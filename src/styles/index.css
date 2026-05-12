@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #14201d;
+  background: #f6f3ea;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f6f3ea;
+  color: #14201d;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(50, 128, 119, 0.24);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-cmr-green/25 bg-cmr-green/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-cmr-green;
+  }
+
+  .eyebrow-dark {
+    @apply inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-white/75;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cmr-green px-6 py-3.5 text-sm font-extrabold text-white transition duration-200;
+    box-shadow: 0 22px 70px rgba(50, 128, 119, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #25675f;
+  }
+
+  .btn-primary-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-extrabold text-cmr-ink transition duration-200;
+    box-shadow: 0 22px 70px rgba(50, 128, 119, 0.2);
+  }
+
+  .btn-primary-light:hover {
+    transform: translateY(-2px);
+    background-color: #edf4f0;
+  }
+
+  .btn-secondary-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-cmr-line bg-white/80 px-6 py-3.5 text-sm font-extrabold text-cmr-ink transition duration-200;
+  }
+
+  .btn-secondary-light:hover {
+    transform: translateY(-2px);
+    border-color: rgba(50, 128, 119, 0.5);
+    background-color: #ddebe7;
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-3.5 text-sm font-extrabold text-white transition duration-200;
+  }
+
+  .btn-secondary-dark:hover {
+    transform: translateY(-2px);
+    border-color: rgba(50, 128, 119, 0.5);
+    background-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .card-light {
+    @apply rounded-[2rem] border border-cmr-line bg-white;
+    box-shadow: 0 18px 50px rgba(20, 32, 29, 0.1);
+  }
+
+  .card-paper {
+  @apply rounded-[2rem] border;
+  border-color: #dce7e2;
+  background-color: #fbf8ef;
+  box-shadow: 0 18px 50px rgba(20, 32, 29, 0.1);
+}
+
+  .card-dark {
+    @apply rounded-[2rem] border border-white/10 bg-white/10 shadow-2xl backdrop-blur;
+  }
+
+  .note-card {
+  @apply rounded-[1.5rem] border p-6;
+  border-color: #dce7e2;
+  background-color: #fbf8ef;
+  box-shadow: 0 18px 50px rgba(20, 32, 29, 0.1);
+}
+
+  .soft-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-cmr-line to-transparent;
+  }
+
+  .hero-text-balance {
+    text-wrap: balance;
+  }
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.13) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.noise > * {
+  position: relative;
+}
+
+.mock-chat-line {
+  position: relative;
+}
+
+.mock-chat-line::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #328077;
+}

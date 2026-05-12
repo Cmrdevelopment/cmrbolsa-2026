@@ -1,0 +1,7 @@
+CMRBolsa One Page Anclas V1
+
+Estructura exacta:
+- Navbar superior con anclas dentro de la home: #inicio, #cmrbolsa, #comunidad, #mentoria, #sala, #eventos, #testimonios, #libro.
+- Botones internos dentro de cada sección hacia páginas ampliadas: /comunidad-pev, /mentoria-pev, /sala-escrita, /eventos, /testimonios, /desgranando-la-esencia-del-mercado, etc.
+- Logo real Cloudinary.
+- Color marca #328077.
