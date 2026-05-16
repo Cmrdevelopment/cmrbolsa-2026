@@ -111,7 +111,7 @@ export default function CmrbolsaPage() {
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                <p className="font-display text-3xl font-black text-white">+260</p>
+                <p className="font-display text-3xl font-black text-white">+280</p>
                 <p className="mt-1 text-sm text-white/62">alumnos formados</p>
               </div>
             </div>

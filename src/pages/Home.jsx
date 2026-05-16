@@ -113,7 +113,7 @@ export default function Home() {
 
             <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3 text-sm text-white/70">
               <div className="rounded-3xl border border-white/10 bg-white/8 p-5">
-                <b className="block font-display text-2xl font-black text-white">+260</b>
+                <b className="block font-display text-2xl font-black text-white">+280</b>
                 alumnos formados
               </div>
               <div className="rounded-3xl border border-white/10 bg-white/8 p-5">
