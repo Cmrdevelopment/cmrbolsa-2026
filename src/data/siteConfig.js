@@ -4,7 +4,7 @@ export const siteConfig = {
   primaryColor: '#328077',
   urls: {
     comunidadCheckout: 'https://www.comudia.com/c/comunidad-trading-pev-de-cmrbolsa',
-    substack: 'SUBSTACK_URL',
+    substack: 'https://cmrbolsa.substack.com/',
     solicitudMentoria: '/solicitud-mentoria',
     capitulosGratis: 'SUBSTACK_O_FORM_URL_CAPITULOS_GRATIS'
   },
