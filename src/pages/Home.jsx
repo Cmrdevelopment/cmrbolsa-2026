@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
+import Placeholder from '../components/Placeholder'
+import TestimoniosCarousel from '../components/testimonios/TestimoniosCarousel'
+import { testimoniosDestacados } from '../data/testimonios'
 import {
   ArrowRight,
   BookOpen,
   CalendarDays,
   CheckCircle2,
-  MessageSquareText,
   PlayCircle,
   ShieldCheck,
   Sparkles,
   UsersRound,
 } from 'lucide-react'
-import Placeholder from '../components/Placeholder'
-import { siteConfig } from '../data/siteConfig'
 
 const pains = [
   {
@@ -39,13 +39,6 @@ const communityItems = [
   'Formación prevista para 16-18 meses',
   'Retos, ejercicios, ejemplos y análisis',
   'Sin permanencia: entras y sales cuando quieras',
-]
-
-const salaLines = [
-  'Ojo aquí, todavía no es entrada. Primero estructura.',
-  'Si rompe sin volumen, no me interesa perseguirla.',
-  'Stop asumido. Una operación más de las próximas 20.000.',
-  'Esto es lo que quiero que veáis: contexto antes que impulso.',
 ]
 
 function SectionHeader({ kicker, title, text, dark = false }) {
@@ -127,7 +120,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative lg:-mt-36">
+          <div className="relative lg:-mt-44">
             <div className="absolute -inset-8 rounded-[3.5rem] bg-cmr-green/20 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-white/10 p-5 shadow-darkGlow backdrop-blur">
@@ -210,23 +203,46 @@ export default function Home() {
           <div>
             <SectionHeader
               kicker="CMRBolsa"
-              title="Soy Carlos, aunque en mercado casi todos me conocen por CMRBolsa"
+              title="Soy Carlos, aunque en redes casi todos me conocen como CMRBolsa"
               text="Empecé como empieza demasiada gente: buscando atajos. Señales, sistemas, gurús, promesas y alguna hostia bien dada por el camino. Con los años entendí que el trading no iba de adivinar, sino de saber qué está haciendo el precio, dónde lo está haciendo y cuándo tiene sentido meter la mano."
             />
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted">
               De ahí nació PEV: una forma de mirar el precio, la estructura y el volumen para dejar de perseguir velas
-              y empezar a trabajar hipótesis. Y sí, aquí se trabaja. Muy ☺️ Mucho .
+              y empezar a trabajar con hipótesis. Y sí, aquí se trabaja. Mucho. Muy mucho.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/cmrbolsa" className="btn-primary">
-                Conocer a CMRBolsa <ArrowRight className="h-4 w-4" />
+                Conocer mi historia <ArrowRight className="h-4 w-4" />
               </Link>
               <a href="#libro" className="btn-secondary-light">
                 Ver el libro
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+            <section id="testimonios" className="bg-cmr-light py-20">
+        <div className="section-shell">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <SectionHeader
+              kicker="Experiencias reales"
+              title="Lo importante no es que hablen de dinero. Es que cuenten cómo han empezado a entender mejor el mercado."
+              text="Alumnos que llegaron con dudas, desorden o demasiada información y que poco a poco han aprendido a trabajar con más criterio, paciencia y cabeza."
+            />
+
+            <Link to="/testimonios" className="btn-secondary-light shrink-0">
+              Ver experiencias de alumnos
+            </Link>
+          </div>
+
+          <div className="mt-10">
+            <TestimoniosCarousel
+              testimonios={testimoniosDestacados}
+              intervalo={8000}
+            />
           </div>
         </div>
       </section>
@@ -237,8 +253,8 @@ export default function Home() {
             <SectionHeader
               dark
               kicker="Comunidad PEV"
-              title="Aprende PEV sin mirar el mercado solo"
-              text="Dentro tienes vídeos, reuniones semanales conmigo, sala escrita, dudas, ejemplos, ejercicios y actualizaciones para ir entendiendo el mercado paso a paso. No vienes a copiar entradas: vienes a aprender cómo se mueve el precio y cuándo una operación puede tener sentido."
+              title="Aprende a leer el mercado antes de meterle mano"
+              text="Dentro tienes vídeos, reuniones semanales conmigo, sala escrita, dudas, ejemplos, ejercicios y actualizaciones para entender el mercado paso a paso. No vengas a copiar entradas: ven a aprender qué mirar, por qué importa y cuándo una operación puede tener sentido."
             />
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -260,7 +276,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="card-dark p-5 -mt-80">
+          <div className="card-dark p-5 lg:-mt-80">
             <Placeholder label="COMUNIDAD_VIDEO_URL + capturas" type="video" className="min-h-[360px]" />
             <div className="mt-5 rounded-3xl bg-cmr-dark/80 p-5">
               <p className="font-display text-xl font-black">No es una sala de señales.</p>
@@ -296,7 +312,7 @@ export default function Home() {
             />
 
             <div className="mt-8 grid gap-4">
-              {['Vídeo → entender → hacer gráfico', 'Mandas ejercicios y se corrigen', 'Precio → Volumen → Estructura', 'Plan de trading y paso progresivo a operar'].map((step, index) => (
+              {['Vídeo → entender → hacer y enviar gráfico', 'Mandas ejercicios y se corrigen', 'Precio → Volumen → Estructura', 'Plan de trading y paso progresivo a operar'].map((step, index) => (
                 <div key={step} className="flex gap-4 rounded-3xl border border-cmr-line bg-white p-5 shadow-soft">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cmr-green text-sm font-black text-white">
                     {index + 1}
@@ -317,155 +333,114 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section id="sala" className="bg-cmr-paper py-20">
-        <div className="section-shell grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
-          <div>
-            <SectionHeader
-              kicker="Sala escrita"
-              title="La sala no es mirar una pantalla en silencio"
-              text="La sala de trading de CMRBolsa es escrita: zonas, contexto, imágenes, evolución del mercado, participación y entradas reales cuando aparecen. También se ven los errores, porque ahí se aprende mucho."
-            />
-
-            <div className="mt-8">
-              <QuoteNote>No vienes a copiar una entrada. Vienes a seguir el razonamiento.</QuoteNote>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/sala-escrita" className="btn-primary">
-                Cómo funciona la sala <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a href="#comunidad" className="btn-secondary-light">
-                Está incluida en Comunidad
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-cmr-line bg-white p-5 shadow-soft">
-            <div className="rounded-[1.5rem] bg-cmr-dark p-6 text-white">
-              <div className="mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
-                <MessageSquareText className="h-6 w-6 text-cmr-green" />
-                <div>
-                  <p className="font-display text-xl font-black">Sala escrita CMRBolsa</p>
-                  <p className="text-sm text-white/55">Ejemplo visual. Luego sustituimos por capturas reales.</p>
-                </div>
-              </div>
-
-              <div className="space-y-5 pl-4">
-                {salaLines.map((line) => (
-                  <p key={line} className="mock-chat-line text-sm leading-6 text-white/78">
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              {siteConfig.media.salaScreens.slice(0, 2).map((screen) => (
-                <Placeholder key={screen} label={screen} dark={false} className="min-h-[160px]" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="eventos" className="bg-cmr-dark py-20 text-white">
-        <div className="section-shell grid gap-12 lg:grid-cols-[1fr_.95fr] lg:items-center">
-          <div>
-            <SectionHeader
-              dark
-              kicker="Eventos"
-              title="También nos hemos visto fuera del gráfico"
-              text="Talleres, encuentros, sesiones online y eventos donde el trading deja de ser solo una pantalla. Aquí se puede mostrar lo ya hecho y captar interés para próximos eventos."
-            />
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {['Talleres presenciales', 'Sesiones online', 'Encuentros con alumnos', 'Próximos eventos'].map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/8 p-4 text-white/78">
-                  <CalendarDays className="mb-3 h-5 w-5 text-cmr-green" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/eventos" className="btn-primary">
-                Ver eventos
-              </Link>
-              <Link to="/eventos#avisarme" className="btn-secondary-dark">
-                Avisarme del próximo
-              </Link>
-            </div>
-          </div>
-
-          <Placeholder label="EVENTO_IMAGE_URL_01 / EVENTO_VIDEO_URL_01" type="video" />
-        </div>
-      </section>
-
-      <section id="testimonios" className="bg-cmr-light py-20">
+      <section id="eventos" className="bg-cmr-dark py-14 text-white">
         <div className="section-shell">
-          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <SectionHeader
-              kicker="Testimonios"
-              title="Lo importante no es que hablen de dinero. Es que hablen de cómo empezaron a mirar el mercado."
-              text="Vídeos, capturas y comentarios reales de alumnos. Con nombres tapados cuando haga falta."
+          <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/6 p-6 shadow-darkGlow sm:p-8 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cmr-green/15 text-cmr-green">
+                  <CalendarDays className="h-5 w-5" />
+                </div>
+
+                <span className="eyebrow-dark">
+                  Eventos
+                </span>
+              </div>
+
+              <h2 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.02em] text-white sm:text-4xl">
+                También hemos salido del gráfico
+              </h2>
+
+              <p className="mt-4 max-w-2xl leading-7 text-white/68">
+                Talleres, sesiones online y encuentros con alumnos. Cuando haya
+                algo nuevo, podrás verlo aquí y apuntarte si te interesa.
+              </p>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link to="/eventos" className="btn-primary">
+                  Ver eventos
+                </Link>
+
+                <Link
+                  to="/eventos#avisarme"
+                  className="btn-secondary-dark"
+                >
+                  Avisarme del próximo
+                </Link>
+              </div>
+            </div>
+
+            <Placeholder
+              label="EVENTO_IMAGE_URL_01"
+              dark
+              className="min-h-[220px]"
             />
-
-            <Link to="/testimonios" className="btn-secondary-light shrink-0">
-              Ver testimonios
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {siteConfig.media.testimoniosScreens.map((screen) => (
-              <Placeholder key={screen} label={screen} dark={false} className="min-h-[250px]" />
-            ))}
           </div>
         </div>
       </section>
 
-      <section id="libro" className="bg-cmr-paper py-20">
-        <div className="section-shell grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
-          <div className="card-light p-8">
-            <BookOpen className="h-10 w-10 text-cmr-green" />
-            <h3 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.02em] text-cmr-ink">
-              Desgranando la esencia del mercado
-            </h3>
-            <p className="mt-4 leading-7 text-cmr-muted">
-              El ebook puede funcionar como autoridad y puerta de entrada: regalar capítulos a cambio de suscripción
-              o llevar a Substack sin parecer un embudo barato.
-            </p>
+      <section id="libro" className="bg-cmr-paper py-14">
+        <div className="section-shell">
+          <div className="rounded-[2rem] border border-cmr-line bg-white p-6 shadow-soft sm:p-8">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+              <div>
+                <span className="eyebrow">
+                  Libro y Substack
+                </span>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Link to="/desgranando-la-esencia-del-mercado" className="btn-primary">
-                Ver el libro
-              </Link>
-              <a href={siteConfig.urls.substack} className="btn-secondary-light">
-                Ir a Substack
-              </a>
-            </div>
-          </div>
+                <h2 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.02em] text-cmr-ink sm:text-4xl">
+                  También puedes empezar leyendo
+                </h2>
 
-          <div>
-            <SectionHeader
-              kicker="Substack"
-              title="Leer antes de entrar también es una buena forma de empezar"
-              text="No todo el mundo tiene que comprar al primer clic. Hay gente que necesita leerte, verte pensar y comprobar que esto no va de señales ni humo."
-            />
-
-            <div className="mt-8 rounded-[2rem] border border-cmr-line bg-white p-6 shadow-soft">
-              <div className="flex items-start gap-4">
-                <Sparkles className="mt-1 h-6 w-6 text-cmr-gold" />
-                <p className="leading-7 text-cmr-muted">
-                  Podemos regalar algunos capítulos y llevar a la gente a Substack para que te conozca antes de entrar
-                  en Comunidad o solicitar Mentoría.
+                <p className="mt-4 max-w-2xl leading-7 text-cmr-muted">
+                  No hace falta que entres a la primera. Puedes empezar por el
+                  libro o por lo que voy publicando en Substack, ver cómo miro
+                  el mercado y después decidir con calma.
                 </p>
               </div>
-            </div>
 
-            <Link to="/substack" className="btn-secondary-light mt-8">
-              Ver qué publico en Substack
-            </Link>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5">
+                  <BookOpen className="h-7 w-7 text-cmr-green" />
+
+                  <h3 className="mt-4 font-display text-xl font-black leading-tight text-cmr-ink">
+                    Desgranando la esencia del mercado
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-cmr-muted">
+                    El libro para empezar a entender cómo trabajo el precio,
+                    la estructura y el volumen.
+                  </p>
+
+                  <Link
+                    to="/desgranando-la-esencia-del-mercado"
+                    className="btn-primary mt-5"
+                  >
+                    Ver el libro
+                  </Link>
+                </div>
+
+                <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5">
+                  <Sparkles className="h-7 w-7 text-cmr-gold" />
+
+                  <h3 className="mt-4 font-display text-xl font-black leading-tight text-cmr-ink">
+                    CMRBolsa en Substack
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-cmr-muted">
+                    Artículos, ideas y reflexiones para conocer mejor mi forma
+                    de entender el mercado.
+                  </p>
+
+                  <Link
+                    to="/substack"
+                    className="btn-secondary-light mt-5"
+                  >
+                    Leer en Substack
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

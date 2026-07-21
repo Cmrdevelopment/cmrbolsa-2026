@@ -99,18 +99,26 @@ export default function ComunidadPage() {
 
             <div className="mt-10 text-center grid max-w-2xl gap-3 sm:grid-cols-3">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                <p className="font-display text-3xl font-black text-white">36,99</p>
-                <p className="mt-1 text-sm text-white/62">€/mes ahora</p>
+                <p className="font-display text-2xl font-black text-white">
+                  Varios planes
+                </p>
+                <p className="mt-1 text-sm text-white/62">
+                  según el apoyo que necesites
+                </p>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                 <p className="font-display text-3xl font-black text-white">0</p>
-                <p className="mt-1 text-sm text-white/62">permanencia</p>
+                <p className="mt-1 text-sm text-white/62">
+                  permanencia
+                </p>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                 <p className="font-display text-3xl font-black text-white">PEV</p>
-                <p className="mt-1 text-sm text-white/62">precio, estructura y volumen</p>
+                <p className="mt-1 text-sm text-white/62">
+                  precio, estructura y volumen
+                </p>
               </div>
             </div>
           </div>
@@ -292,21 +300,31 @@ export default function ComunidadPage() {
       <section className="bg-cmr-light py-20">
         <div className="section-shell grid gap-12 lg:grid-cols-[1fr_.9fr] lg:items-start">
           <div>
-            <span className="eyebrow">Precio</span>
+            <span className="eyebrow">Planes de Comunidad</span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink sm:text-5xl">
-              Entra, prueba y quédate solo si te aporta
+              Elige el apoyo que necesitas
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-cmr-muted">
-              Ahora mismo la Comunidad PEV tiene una oferta limitada. El precio normal es
-              59,99 €/mes, pero puedes entrar por 36,99 €/mes mientras la oferta esté activa.
+              No todo el mundo necesita lo mismo. Por eso tienes distintos planes
+              para entrar en la Comunidad, según la formación, el seguimiento y el
+              apoyo que quieras tener.
+            </p>
+
+            <p className="mt-4 max-w-2xl leading-7 text-cmr-muted">
+              En Comudia puedes ver qué incluye cada uno, compararlos tranquilamente
+              y elegir el que mejor encaje contigo.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="card-light p-5">
                 <Clock3 className="h-6 w-6 text-cmr-green" />
-                <p className="mt-4 font-bold text-cmr-ink">Sin permanencia</p>
+
+                <p className="mt-4 font-bold text-cmr-ink">
+                  Sin permanencia
+                </p>
+
                 <p className="mt-2 text-sm leading-6 text-cmr-muted">
                   Puedes cancelar cuando quieras.
                 </p>
@@ -314,70 +332,63 @@ export default function ComunidadPage() {
 
               <div className="card-light p-5">
                 <UsersRound className="h-6 w-6 text-cmr-green" />
-                <p className="mt-4 font-bold text-cmr-ink">Comunidad activa</p>
+
+                <p className="mt-4 font-bold text-cmr-ink">
+                  Distintos planes
+                </p>
+
                 <p className="mt-2 text-sm leading-6 text-cmr-muted">
-                  Sala, reuniones y dudas.
+                  Elige según el apoyo que quieras tener.
                 </p>
               </div>
 
               <div className="card-light p-5">
                 <ShieldCheck className="h-6 w-6 text-cmr-green" />
-                <p className="mt-4 font-bold text-cmr-ink">Pago seguro</p>
+
+                <p className="mt-4 font-bold text-cmr-ink">
+                  Todo claro antes de entrar
+                </p>
+
                 <p className="mt-2 text-sm leading-6 text-cmr-muted">
-                  Se gestionará desde Comudia.
+                  Puedes comparar qué incluye cada plan.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-cmr-line bg-white p-7 shadow-soft">
-            <div className="mb-5 flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-full border border-cmr-green/25 bg-cmr-green/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-cmr-green">
-                Oferta limitada
-                </span>
+            <span className="inline-flex items-center rounded-full border border-cmr-green/25 bg-cmr-green/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-cmr-green">
+              Planes disponibles
+            </span>
 
-                <span className="inline-flex items-center rounded-full border border-cmr-gold/30 bg-cmr-gold/10 px-3 py-1 text-xs font-extrabold text-cmr-gold">
-                Ahorras 23 €/mes
-                </span>
-            </div>
+            <h3 className="mt-6 font-display text-3xl font-black leading-tight text-cmr-ink">
+              Entra en la Comunidad a tu manera
+            </h3>
 
-            <div className="rounded-[1.75rem] border border-cmr-green/18 bg-cmr-light2 p-6">
-                <p className="text-sm font-bold text-cmr-muted line-through">
-                Precio normal: 59,99 €/mes
-                </p>
+            <p className="mt-5 leading-7 text-cmr-muted">
+              Puedes empezar con una opción más sencilla o elegir un plan con más
+              formación, seguimiento y acceso, dependiendo de lo que estés buscando.
+            </p>
 
-                <div className="mt-3 flex items-end gap-2">
-                <span className="font-display text-6xl font-black leading-none text-cmr-ink">
-                    36,99
-                </span>
-
-                <span className="pb-2 text-lg font-black text-cmr-ink">
-                    €/mes
-                </span>
-                </div>
-
-                <p className="mt-3 text-sm font-extrabold text-cmr-green">
-                Precio actual por tiempo limitado
-                </p>
-            </div>
-
-            <p className="mt-6 leading-7 text-cmr-muted">
-                Acceso a la Comunidad PEV con sala de trading escrita, reuniones semanales,
-                vídeos, ejercicios y acompañamiento.
+            <p className="mt-4 leading-7 text-cmr-muted">
+              Los precios y las condiciones actualizadas los encontrarás siempre
+              en Comudia.
             </p>
 
             <a
-                href={siteConfig.urls.comunidadCheckout}
-                className="btn-primary mt-7 w-full justify-center"
+              href={siteConfig.urls.comunidadCheckout}
+              className="btn-primary mt-7 w-full justify-center"
+              target="_blank"
+              rel="noreferrer"
             >
-                Entrar en Comunidad
-                <ArrowRight className="h-4 w-4" />
+              Ver planes de Comunidad
+              <ArrowRight className="h-4 w-4" />
             </a>
 
             <p className="mt-4 text-center text-xs leading-5 text-cmr-muted">
-                Sin permanencia · Puedes salir cuando quieras
+              Compara los planes y elige el que mejor encaje contigo
             </p>
-            </div>
+          </div>
         </div>
       </section>
 

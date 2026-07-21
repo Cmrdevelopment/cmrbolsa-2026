@@ -6,57 +6,9 @@ import { siteConfig } from '../data/siteConfig'
 import ComunidadPage from './internas/ComunidadPage'
 import CmrbolsaPage from './internas/CmrbolsaPage'
 import SubstackPage from './internas/SubstackPage'
+import MentoriaPage from './internas/MentoriaPage'
 
 const pageData = {
-  cmrbolsa: {
-    eyebrow: 'CMRBolsa',
-    title: 'Carlos Martín Rodríguez: de buscar atajos a entender cómo se mueve el mercado',
-    text: 'Esta es la historia real detrás de CMRBolsa: errores, señales, sistemas, gurús, muchas horas de mercado y una forma de enseñar basada en Precio, Estructura, Volumen y cabeza.',
-    media: 'CARLOS_IMAGE_URL_02',
-    bullets: [
-      'Más de 21 años en mercados',
-      'PEV: Precio, Estructura y Volumen',
-      'Más de 260 alumnos formados',
-      'Claro, cercano y exigente cuando toca',
-    ],
-    cta: ['Ver Comunidad PEV', '/comunidad-pev'],
-    note: 'CMRBolsa no nació de una promesa bonita. Nació después de equivocarme, buscar atajos y entender que el mercado no va de adivinar.',
-  },
-
-  comunidad: {
-    eyebrow: 'Comunidad PEV',
-    title: 'Comunidad Trading PEV de CMRBolsa',
-    text: 'La puerta de entrada para conocer cómo trabajamos el mercado por dentro: formación en vídeos, reuniones semanales, sala escrita, contexto, imágenes, dudas, ejercicios y participación.',
-    media: 'COMUNIDAD_VIDEO_URL',
-    bullets: [
-      'Precio normal: 59,99 €/mes',
-      'Ahora por tiempo limitado: 36,99 €/mes',
-      'Sin permanencia',
-      'Sala escrita incluida mientras pagues',
-      'Reuniones semanales conmigo',
-      'Formación prevista para 16-18 meses',
-    ],
-    cta: ['Entrar en Comunidad', siteConfig.urls.comunidadCheckout],
-    note: 'No vienes a copiar entradas. Vienes a entender qué estamos mirando, por qué una zona importa y cuándo una operación puede tener sentido.',
-  },
-
-  mentoria: {
-    eyebrow: 'Mentoría PEV',
-    title: 'Mentoría PEV de CMRBolsa',
-    text: 'Un proceso serio para quien quiere corrección personal, acompañamiento directo, plan de trading y una estructura real de aprendizaje. No entra todo el mundo, y está bien que sea así.',
-    media: 'MENTORIA_VIDEO_URL',
-    bullets: [
-      'Entrada por solicitud',
-      'Entrevista personal',
-      'Inversión importante',
-      'Comunidad permanente incluida',
-      'Sala incluida el primer año',
-      'Correcciones personales',
-    ],
-    cta: ['Solicitar valoración', '/solicitud-mentoria'],
-    note: 'La Mentoría no es para mirar. Es para trabajar, mandar gráficos, corregir, repetir y empezar a ordenar la cabeza delante del mercado.',
-  },
-
   sala: {
     eyebrow: 'Sala escrita',
     title: 'Mercado en directo, pero por escrito y con contexto',
@@ -71,7 +23,7 @@ const pageData = {
       'Se puede revisar en diferido',
     ],
     cta: ['Ver Comunidad PEV', '/comunidad-pev'],
-    note: 'No vienes a copiar una entrada. Vienes a seguir el razonamiento.',
+    note: 'No vengas a copiar entradas. Ven a entender el motivo.',
   },
 
   eventos: {
@@ -121,22 +73,6 @@ const pageData = {
     cta: ['Leer en Substack', siteConfig.urls.substack],
     note: 'Leer antes de entrar también es una buena forma de empezar. Hay gente que necesita verte pensar antes de dar el paso.',
   },
-
-  substack: {
-    eyebrow: 'Substack',
-    title: 'Leer CMRBolsa antes de entrar también tiene sentido',
-    text: 'Una sección puente para explicar qué publico en Substack, qué parte es gratis, qué parte es de pago y por qué puede ayudarte a entender mejor mi forma de mirar el mercado.',
-    media: 'SUBSTACK_SCREENSHOT_URL',
-    bullets: [
-      'Artículos gratis',
-      'Contenido de pago',
-      'Análisis',
-      'Reflexiones de mercado',
-      'Puente hacia Comunidad',
-    ],
-    cta: ['Ir a Substack', siteConfig.urls.substack],
-    note: 'No todo el mundo tiene que comprar al primer clic. Leer, mirar y entender también forma parte del camino.',
-  },
 }
 
 function isExternalUrl(url) {
@@ -144,10 +80,7 @@ function isExternalUrl(url) {
 }
 
 function ActionButton({ to, children, variant = 'primary' }) {
-  const className =
-    variant === 'primary'
-      ? 'btn-primary'
-      : 'btn-secondary-light'
+  const className = variant === 'primary' ? 'btn-primary' : 'btn-secondary-light'
 
   if (isExternalUrl(to)) {
     return (
@@ -168,6 +101,7 @@ export default function GenericPage({ type }) {
   if (type === 'comunidad') return <ComunidadPage />
   if (type === 'cmrbolsa') return <CmrbolsaPage />
   if (type === 'substack') return <SubstackPage />
+  if (type === 'mentoria') return <MentoriaPage />
 
   const data = pageData[type]
 
@@ -179,9 +113,11 @@ export default function GenericPage({ type }) {
             <h1 className="font-display text-4xl font-black tracking-[-0.02em]">
               Página no encontrada
             </h1>
+
             <p className="mt-4 text-cmr-muted">
               Esta página todavía no está configurada.
             </p>
+
             <Link to="/" className="btn-primary mt-8">
               Volver al inicio
             </Link>

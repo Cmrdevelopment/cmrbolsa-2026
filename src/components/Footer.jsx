@@ -1,12 +1,56 @@
 import { Link } from 'react-router-dom'
 import {
-  BookOpen,
-  Users,
-  GraduationCap,
   ChevronRight,
   FileText,
   AlertTriangle,
 } from 'lucide-react'
+import {
+  FaXTwitter,
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaFacebookF,
+} from 'react-icons/fa6'
+import { SiSubstack } from 'react-icons/si'
+
+const socialLinks = [
+  {
+    label: 'X',
+    href: 'https://x.com/cmrbolsa',
+    icon: FaXTwitter,
+    hoverClass: 'hover:text-white',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/cmrbolsa',
+    icon: FaInstagram,
+    hoverClass: 'hover:text-[#E1306C]',
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@cmrbolsa',
+    icon: FaTiktok,
+    hoverClass: 'hover:text-white',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@cmrbolsa',
+    icon: FaYoutube,
+    hoverClass: 'hover:text-[#FF0000]',
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/cmrbolsa',
+    icon: FaFacebookF,
+    hoverClass: 'hover:text-[#1877F2]',
+  },
+  {
+    label: 'Substack',
+    href: 'https://cmrbolsa.substack.com/',
+    icon: SiSubstack,
+    hoverClass: 'hover:text-[#FF6719]',
+  },
+]
 
 export default function Footer() {
   return (
@@ -185,7 +229,10 @@ export default function Footer() {
               </p>
 
               <div className="mt-6 grid gap-4 text-sm font-bold">
-                <a href="#aviso-riesgo" className="text-white/74 transition hover:text-cmr-green">
+                <a
+                  href="#aviso-riesgo"
+                  className="text-white/74 transition hover:text-cmr-green"
+                >
                   Aviso de riesgo
                 </a>
 
@@ -196,120 +243,133 @@ export default function Footer() {
                   Declaraciones legales
                 </a>
 
-                <Link to="/privacidad" className="text-white/74 transition hover:text-cmr-green">
-                  Política de privacidad
-                </Link>
-
-                <Link to="/aviso-legal" className="text-white/74 transition hover:text-cmr-green">
+                <Link
+                  to="/aviso-legal"
+                  className="text-white/74 transition hover:text-cmr-green"
+                >
                   Aviso legal
                 </Link>
 
-                <Link to="/cookies" className="text-white/74 transition hover:text-cmr-green">
+                <Link
+                  to="/politica-privacidad"
+                  className="text-white/74 transition hover:text-cmr-green"
+                >
+                  Política de privacidad
+                </Link>
+
+                <Link
+                  to="/politica_de_cookies"
+                  className="text-white/74 transition hover:text-cmr-green"
+                >
                   Política de cookies
+                </Link>
+
+                <Link
+                  to="/terminos_y_condiciones"
+                  className="text-white/74 transition hover:text-cmr-green"
+                >
+                  Términos y condiciones
                 </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* PIE FINAL */}
+        {/* REDES SOCIALES */}
+        <div className="mx-auto mt-12 max-w-7xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.20)] backdrop-blur-sm sm:p-6">
+            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cmr-green/12 blur-3xl" />
+            <div className="absolute -bottom-12 left-20 h-28 w-28 rounded-full bg-cmr-gold/8 blur-3xl" />
 
-        {/* TARJETAS PRINCIPALES ABAJO */}
-        <div className="mx-auto mt-12 grid max-w-7xl gap-4 lg:grid-cols-3">
-          <Link
-            to="/comunidad-pev"
-            className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-5 transition hover:-translate-y-0.5 hover:bg-white/8"
-          >
-            <div className="flex items-start gap-4">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cmr-green/14 text-cmr-green">
-                <Users className="h-5 w-5" />
+            <div className="relative flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
+              <div className="max-w-xl">
+                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-cmr-green">
+                  Sígueme también en redes
+                </p>
+
+                <h3 className="mt-3 font-display text-2xl font-black leading-tight tracking-[-0.02em] text-white sm:text-3xl">
+                  Más mercado, más ideas y más CMRBolsa fuera de la web.
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Vídeos, análisis, reflexiones, artículos y contenido para seguir entendiendo el mercado con PEV.
+                </p>
               </div>
 
-              <div>
-                <p className="font-display text-2xl font-black leading-tight text-white">
-                  Comunidad PEV
-                </p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:min-w-[620px]">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon
 
-                <p className="mt-2 text-sm leading-6 text-white/68">
-                  Vídeos, reuniones, sala escrita y acompañamiento.
-                </p>
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-cmr-dark2/70 px-4 py-4 text-white/78 transition duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 ${social.hoverClass}`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/6 text-white transition group-hover:border-white/20">
+                          <Icon className="h-5 w-5" />
+                        </span>
 
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green transition">
-                  Ver Comunidad
-                  <ChevronRight className="h-4 w-4" />
-                </span>
-              </div>
-            </div>
-          </Link>
+                        <span className="text-sm font-extrabold">
+                          {social.label}
+                        </span>
+                      </span>
 
-          <Link
-            to="/mentoria-pev"
-            className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-5 transition hover:-translate-y-0.5 hover:bg-white/8"
-          >
-            <div className="flex items-start gap-4">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cmr-green/14 text-cmr-green">
-                <GraduationCap className="h-5 w-5" />
-              </div>
-
-              <div>
-                <p className="font-display text-2xl font-black leading-tight text-white">
-                  Mentoría PEV
-                </p>
-
-                <p className="mt-2 text-sm leading-6 text-white/68">
-                  Para quien quiere corrección, orden y proceso directo.
-                </p>
-
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green transition">
-                  Ver Mentoría
-                  <ChevronRight className="h-4 w-4" />
-                </span>
+                      <ChevronRight className="h-4 w-4 text-white/28 transition group-hover:translate-x-0.5 group-hover:text-white/70" />
+                    </a>
+                  )
+                })}
               </div>
             </div>
-          </Link>
-
-          <Link
-            to="/desgranando-la-esencia-del-mercado"
-            className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-5 transition hover:-translate-y-0.5 hover:bg-white/8"
-          >
-            <div className="flex items-start gap-4">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cmr-gold/12 text-cmr-gold">
-                <BookOpen className="h-5 w-5" />
-              </div>
-
-              <div>
-                <p className="font-display text-2xl font-black leading-tight text-white">
-                  Desgranando la esencia del mercado
-                </p>
-
-                <p className="mt-2 text-sm leading-6 text-white/68">
-                  El libro y Substack son una buena forma de empezar a conocer cómo miro el mercado.
-                </p>
-
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green transition">
-                  Ver libro
-                  <ChevronRight className="h-4 w-4" />
-                </span>
-              </div>
-            </div>
-          </Link>
+          </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/38 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/38 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} CMRBolsa · Todos los derechos reservados.</p>
 
           <div className="flex flex-wrap gap-4">
-            <Link to="/privacidad" className="transition hover:text-white/72">
-              Privacidad
-            </Link>
-
-            <Link to="/aviso-legal" className="transition hover:text-white/72">
+            <Link
+              to="/aviso-legal"
+              className="transition hover:text-white/72"
+            >
               Aviso legal
             </Link>
 
-            <Link to="/cookies" className="transition hover:text-white/72">
+            <Link
+              to="/politica-privacidad"
+              className="transition hover:text-white/72"
+            >
+              Privacidad
+            </Link>
+
+            <Link
+              to="/politica_de_cookies"
+              className="transition hover:text-white/72"
+            >
               Cookies
             </Link>
+
+            <Link
+              to="/terminos_y_condiciones"
+              className="transition hover:text-white/72"
+            >
+              Términos y condiciones
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => {
+                window.dispatchEvent(
+                  new CustomEvent('cmrbolsa:open-cookie-settings')
+                )
+              }}
+              className="transition hover:text-white/72"
+            >
+              Configurar cookies
+            </button>
           </div>
         </div>
       </div>

@@ -2,9 +2,8 @@ export const siteConfig = {
   brand: 'CMRBolsa',
   logoUrl: 'https://res.cloudinary.com/dwbxywvdw/image/upload/v1777842803/cmrbolsa/Logo_cmrbolsa_09_2023_aoggtn.png',
   primaryColor: '#328077',
-  communityPrice: '36,99 €/mes',
   urls: {
-    comunidadCheckout: 'COMUDIA_CHECKOUT_URL',
+    comunidadCheckout: 'https://www.comudia.com/c/comunidad-trading-pev-de-cmrbolsa',
     substack: 'SUBSTACK_URL',
     solicitudMentoria: '/solicitud-mentoria',
     capitulosGratis: 'SUBSTACK_O_FORM_URL_CAPITULOS_GRATIS'

@@ -41,16 +41,40 @@ export default function Header() {
 }, [])
 
   useEffect(() => {
-    const sectionIds = navItems.map((item) => item.href.replace('#', ''))
+    if (!isHomePage) {
+      setActiveSection('inicio')
+      return undefined
+    }
+
+    const sectionIds = navItems.map(
+      (item) => item.href.replace('#', '')
+    )
+
+    const elementos = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+
+    if (!elementos.length) {
+      return undefined
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntries = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio -
+              a.intersectionRatio
+          )
 
-        if (visibleEntries.length > 0 && visibleEntries[0]?.target?.id) {
-          setActiveSection(visibleEntries[0].target.id)
+        if (
+          visibleEntries.length > 0 &&
+          visibleEntries[0]?.target?.id
+        ) {
+          setActiveSection(
+            visibleEntries[0].target.id
+          )
         }
       },
       {
@@ -60,15 +84,19 @@ export default function Header() {
       }
     )
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id)
-      if (element) observer.observe(element)
+    elementos.forEach((elemento) => {
+      observer.observe(elemento)
     })
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      observer.disconnect()
+    }
+  }, [isHomePage])
 
-  const isDarkHeader = !scrolled || darkSections.includes(activeSection)
+  const isDarkHeader = isHomePage
+  ? !scrolled ||
+    darkSections.includes(activeSection)
+  : !scrolled
 
   const headerClass = isDarkHeader
     ? 'border-white/10 bg-cmr-dark/90 text-white backdrop-blur-xl'
