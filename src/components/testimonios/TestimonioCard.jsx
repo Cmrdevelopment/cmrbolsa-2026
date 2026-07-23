@@ -8,6 +8,7 @@ import {
   Maximize2,
   Quote,
 } from 'lucide-react'
+
 import TestimonioMedia from './TestimonioMedia'
 import TestimonioModal from './TestimonioModal'
 
@@ -20,36 +21,53 @@ const nombresCategorias = {
   general: 'CMRBolsa',
 }
 
-function dividirTextoEnParrafos(texto, limite = 420) {
-  if (!texto) return []
+function dividirTextoEnParrafos(
+  texto,
+  limite = 420
+) {
+  if (!texto) {
+    return []
+  }
 
   const frases =
     texto
-      .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
-      ?.map((frase) => frase.trim())
+      .match(
+        /[^.!?]+[.!?]+|[^.!?]+$/g
+      )
+      ?.map((frase) =>
+        frase.trim()
+      )
       .filter(Boolean) || [texto]
 
   const parrafos = []
   let parrafoActual = ''
 
   frases.forEach((frase) => {
-    const textoCombinado = parrafoActual
-      ? `${parrafoActual} ${frase}`
-      : frase
+    const textoCombinado =
+      parrafoActual
+        ? `${parrafoActual} ${frase}`
+        : frase
 
     if (
-      textoCombinado.length > limite &&
+      textoCombinado.length >
+        limite &&
       parrafoActual
     ) {
-      parrafos.push(parrafoActual)
+      parrafos.push(
+        parrafoActual
+      )
+
       parrafoActual = frase
     } else {
-      parrafoActual = textoCombinado
+      parrafoActual =
+        textoCombinado
     }
   })
 
   if (parrafoActual) {
-    parrafos.push(parrafoActual)
+    parrafos.push(
+      parrafoActual
+    )
   }
 
   return parrafos
@@ -59,14 +77,20 @@ export default function TestimonioCard({
   testimonio,
   compact = false,
 }) {
-  const [modalAbierto, setModalAbierto] = useState(false)
-  const [textoRecortado, setTextoRecortado] = useState(false)
+  const [
+    modalAbierto,
+    setModalAbierto,
+  ] = useState(false)
+
+  const [
+    textoRecortado,
+    setTextoRecortado,
+  ] = useState(false)
 
   const textoRef = useRef(null)
 
-  if (!testimonio) return null
-
   const {
+    id,
     nombre,
     texto,
     categoriaInterna,
@@ -74,7 +98,7 @@ export default function TestimonioCard({
     imagenUrl,
     videoUrl,
     portadaUrl,
-  } = testimonio
+  } = testimonio || {}
 
   const tieneMedia = Boolean(
     imagenUrl ||
@@ -83,27 +107,39 @@ export default function TestimonioCard({
   )
 
   const categoriaVisible =
-    nombresCategorias[categoriaInterna] || 'CMRBolsa'
+    nombresCategorias[
+      categoriaInterna
+    ] || 'CMRBolsa'
 
   const tituloModal =
-    nombre || 'Alumno de CMRBolsa'
+    nombre ||
+    'Alumno de CMRBolsa'
 
   const parrafosTexto =
-    dividirTextoEnParrafos(texto)
+    dividirTextoEnParrafos(
+      texto
+    )
 
   useEffect(() => {
-    const elemento = textoRef.current
+    const elemento =
+      textoRef.current
 
-    if (!elemento || !texto) {
+    if (
+      !elemento ||
+      !texto
+    ) {
       setTextoRecortado(false)
       return undefined
     }
 
     function comprobarRecorte() {
       const estaRecortado =
-        elemento.scrollHeight > elemento.clientHeight + 2
+        elemento.scrollHeight >
+        elemento.clientHeight + 2
 
-      setTextoRecortado(estaRecortado)
+      setTextoRecortado(
+        estaRecortado
+      )
     }
 
     comprobarRecorte()
@@ -119,25 +155,38 @@ export default function TestimonioCard({
         comprobarRecorte
       )
     }
-  }, [texto, compact])
+  }, [
+    texto,
+    compact,
+  ])
+
+  if (!testimonio) {
+    return null
+  }
 
   return (
     <>
-      <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-cmr-line bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(20,32,29,0.12)]">
+      <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-cmr-line bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(20,32,29,0.12)] dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_22px_65px_rgba(0,0,0,0.26)] dark:hover:border-cmr-green/35 dark:hover:shadow-[0_28px_80px_rgba(0,0,0,0.34)]">
         {tieneMedia && (
           <div className="relative p-3 pb-0">
             <TestimonioMedia
-              testimonio={testimonio}
+              testimonio={
+                testimonio
+              }
               vistaPrevia
             />
 
             <button
               type="button"
-              onClick={() => setModalAbierto(true)}
+              onClick={() =>
+                setModalAbierto(
+                  true
+                )
+              }
               aria-label={`Ampliar testimonio de ${tituloModal}`}
               className="absolute inset-3 bottom-0 z-10 flex items-end justify-end rounded-[1.5rem] bg-transparent p-3"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-cmr-dark/78 text-white shadow-lg backdrop-blur transition group-hover:scale-105 group-hover:bg-cmr-dark">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.24] bg-cmr-dark/[0.82] text-white shadow-lg backdrop-blur transition group-hover:scale-105 group-hover:bg-cmr-dark">
                 <Maximize2 className="h-4 w-4" />
               </span>
             </button>
@@ -146,26 +195,32 @@ export default function TestimonioCard({
 
         <div
           className={`flex flex-1 flex-col ${
-            compact ? 'p-5' : 'p-6 sm:p-7'
+            compact
+              ? 'p-5'
+              : 'p-6 sm:p-7'
           }`}
         >
-          {(texto || mostrarCategoria) && (
+          {(texto ||
+            mostrarCategoria) && (
             <div
               className={`flex items-center gap-4 ${
-                mostrarCategoria && !texto
+                mostrarCategoria &&
+                !texto
                   ? 'justify-end'
                   : 'justify-between'
               }`}
             >
               {texto && (
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cmr-greenSoft text-cmr-green">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cmr-green/15 bg-cmr-greenSoft text-cmr-green dark:border-cmr-green/30 dark:bg-cmr-green/[0.14] dark:text-[#79CFC4]">
                   <Quote className="h-5 w-5" />
                 </div>
               )}
 
               {mostrarCategoria && (
-                <span className="rounded-full border border-cmr-line bg-cmr-paper px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-cmr-muted">
-                  {categoriaVisible}
+                <span className="rounded-full border border-cmr-line bg-cmr-paper px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-cmr-muted dark:border-white/[0.14] dark:bg-white/[0.08] dark:text-white/[0.72]">
+                  {
+                    categoriaVisible
+                  }
                 </span>
               )}
             </div>
@@ -175,16 +230,22 @@ export default function TestimonioCard({
             <div className="mt-5 flex-1">
               <p
                 ref={textoRef}
-                className={`font-display font-black leading-relaxed tracking-[-0.015em] text-cmr-ink ${
+                className={`font-display font-black leading-relaxed tracking-[-0.015em] text-cmr-ink dark:text-white ${
                   compact
                     ? 'text-lg'
                     : 'text-xl'
                 }`}
                 style={{
-                  display: '-webkit-box',
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: compact ? 5 : 6,
-                  overflow: 'hidden',
+                  display:
+                    '-webkit-box',
+                  WebkitBoxOrient:
+                    'vertical',
+                  WebkitLineClamp:
+                    compact
+                      ? 5
+                      : 6,
+                  overflow:
+                    'hidden',
                 }}
               >
                 “{texto}”
@@ -193,10 +254,16 @@ export default function TestimonioCard({
               {textoRecortado && (
                 <button
                   type="button"
-                  onClick={() => setModalAbierto(true)}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green transition hover:gap-3 hover:text-cmr-ink"
+                  onClick={() =>
+                    setModalAbierto(
+                      true
+                    )
+                  }
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green transition hover:gap-3 hover:text-cmr-ink dark:text-[#79CFC4] dark:hover:text-white"
                 >
-                  Leer testimonio completo
+                  Leer testimonio
+                  completo
+
                   <ArrowRight className="h-4 w-4" />
                 </button>
               )}
@@ -206,17 +273,17 @@ export default function TestimonioCard({
           <div
             className={
               texto
-                ? 'mt-6 border-t border-cmr-line pt-5'
+                ? 'mt-6 border-t border-cmr-line pt-5 dark:border-white/[0.14]'
                 : tieneMedia
                   ? 'mt-1'
-                  : 'mt-5 border-t border-cmr-line pt-5'
+                  : 'mt-5 border-t border-cmr-line pt-5 dark:border-white/[0.14]'
             }
           >
-            <p className="font-display text-lg font-black text-cmr-ink">
+            <p className="font-display text-lg font-black text-cmr-ink dark:text-white">
               {tituloModal}
             </p>
 
-            <p className="mt-1 text-sm font-semibold text-cmr-muted">
+            <p className="mt-1 text-sm font-semibold text-cmr-muted dark:text-white/[0.62]">
               Experiencia real
             </p>
           </div>
@@ -226,35 +293,54 @@ export default function TestimonioCard({
       <TestimonioModal
         abierto={modalAbierto}
         titulo={tituloModal}
-        onCerrar={() => setModalAbierto(false)}
+        onCerrar={() =>
+          setModalAbierto(
+            false
+          )
+        }
       >
         {tieneMedia && (
           <TestimonioMedia
-            testimonio={testimonio}
+            testimonio={
+              testimonio
+            }
             className="mx-auto w-full"
           />
         )}
 
         {texto && (
           <div
-            className={`rounded-[1.5rem] border border-white/10 bg-white/6 p-5 sm:p-6 ${
-              tieneMedia ? 'mt-5' : ''
+            className={`rounded-[1.5rem] border border-white/[0.14] bg-white/[0.08] p-5 sm:p-6 ${
+              tieneMedia
+                ? 'mt-5'
+                : ''
             }`}
           >
             <div className="space-y-5">
-              {parrafosTexto.map((parrafo, indice) => (
-                <p
-                  key={`${testimonio.id}-parrafo-${indice}`}
-                  className="font-display text-lg font-black leading-8 text-white sm:text-xl"
-                >
-                  {indice === 0 && '“'}
-                  {parrafo}
-                  {indice === parrafosTexto.length - 1 && '”'}
-                </p>
-              ))}
+              {parrafosTexto.map(
+                (
+                  parrafo,
+                  indice
+                ) => (
+                  <p
+                    key={`${id}-parrafo-${indice}`}
+                    className="font-display text-lg font-black leading-8 text-white sm:text-xl"
+                  >
+                    {indice ===
+                      0 && '“'}
+
+                    {parrafo}
+
+                    {indice ===
+                      parrafosTexto.length -
+                        1 &&
+                      '”'}
+                  </p>
+                )
+              )}
             </div>
 
-            <p className="mt-6 text-sm font-bold text-cmr-green">
+            <p className="mt-6 text-sm font-bold text-[#79CFC4]">
               {tituloModal}
             </p>
           </div>

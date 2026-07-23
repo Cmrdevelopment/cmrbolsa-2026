@@ -42,7 +42,7 @@ export default function LegalPage({ type }) {
   }
 
   return (
-    <div className="min-h-screen bg-cmr-light text-cmr-ink">
+    <div className="min-h-screen bg-cmr-light text-cmr-ink transition-colors duration-300 dark:bg-cmr-dark dark:text-white">
       <section className="noise bg-cmr-dark bg-cmr-radial pt-[142px] pb-16 text-white sm:pb-20">
         <div className="section-shell">
           <div className="max-w-4xl">
@@ -61,9 +61,9 @@ export default function LegalPage({ type }) {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="bg-cmr-light py-16 transition-colors duration-300 dark:bg-cmr-dark2 sm:py-20">
         <div className="section-shell">
-          <div className="mx-auto max-w-4xl rounded-[2rem] border border-cmr-line bg-white p-7 shadow-soft sm:p-10">
+          <div className="mx-auto max-w-4xl rounded-[2rem] border border-cmr-line bg-white p-7 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_24px_75px_rgba(0,0,0,0.28)] sm:p-10">
             {type === 'aviso' && (
               <AvisoLegalContent />
             )}
@@ -80,7 +80,7 @@ export default function LegalPage({ type }) {
               <TerminosContent />
             )}
 
-            <div className="mt-10 border-t border-cmr-line pt-8">
+            <div className="mt-10 border-t border-cmr-line pt-8 dark:border-white/[0.14]">
               <Link
                 to="/"
                 className="btn-primary inline-flex"

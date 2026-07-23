@@ -13,6 +13,7 @@ import {
   UsersRound,
 } from 'lucide-react'
 import Placeholder from '../../components/Placeholder'
+import PageHero from '../../components/PageHero'
 
 const incluye = [
   'Proceso de aprendizaje organizado y guiado',
@@ -80,87 +81,111 @@ const trabajo = [
 export default function MentoriaPage() {
   return (
     <div className="bg-cmr-light text-cmr-ink">
-      <section className="noise relative overflow-hidden bg-cmr-dark bg-cmr-radial pt-[142px] pb-20 text-white sm:pb-24">
-        <div className="section-shell grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
-          <div>
-            <span className="eyebrow-dark">Mentoría PEV</span>
-
-            <h1 className="hero-text-balance mt-7 font-display text-5xl font-black leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-              No es mirar más contenido. Es dejar que te guien en el proceso.
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white/76">
-              La Mentoría PEV es para quien quiere trabajar de verdad: entender el mercado,
-              mandar ejercicios, corregir errores, ordenar su operativa y construir un plan
-              que pueda repetir sin depender de señales.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link to="/solicitud-mentoria" className="btn-primary">
-                Solicitar valoración
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <a href="#que-incluye" className="btn-secondary-dark">
-                Ver qué incluye
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-
-            <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-                <p className="font-display text-3xl font-black text-white">PEV</p>
-                <p className="mt-1 text-sm text-white/62">precio, estructura y volumen</p>
-              </div>
-
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-                <p className="font-display text-3xl font-black text-white">1:1</p>
-                <p className="mt-1 text-sm text-white/62">corrección y seguimiento</p>
-              </div>
-
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-                <p className="font-display text-3xl font-black text-white">Plan</p>
-                <p className="mt-1 text-sm text-white/62">estructura para operar</p>
-              </div>
-            </div>
-          </div>
-
+      <PageHero
+        eyebrow="Mentoría PEV"
+        title="No necesitas más contenido. Necesitas que te corrijan de verdad."
+        text="La Mentoría PEV es un proceso personal para aprender a leer el mercado, trabajar sobre tus propios errores y construir una forma de operar que puedas entender y repetir."
+        primaryLabel="Solicitar valoración"
+        primaryTo="/solicitud-mentoria"
+        secondaryLabel="Ver cómo funciona"
+        secondaryTo="#que-incluye"
+        contenidoLateral={
           <div className="relative">
-            <div className="absolute -inset-8 rounded-[3.5rem] bg-cmr-green/20 blur-3xl" />
+            <div className="pointer-events-none absolute -inset-10 rounded-[4rem] bg-cmr-green/[0.24] blur-[70px]" />
 
-            <div className="relative rounded-[2.5rem] border border-white/10 bg-white/10 p-5 shadow-darkGlow backdrop-blur">
-              <Placeholder
-                label="MENTORIA_VIDEO_URL"
-                type="video"
-                className="min-h-[420px] border-cmr-green/25 bg-cmr-dark3"
-              />
+            <div className="pointer-events-none absolute -bottom-12 -right-10 h-52 w-52 rounded-full bg-cmr-gold/[0.16] blur-[70px]" />
 
-              <div className="mt-5 rounded-3xl bg-cmr-dark/90 p-5">
-                <div className="flex items-start gap-3">
-                  <GraduationCap className="mt-1 h-6 w-6 shrink-0 text-cmr-green" />
+            <div className="relative overflow-hidden rounded-[2.75rem] border border-white/[0.18] bg-white/[0.10] p-5 shadow-[0_35px_110px_rgba(0,0,0,0.38)] backdrop-blur-xl">
+              <div className="flex flex-wrap items-center justify-between gap-3 px-1">
+                <div className="flex items-center gap-2 rounded-full border border-cmr-gold/[0.30] bg-cmr-gold/[0.10] px-4 py-2">
+                  <ShieldCheck className="h-4 w-4 text-cmr-gold" />
+
+                  <span className="text-xs font-extrabold uppercase tracking-[0.14em] text-cmr-gold">
+                    Proceso personal
+                  </span>
+                </div>
+
+                <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/[0.52]">
+                  Plazas limitadas
+                </span>
+              </div>
+
+              <div className="relative mt-5 overflow-hidden rounded-[2rem] border border-white/[0.14] bg-cmr-dark3">
+                <Placeholder
+                  label="MENTORIA_VIDEO_URL"
+                  type="video"
+                  className="min-h-[300px] border-0 bg-cmr-dark3 sm:min-h-[360px]"
+                />
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cmr-dark via-cmr-dark/[0.58] to-transparent" />
+              </div>
+
+              <div className="mt-5 rounded-[1.75rem] border border-white/[0.13] bg-black/[0.18] p-5">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cmr-green/[0.30] bg-cmr-green/[0.16]">
+                    <GraduationCap className="h-6 w-6 text-[#79CFC4]" />
+                  </div>
+
                   <div>
                     <p className="font-display text-xl font-black text-white">
-                      Aquí no vienes a mirar desde la grada.
+                      Aquí vienes a trabajar
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/62">
-                      Vienes a trabajar, mandar gráficos, recibir corrección y ordenar lo que haces delante del mercado.
+
+                    <p className="mt-2 text-sm leading-6 text-white/[0.68]">
+                      Mandas gráficos, recibes correcciones y trabajamos sobre
+                      lo que realmente estás haciendo delante del mercado.
                     </p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="absolute -bottom-16 -left-4 hidden rounded-3xl border border-cmr-line bg-cmr-paper p-5 shadow-soft lg:block">
-              <p className="font-display text-xl font-black text-cmr-ink">
-                Trabajo real.
-              </p>
-              <p className="mt-1 text-sm text-cmr-muted">
-                Si no vas a practicar, no tiene sentido.
-              </p>
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                <div className="rounded-2xl border border-white/[0.12] bg-white/[0.07] p-4 text-center">
+                  <Eye className="mx-auto h-5 w-5 text-[#79CFC4]" />
+
+                  <p className="mt-3 font-display text-lg font-black text-white">
+                    Lectura
+                  </p>
+
+                  <p className="mt-1 text-xs leading-5 text-white/[0.52]">
+                    Precio, estructura y volumen
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/[0.12] bg-white/[0.07] p-4 text-center">
+                  <Target className="mx-auto h-5 w-5 text-[#79CFC4]" />
+
+                  <p className="mt-3 font-display text-lg font-black text-white">
+                    Corrección
+                  </p>
+
+                  <p className="mt-1 text-xs leading-5 text-white/[0.52]">
+                    Trabajo sobre tus errores
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/[0.12] bg-white/[0.07] p-4 text-center">
+                  <FileText className="mx-auto h-5 w-5 text-[#79CFC4]" />
+
+                  <p className="mt-3 font-display text-lg font-black text-white">
+                    Plan
+                  </p>
+
+                  <p className="mt-1 text-xs leading-5 text-white/[0.52]">
+                    Una estructura para operar
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 flex items-center justify-center gap-2 rounded-2xl border border-white/[0.10] bg-white/[0.05] px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.12em] text-white/[0.56]">
+                <ClipboardCheck className="h-4 w-4 text-[#79CFC4]" />
+
+                Solicitud previa · Sin compra directa
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       <section id="que-incluye" className="bg-cmr-light py-20">
         <div className="section-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">

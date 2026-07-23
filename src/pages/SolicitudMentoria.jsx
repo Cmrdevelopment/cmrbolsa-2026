@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+
 import CampoFormulario from '../components/forms/CampoFormulario'
 import PageHero from '../components/PageHero'
 
@@ -8,7 +9,7 @@ export default function SolicitudMentoria() {
   }
 
   return (
-    <div className="bg-cmr-light text-cmr-ink">
+    <div className="bg-cmr-light text-cmr-ink transition-colors duration-300 dark:bg-cmr-dark dark:text-white">
       <PageHero
         eyebrow="Solicitud"
         title="Solicitud para Mentoría PEV"
@@ -17,22 +18,26 @@ export default function SolicitudMentoria() {
         primaryTo="/"
       />
 
-      <section className="py-20">
-        <div className="section-shell max-w-3xl">
+      <section className="relative overflow-hidden bg-cmr-light py-20 transition-colors duration-300 dark:bg-cmr-dark2">
+        <div className="pointer-events-none absolute -right-40 top-20 hidden h-96 w-96 rounded-full bg-cmr-green/[0.08] blur-3xl dark:block" />
+
+        <div className="pointer-events-none absolute -left-40 bottom-0 hidden h-80 w-80 rounded-full bg-cmr-gold/[0.05] blur-3xl dark:block" />
+
+        <div className="section-shell relative max-w-3xl">
           <form
-            className="card-light grid gap-6 p-6 sm:p-8"
+            className="grid gap-6 rounded-[2rem] border border-cmr-line bg-white p-6 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_28px_90px_rgba(0,0,0,0.30)] sm:p-8"
             onSubmit={enviarSolicitud}
           >
             <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cmr-green">
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cmr-green dark:text-[#79CFC4]">
                 Cuéntame tu situación
               </p>
 
-              <h2 className="mt-3 font-display text-3xl font-black tracking-[-0.025em] text-cmr-ink">
+              <h2 className="mt-3 font-display text-3xl font-black tracking-[-0.025em] text-cmr-ink dark:text-white">
                 Antes de hablar, necesito conocerte un poco
               </h2>
 
-              <p className="mt-3 leading-7 text-cmr-muted">
+              <p className="mt-3 leading-7 text-cmr-muted dark:text-white/[0.68]">
                 No necesitas escribir una novela, pero sí contarme con claridad
                 dónde estás, qué has probado y qué esperas conseguir.
               </p>
@@ -119,7 +124,7 @@ export default function SolicitudMentoria() {
               required
             />
 
-            <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5">
+            <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5 transition-colors duration-300 dark:border-white/[0.12] dark:bg-white/[0.06]">
               <label className="flex cursor-pointer items-start gap-3">
                 <input
                   type="checkbox"
@@ -128,16 +133,18 @@ export default function SolicitudMentoria() {
                   className="mt-1 h-5 w-5 shrink-0 accent-cmr-green"
                 />
 
-                <span className="text-sm font-normal leading-7 text-cmr-muted">
+                <span className="text-sm font-normal leading-7 text-cmr-muted dark:text-white/[0.68]">
                   He leído y acepto la{' '}
+
                   <Link
                     to="/politica-privacidad"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-bold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+                    className="font-bold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
                   >
                     Política de privacidad
                   </Link>
+
                   . Mis datos se utilizarán para revisar la solicitud y contactar
                   conmigo en relación con la Mentoría PEV.
                 </span>
@@ -151,7 +158,7 @@ export default function SolicitudMentoria() {
               Enviar solicitud
             </button>
 
-            <p className="text-xs leading-6 text-cmr-muted">
+            <p className="text-xs leading-6 text-cmr-muted dark:text-white/[0.52]">
               El formulario todavía no realiza un envío real. En el siguiente
               bloque técnico lo conectaremos con el sistema definitivo.
             </p>

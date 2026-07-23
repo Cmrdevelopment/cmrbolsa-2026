@@ -2,52 +2,65 @@ import { Link } from 'react-router-dom'
 
 export default function AvisoLegalContent() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 text-cmr-ink transition-colors duration-300 dark:text-white">
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           1. Datos identificativos
         </h2>
 
-        <div className="mt-5 space-y-3 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-3 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             En cumplimiento de la normativa aplicable, se informa de que el
             titular de este sitio web es:
           </p>
 
-          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6">
+          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6 transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3">
             <p>
-              <strong className="text-cmr-ink">Titular:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Titular:
+              </strong>{' '}
               Carlos Martín Rodríguez
             </p>
 
             <p>
-              <strong className="text-cmr-ink">NIF:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                NIF:
+              </strong>{' '}
               42859056M
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Nombre comercial:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Nombre comercial:
+              </strong>{' '}
               CMRBolsa – PEV
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Domicilio:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Domicilio:
+              </strong>{' '}
               Calle General Vives, 23-25, 1.º, oficina 2, 35007 Las Palmas
               de Gran Canaria, Las Palmas, España
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Correo electrónico:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Correo electrónico:
+              </strong>{' '}
+
               <a
                 href="mailto:rotinlos@gmail.com"
-                className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+                className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
               >
                 rotinlos@gmail.com
               </a>
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Sitio web:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Sitio web:
+              </strong>{' '}
               cmrbolsa.com
             </p>
           </div>
@@ -55,11 +68,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           2. Objeto de la web
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             CMRBolsa es una web dedicada a la formación y divulgación de
             contenidos relacionados con el trading, los mercados financieros
@@ -75,11 +88,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           3. Condiciones de uso
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             El acceso y la navegación por cmrbolsa.com atribuyen la condición
             de usuario e implican la aceptación de las condiciones recogidas
@@ -101,11 +114,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           4. Formación, mercados y responsabilidad
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los contenidos de CMRBolsa tienen una finalidad exclusivamente
             formativa e informativa. No constituyen asesoramiento financiero
@@ -136,11 +149,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           5. Propiedad intelectual e industrial
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los textos, vídeos, imágenes, diseños, logotipos, gráficos,
             materiales formativos, cursos y demás contenidos propios de
@@ -163,17 +176,17 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           6. Comudia y otros servicios utilizados
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             La Comunidad Trading PEV y la Mentoría PEV de CMRBolsa se alojan y
-            se gestionan a través de Comudia.com, plataforma desde la que el usuario
-            puede consultar los planes disponibles, registrarse, realizar la
-            contratación y acceder a la formación, los contenidos y los
-            diferentes espacios incluidos en cada servicio.
+            se gestionan a través de Comudia.com, plataforma desde la que el
+            usuario puede consultar los planes disponibles, registrarse,
+            realizar la contratación y acceder a la formación, los contenidos
+            y los diferentes espacios incluidos en cada servicio.
           </p>
 
           <p>
@@ -199,11 +212,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           7. Disponibilidad y funcionamiento
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Se trabaja para que la web y sus contenidos estén disponibles y
             funcionen correctamente. Sin embargo, no puede garantizarse que
@@ -219,17 +232,18 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           8. Protección de datos personales
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             La información sobre el tratamiento de los datos personales puede
             consultarse en la{' '}
+
             <Link
               to="/privacidad"
-              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de privacidad
             </Link>
@@ -239,17 +253,18 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           9. Uso de cookies
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             La información sobre las cookies utilizadas y la forma de gestionar
             las preferencias puede consultarse en la{' '}
+
             <Link
               to="/cookies"
-              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de cookies
             </Link>
@@ -259,11 +274,11 @@ export default function AvisoLegalContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           10. Legislación aplicable
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Este Aviso Legal se rige por la legislación española. Cualquier
             conflicto relacionado con esta web se resolverá ante los juzgados
@@ -272,8 +287,8 @@ export default function AvisoLegalContent() {
         </div>
       </section>
 
-      <section className="border-t border-cmr-line pt-8">
-        <p className="text-sm leading-7 text-cmr-muted">
+      <section className="border-t border-cmr-line pt-8 dark:border-white/[0.14]">
+        <p className="text-sm leading-7 text-cmr-muted dark:text-white/[0.52]">
           Última actualización: 21 de julio de 2026.
         </p>
       </section>

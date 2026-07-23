@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function TerminosContent() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 text-cmr-ink transition-colors duration-300 dark:text-white dark:[&_h2]:text-white dark:[&_.text-cmr-ink]:text-white dark:[&_.text-cmr-muted]:text-white/[0.68] dark:[&_.text-cmr-green]:text-[#79CFC4] dark:[&_.border-cmr-line]:border-white/[0.14] dark:[&_.bg-cmr-light]:bg-cmr-dark2">
       <section>
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
           1. Identificación del titular

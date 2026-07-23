@@ -2,45 +2,56 @@ import { Link } from 'react-router-dom'
 
 export default function PrivacidadContent() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 text-cmr-ink transition-colors duration-300 dark:text-white">
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           1. Responsable del tratamiento
         </h2>
 
-        <div className="mt-5 space-y-3 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-3 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             El responsable del tratamiento de los datos personales recogidos
             a través de esta web y de los servicios de CMRBolsa es:
           </p>
 
-          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6">
+          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6 transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2">
             <p>
-              <strong className="text-cmr-ink">Responsable:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Responsable:
+              </strong>{' '}
               Carlos Martín Rodríguez
             </p>
 
             <p>
-              <strong className="text-cmr-ink">NIF:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                NIF:
+              </strong>{' '}
               42859056M
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Nombre comercial:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Nombre comercial:
+              </strong>{' '}
               CMRBolsa – PEV
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Domicilio:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Domicilio:
+              </strong>{' '}
               Calle General Vives, 23-25, 1.º, oficina 2, 35007 Las Palmas
               de Gran Canaria, Las Palmas, España
             </p>
 
             <p>
-              <strong className="text-cmr-ink">Correo electrónico:</strong>{' '}
+              <strong className="text-cmr-ink dark:text-white">
+                Correo electrónico:
+              </strong>{' '}
+
               <a
                 href="mailto:rotinlos@gmail.com"
-                className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+                className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
               >
                 rotinlos@gmail.com
               </a>
@@ -50,11 +61,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           2. Qué datos podemos recoger
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Dependiendo de la forma en la que contactes con CMRBolsa o de los
             servicios que utilices, podremos tratar los siguientes datos:
@@ -105,11 +116,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           3. Para qué utilizamos tus datos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los datos personales podrán utilizarse para las siguientes
             finalidades:
@@ -165,11 +176,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           4. Base que permite tratar los datos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             El tratamiento de los datos se realizará, según cada caso, sobre
             alguna de las siguientes bases:
@@ -177,7 +188,7 @@ export default function PrivacidadContent() {
 
           <ul className="list-disc space-y-3 pl-6">
             <li>
-              <strong className="text-cmr-ink">
+              <strong className="text-cmr-ink dark:text-white">
                 Aplicación de medidas precontractuales:
               </strong>{' '}
               cuando solicitas información o envías una solicitud para la
@@ -185,7 +196,7 @@ export default function PrivacidadContent() {
             </li>
 
             <li>
-              <strong className="text-cmr-ink">
+              <strong className="text-cmr-ink dark:text-white">
                 Ejecución de un contrato:
               </strong>{' '}
               cuando contratas y utilizas la Comunidad, la Mentoría u otro
@@ -193,7 +204,7 @@ export default function PrivacidadContent() {
             </li>
 
             <li>
-              <strong className="text-cmr-ink">
+              <strong className="text-cmr-ink dark:text-white">
                 Consentimiento:
               </strong>{' '}
               cuando aceptas recibir determinadas comunicaciones, completas un
@@ -201,7 +212,7 @@ export default function PrivacidadContent() {
             </li>
 
             <li>
-              <strong className="text-cmr-ink">
+              <strong className="text-cmr-ink dark:text-white">
                 Cumplimiento de obligaciones legales:
               </strong>{' '}
               para atender obligaciones fiscales, contables, administrativas o
@@ -209,7 +220,7 @@ export default function PrivacidadContent() {
             </li>
 
             <li>
-              <strong className="text-cmr-ink">
+              <strong className="text-cmr-ink dark:text-white">
                 Interés legítimo:
               </strong>{' '}
               para garantizar la seguridad, prevenir fraudes, defender
@@ -221,11 +232,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           5. Comunidad, Mentoría y Comudia
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             La Comunidad Trading PEV y la Mentoría PEV se alojan y gestionan a
             través de Comudia.com. Por este motivo, determinados datos necesarios
@@ -255,11 +266,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           6. Pagos y facturación
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Cuando se contrata un servicio de pago, podrán tratarse los datos
             necesarios para gestionar el cobro, emitir la factura, atender una
@@ -281,11 +292,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           7. Con quién pueden compartirse los datos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los datos personales no se venderán a terceros.
           </p>
@@ -333,11 +344,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           8. Servicios y enlaces externos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             CMRBolsa puede utilizar o enlazar servicios como YouTube, Substack,
             redes sociales, herramientas de videoconferencia, proveedores de
@@ -354,11 +365,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           9. Durante cuánto tiempo conservamos los datos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los datos se conservarán durante el tiempo necesario para atender
             la consulta, revisar una solicitud o prestar el servicio contratado.
@@ -379,11 +390,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           10. Derechos de las personas
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Puedes solicitar el acceso a tus datos personales, su rectificación,
             supresión, limitación, portabilidad u oposición al tratamiento.
@@ -392,9 +403,10 @@ export default function PrivacidadContent() {
 
           <p>
             Para ejercer estos derechos puedes escribir a{' '}
+
             <a
               href="mailto:rotinlos@gmail.com"
-              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               rotinlos@gmail.com
             </a>
@@ -411,11 +423,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           11. Datos de menores
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Los servicios de CMRBolsa relacionados con trading y mercados
             financieros no están dirigidos a menores de edad.
@@ -429,11 +441,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           12. Seguridad de los datos
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Se aplican medidas razonables de seguridad para proteger los datos
             personales frente a accesos no autorizados, pérdidas, alteraciones
@@ -449,18 +461,19 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           13. Cookies
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             La información sobre las cookies utilizadas en esta web y la forma
             de aceptar, rechazar o modificar las preferencias puede consultarse
             en la{' '}
+
             <Link
               to="/cookies"
-              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4"
+              className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de cookies
             </Link>
@@ -470,11 +483,11 @@ export default function PrivacidadContent() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
+        <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
           14. Cambios en esta política
         </h2>
 
-        <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
+        <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
             Esta Política de privacidad podrá actualizarse cuando cambien los
             servicios, las herramientas utilizadas o la normativa aplicable.
@@ -487,8 +500,8 @@ export default function PrivacidadContent() {
         </div>
       </section>
 
-      <section className="border-t border-cmr-line pt-8">
-        <p className="text-sm leading-7 text-cmr-muted">
+      <section className="border-t border-cmr-line pt-8 dark:border-white/[0.14]">
+        <p className="text-sm leading-7 text-cmr-muted dark:text-white/[0.52]">
           Última actualización: 21 de julio de 2026.
         </p>
       </section>
