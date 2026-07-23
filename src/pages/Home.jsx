@@ -405,9 +405,8 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-4 max-w-2xl leading-7 text-cmr-muted">
-                  No hace falta que entres a la primera. Puedes empezar por el
-                  libro o por lo que voy publicando en Substack, ver cómo miro
-                  el mercado y después decidir con calma.
+                  Puedes empezar por el libro o por lo que voy publicando en Substack, ver cómo miro
+                  el mercado y después decidir si quieres profundizar.
                 </p>
               </div>
 

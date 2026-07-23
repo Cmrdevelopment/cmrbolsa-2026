@@ -69,9 +69,9 @@ export default function SubstackPage() {
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white/76">
-              Substack es la forma más tranquila de conocer CMRBolsa: análisis,
+              Substack es una buena forma de conocer CMRBolsa: análisis,
               ideas de mercado, reflexiones y contenido basado en Precio, Estructura
-              y Volumen. Sin prisa, sin señales mágicas y sin tener que pagar antes de entender.
+              y Volumen. Sin prisas y sin señales mágicas.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -122,7 +122,7 @@ export default function SubstackPage() {
                       El Informe de CMRBolsa
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/62">
-                      Análisis, ideas y reflexiones para entender cómo miro el mercado antes de entrar en una formación.
+                      Análisis, ideas y reflexiones para entender cómo mirar el mercado.
                     </p>
                   </div>
                 </div>
