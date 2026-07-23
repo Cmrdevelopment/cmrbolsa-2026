@@ -411,41 +411,41 @@ export default function Home() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5">
+                <div className="flex h-full flex-col rounded-3xl border border-cmr-green/25 bg-cmr-light p-5 shadow-[0_12px_35px_rgba(20,32,29,0.06)]">
                   <BookOpen className="h-7 w-7 text-cmr-green" />
 
                   <h3 className="mt-4 font-display text-xl font-black leading-tight text-cmr-ink">
                     Desgranando la esencia del mercado
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-cmr-muted">
+                  <p className="mt-3 flex-1 text-sm leading-6 text-cmr-muted">
                     El libro para empezar a entender cómo trabajo el precio,
                     la estructura y el volumen.
                   </p>
 
                   <Link
                     to="/desgranando-la-esencia-del-mercado"
-                    className="btn-primary mt-5"
+                    className="btn-primary mt-5 w-fit"
                   >
                     Ver el libro
                   </Link>
                 </div>
 
-                <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5">
+                <div className="flex h-full flex-col rounded-3xl border border-cmr-gold/35 bg-cmr-light p-5 shadow-[0_12px_35px_rgba(20,32,29,0.06)]">
                   <Sparkles className="h-7 w-7 text-cmr-gold" />
 
                   <h3 className="mt-4 font-display text-xl font-black leading-tight text-cmr-ink">
                     CMRBolsa en Substack
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-cmr-muted">
+                  <p className="mt-3 flex-1 text-sm leading-6 text-cmr-muted">
                     Artículos, ideas y reflexiones para conocer mejor mi forma
                     de entender el mercado.
                   </p>
 
                   <Link
                     to="/substack"
-                    className="btn-secondary-light mt-5"
+                    className="mt-5 inline-flex w-fit items-center justify-center rounded-full border-2 border-cmr-green/35 bg-white px-6 py-3.5 text-sm font-extrabold text-cmr-green transition duration-200 hover:-translate-y-0.5 hover:border-cmr-green hover:bg-cmr-greenSoft"
                   >
                     Leer en Substack
                   </Link>

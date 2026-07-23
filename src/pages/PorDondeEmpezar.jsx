@@ -341,20 +341,20 @@ export default function PorDondeEmpezar() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/8 p-6 shadow-darkGlow backdrop-blur sm:p-8">
+          <div className="rounded-[2rem] border border-white/25 bg-white/[0.14] p-6 shadow-darkGlow backdrop-blur sm:p-8">
             <Compass className="h-9 w-9 text-cmr-green" />
 
             <p className="mt-5 font-display text-2xl font-black">
               Tardarás menos de dos minutos
             </p>
 
-            <p className="mt-3 leading-7 text-white/68">
+            <p className="mt-3 leading-7 text-white/82">
               Al terminar te diré por dónde empezaría yo
               en tu caso y qué otra opción podría
               encajarte.
             </p>
 
-            <div className="mt-6 flex items-center gap-3 text-sm font-bold text-white/78">
+            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/15 bg-black/15 px-4 py-3 text-sm font-bold text-white/90">
               <CheckCircle2 className="h-5 w-5 text-cmr-green" />
               Sin registro y sin dejar tus datos
             </div>
