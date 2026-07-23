@@ -131,7 +131,9 @@ export default function Home() {
                     libraryId="710893"
                     videoId="10d12fe9-5956-4736-9ef1-22e4a81ecc28"
                     title="Presentación de CMRBolsa"
+                    posterUrl="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1784795691/cmrbolsa/cmrbolsa-home-carlos-principal-reduced_nqre5p.png"
                     className="border border-cmr-green/25"
+                    cargaAlPulsar
                   />
 
                   <div className="rounded-3xl bg-cmr-dark/90 p-5">
@@ -244,6 +246,7 @@ export default function Home() {
             <TestimoniosCarousel
               testimonios={testimoniosDestacados}
               intervalo={8000}
+              cargaDiferida
             />
           </div>
         </div>
@@ -284,6 +287,7 @@ export default function Home() {
               videoId="c8e9a7e1-7409-4df3-9a57-7f062b186a18"
               title="Presentación de la Comunidad PEV"
               className="border border-white/10"
+              cargaDiferida
             />
 
             <div className="mt-5 rounded-3xl bg-cmr-dark/80 p-5">

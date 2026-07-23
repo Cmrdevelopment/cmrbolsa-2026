@@ -3,6 +3,7 @@ import {
   useRef,
   useState,
 } from 'react'
+import { Play } from 'lucide-react'
 
 let promesaPlayerJs = null
 
@@ -24,11 +25,6 @@ function cargarPlayerJs() {
           )
 
         if (scriptExistente) {
-          if (window.playerjs) {
-            resolve()
-            return
-          }
-
           scriptExistente.addEventListener(
             'load',
             resolve,
@@ -51,7 +47,8 @@ function cargarPlayerJs() {
           'https://assets.mediadelivery.net/playerjs/playerjs-latest.min.js'
 
         script.async = true
-        script.dataset.bunnyPlayerjs = 'true'
+        script.dataset.bunnyPlayerjs =
+          'true'
 
         script.addEventListener(
           'load',
@@ -65,7 +62,9 @@ function cargarPlayerJs() {
           { once: true }
         )
 
-        document.head.appendChild(script)
+        document.head.appendChild(
+          script
+        )
       }
     )
   }
@@ -78,15 +77,31 @@ export default function BunnyVideo({
   videoId,
   title,
   className = '',
+  cargaDiferida = false,
+  cargaAlPulsar = false,
+  posterUrl = '',
 }) {
+  const contenedorRef = useRef(null)
   const iframeRef = useRef(null)
 
   const [reinicio, setReinicio] =
     useState(0)
 
+  const [debeCargar, setDebeCargar] =
+    useState(
+      () =>
+        !cargaDiferida &&
+        !cargaAlPulsar
+    )
+
+  const autoplay =
+    cargaAlPulsar
+      ? 'true'
+      : 'false'
+
   const src =
     `https://player.mediadelivery.net/embed/${libraryId}/${videoId}` +
-    '?autoplay=false' +
+    `?autoplay=${autoplay}` +
     '&preload=false' +
     '&loop=false' +
     '&muted=false' +
@@ -100,6 +115,75 @@ export default function BunnyVideo({
     `&playerInstance=${reinicio}`
 
   useEffect(() => {
+    if (cargaAlPulsar) {
+      return undefined
+    }
+
+    if (!cargaDiferida) {
+      setDebeCargar(true)
+      return undefined
+    }
+
+    if (debeCargar) {
+      return undefined
+    }
+
+    const contenedor =
+      contenedorRef.current
+
+    if (!contenedor) {
+      return undefined
+    }
+
+    if (
+      typeof window === 'undefined' ||
+      !(
+        'IntersectionObserver'
+        in window
+      )
+    ) {
+      setDebeCargar(true)
+      return undefined
+    }
+
+    const observador =
+      new IntersectionObserver(
+        (entradas) => {
+          const entrada =
+            entradas[0]
+
+          if (
+            entrada?.isIntersecting
+          ) {
+            setDebeCargar(true)
+            observador.disconnect()
+          }
+        },
+        {
+          rootMargin:
+            '600px 0px',
+          threshold: 0,
+        }
+      )
+
+    observador.observe(
+      contenedor
+    )
+
+    return () => {
+      observador.disconnect()
+    }
+  }, [
+    cargaAlPulsar,
+    cargaDiferida,
+    debeCargar,
+  ])
+
+  useEffect(() => {
+    if (!debeCargar) {
+      return undefined
+    }
+
     let efectoActivo = true
     let reinicioSolicitado = false
     let temporizador = null
@@ -114,17 +198,24 @@ export default function BunnyVideo({
 
       reinicioSolicitado = true
 
-      temporizador = window.setTimeout(
-        () => {
-          if (!efectoActivo) return
+      temporizador =
+        window.setTimeout(
+          () => {
+            if (!efectoActivo) {
+              return
+            }
 
-          setReinicio(
-            (valorActual) =>
-              valorActual + 1
-          )
-        },
-        200
-      )
+            if (cargaAlPulsar) {
+              setDebeCargar(false)
+            }
+
+            setReinicio(
+              (valorActual) =>
+                valorActual + 1
+            )
+          },
+          200
+        )
     }
 
     function comprobarFinal(datos) {
@@ -143,7 +234,8 @@ export default function BunnyVideo({
         Number.isFinite(segundos) &&
         Number.isFinite(duracion) &&
         duracion > 0 &&
-        segundos >= duracion - 0.3
+        segundos >=
+          duracion - 0.3
       ) {
         volverALaCaratula()
       }
@@ -165,7 +257,9 @@ export default function BunnyVideo({
           )
 
         player.on('ready', () => {
-          if (!efectoActivo) return
+          if (!efectoActivo) {
+            return
+          }
 
           player.on(
             'ended',
@@ -193,28 +287,64 @@ export default function BunnyVideo({
           temporizador
         )
       }
-
-      /*
-       * No usamos player.off().
-       * Al cambiar la key, React elimina el iframe anterior
-       * y PlayerJS falla si intenta comunicarse con él.
-       */
     }
-  }, [reinicio])
+  }, [
+    cargaAlPulsar,
+    debeCargar,
+    reinicio,
+  ])
 
   return (
     <div
+      ref={contenedorRef}
       className={`relative aspect-video w-full overflow-hidden rounded-[1.5rem] bg-black ${className}`}
     >
-      <iframe
-        key={reinicio}
-        ref={iframeRef}
-        src={src}
-        title={title}
-        loading="lazy"
-        allow="encrypted-media"
-        className="absolute inset-0 h-full w-full border-0"
-      />
+      {debeCargar ? (
+        <iframe
+          key={reinicio}
+          ref={iframeRef}
+          src={src}
+          title={title}
+          loading="lazy"
+          allow="autoplay; encrypted-media"
+          className="absolute inset-0 h-full w-full border-0"
+        />
+      ) : cargaAlPulsar &&
+        posterUrl ? (
+        <button
+          type="button"
+          onClick={() =>
+            setDebeCargar(true)
+          }
+          aria-label={`Reproducir ${title}`}
+          className="group absolute inset-0 h-full w-full cursor-pointer overflow-hidden bg-cmr-dark"
+        >
+          <img
+            src={posterUrl}
+            alt={`Carátula de ${title}`}
+            loading="eager"
+            fetchPriority="high"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+          />
+
+          <span className="absolute inset-0 bg-gradient-to-t from-cmr-dark/55 via-cmr-dark/10 to-transparent" />
+
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="flex h-20 w-20 items-center justify-center rounded-full border border-white/30 bg-cmr-dark/75 text-white shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur transition duration-300 group-hover:scale-110 group-hover:bg-cmr-green">
+              <Play
+                className="ml-1 h-9 w-9"
+                fill="currentColor"
+              />
+            </span>
+          </span>
+        </button>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center bg-cmr-dark2 px-6 text-center">
+          <p className="text-sm font-bold text-white/60">
+            El vídeo se cargará al llegar a esta sección
+          </p>
+        </div>
+      )}
     </div>
   )
 }
