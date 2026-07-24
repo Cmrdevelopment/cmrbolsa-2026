@@ -35,6 +35,10 @@ const ContactoPage = lazy(
   () => import('./pages/ContactoPage')
 )
 
+const NoEncontradoPage = lazy(
+  () => import('./pages/NoEncontradoPage')
+)
+
 const CmrbolsaPage = lazy(
   () => import('./pages/internas/CmrbolsaPage')
 )
@@ -206,12 +210,7 @@ export default function App() {
 
           <Route
             path="*"
-            element={
-              <Navigate
-                to="/"
-                replace
-              />
-            }
+            element={<NoEncontradoPage />}
           />
         </Routes>
       </Suspense>

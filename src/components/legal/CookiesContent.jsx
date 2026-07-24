@@ -321,7 +321,7 @@ export default function CookiesContent() {
             personales puedes consultar la{' '}
 
             <Link
-              to="/privacidad"
+              to="/politica-privacidad"
               className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de privacidad

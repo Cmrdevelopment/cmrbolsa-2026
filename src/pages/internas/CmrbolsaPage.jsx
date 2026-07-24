@@ -76,7 +76,7 @@ export default function CmrbolsaPage() {
       <PageHero
         eyebrow="CMRBolsa"
         title="Soy Carlos. En redes y en el mercado me conocen como CMRBolsa."
-        text="Opero desde el 2005 y enseño trading desde una idea muy simple: si no entiendes qué está haciendo el precio, dónde lo está haciendo y por qué puede tener sentido una entrada, tarde o temprano acabas operando desde la emoción."
+        text="Opero desde el 2005 y enseño trading desde eluna idea muy simple: si no entiendes qué está haciendo el precio, dónde lo está haciendo y por qué puede tener sentido una entrada, tarde o temprano acabas operando desde la emoción."
         primaryLabel="Ver Comunidad PEV"
         primaryTo="/comunidad-pev"
         secondaryLabel="Ver por dónde empezar"

@@ -242,7 +242,7 @@ export default function AvisoLegalContent() {
             consultarse en la{' '}
 
             <Link
-              to="/privacidad"
+              to="/politica-privacidad"
               className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de privacidad
@@ -263,7 +263,7 @@ export default function AvisoLegalContent() {
             las preferencias puede consultarse en la{' '}
 
             <Link
-              to="/cookies"
+              to="/politica_de_cookies"
               className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de cookies

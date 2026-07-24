@@ -472,7 +472,7 @@ export default function PrivacidadContent() {
             en la{' '}
 
             <Link
-              to="/cookies"
+              to="/politica_de_cookies"
               className="font-semibold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
             >
               Política de cookies

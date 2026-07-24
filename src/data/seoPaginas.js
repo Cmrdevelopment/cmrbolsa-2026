@@ -122,11 +122,22 @@ export const seoPaginas = {
     description:
       'Consulta los términos y condiciones aplicables a los contenidos, productos y servicios ofrecidos a través de CMRBolsa.',
   },
+
+  '/404': {
+    title:
+      'Página no encontrada | CMRBolsa',
+    description:
+      'La página que buscas no existe o se ha salido del gráfico. Vuelve a CMRBolsa para seguir aprendiendo sobre trading y el método PEV.',
+  },
 }
 
 export function obtenerSeoPagina(pathname) {
+  const seoPagina =
+    seoPaginas[pathname] ??
+    seoPaginas['/404']
+
   return {
     ...seoBase,
-    ...seoPaginas[pathname],
+    ...seoPagina,
   }
 }
