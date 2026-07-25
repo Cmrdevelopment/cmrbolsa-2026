@@ -14,6 +14,7 @@ import {
 
 import Placeholder from '../../components/Placeholder'
 import PageHero from '../../components/PageHero'
+import ArticulosSubstack from '../../components/substack/ArticulosSubstack'
 
 const SUBSTACK_URL = 'https://cmrbolsa.substack.com/'
 
@@ -288,27 +289,29 @@ export default function SubstackPage() {
       <section className="relative overflow-hidden bg-cmr-light py-20 transition-colors duration-300 dark:bg-cmr-dark2">
         <div className="pointer-events-none absolute -right-40 top-20 hidden h-96 w-96 rounded-full bg-cmr-green/[0.08] blur-3xl dark:block" />
 
-        <div className="section-shell relative grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
-          <div className="relative">
-            <Placeholder
-              label="SUBSTACK_ARTICLES_SCREENSHOT_URL"
-              type="image"
-              className="min-h-[420px] bg-white dark:border-white/[0.14] dark:bg-cmr-dark3"
-            />
+        <div className="section-shell relative">
+          <div>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="eyebrow">
+                Últimos artículos
+              </span>
 
-            <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-cmr-line bg-white/[0.94] p-5 shadow-soft backdrop-blur transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3/[0.94] dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
-              <div className="flex items-start gap-3">
-                <Mail className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
+              <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
+                Lo último que he publicado en Substack
+              </h2>
 
-                <p className="text-sm font-semibold leading-6 text-cmr-muted dark:text-white/[0.66]">
-                  Aquí podemos poner una captura real del Substack o de tus
-                  artículos destacados.
-                </p>
-              </div>
+              <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
+                Esta sección se actualiza automáticamente cada vez que publico
+                un nuevo artículo en El Informe de CMRBolsa.
+              </p>
+            </div>
+
+            <div className="mt-12">
+              <ArticulosSubstack />
             </div>
           </div>
 
-          <div>
+          <div className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-cmr-line bg-white p-7 shadow-soft dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_24px_70px_rgba(0,0,0,0.26)] sm:p-9">
             <span className="eyebrow">
               De leer a entrar
             </span>
