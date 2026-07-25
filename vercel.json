@@ -4,6 +4,41 @@
       "source": "/compra-ahora",
       "destination": "/desgranando-la-esencia-del-mercado",
       "permanent": true
+    },
+    {
+      "source": "/mi-libro",
+      "destination": "/desgranando-la-esencia-del-mercado",
+      "permanent": true
+    },
+    {
+      "source": "/conoceme",
+      "destination": "/cmrbolsa",
+      "permanent": true
+    },
+    {
+      "source": "/mentoria_pev",
+      "destination": "/mentoria-pev",
+      "permanent": true
+    },
+    {
+      "source": "/membresia",
+      "destination": "/comunidad-pev",
+      "permanent": true
+    },
+    {
+      "source": "/mas_testimonios",
+      "destination": "/testimonios",
+      "permanent": true
+    },
+    {
+      "source": "/formacion",
+      "destination": "/por-donde-empezar",
+      "permanent": true
+    },
+    {
+      "source": "/quieres_eventos",
+      "destination": "/contacto?motivo=eventos",
+      "permanent": true
     }
   ],
   "rewrites": [

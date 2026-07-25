@@ -166,6 +166,16 @@ export default function App() {
           />
 
           <Route
+            path="/compra-ahora"
+            element={
+              <Navigate
+                to="/desgranando-la-esencia-del-mercado"
+                replace
+              />
+            }
+          />
+
+          <Route
             path="/por-donde-empezar"
             element={<PorDondeEmpezar />}
           />
