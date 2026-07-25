@@ -74,11 +74,20 @@ export default function Seo() {
       seo.imageAlt ??
       seo.defaultImageAlt
 
+    const robots =
+      seo.robots ??
+      seo.defaultRobots
+
     document.title = title
 
     actualizarMetaNombre(
       'description',
       description
+    )
+
+    actualizarMetaNombre(
+      'robots',
+      robots
     )
 
     actualizarMetaPropiedad(

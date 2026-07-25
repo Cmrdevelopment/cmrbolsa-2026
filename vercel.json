@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/compra-ahora",
+      "destination": "/desgranando-la-esencia-del-mercado",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",

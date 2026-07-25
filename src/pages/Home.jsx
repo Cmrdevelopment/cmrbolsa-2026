@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Placeholder from '../components/Placeholder'
 import BunnyVideo from '../components/media/BunnyVideo'
 import TestimoniosCarousel from '../components/testimonios/TestimoniosCarousel'
+import PlataformasTrading from '../components/home/PlataformasTrading'
 import { testimoniosDestacados } from '../data/testimonios'
 import {
   ArrowRight,
@@ -669,6 +670,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PlataformasTrading />
 
       <section className="noise bg-cmr-dark bg-cmr-radial py-20 text-white">
         <div className="section-shell grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-center">

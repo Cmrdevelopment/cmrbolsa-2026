@@ -137,6 +137,10 @@ export async function prerender({
     seo.imageAlt ??
     seo.defaultImageAlt
 
+  const robots =
+    seo.robots ??
+    seo.defaultRobots
+
   const ubicacion = [
     urlPrerender.pathname,
     urlPrerender.search,
@@ -170,6 +174,14 @@ export async function prerender({
       title,
 
       elements: new Set([
+        {
+          type: 'meta',
+          props: {
+            name: 'robots',
+            content: robots,
+          },
+        },
+
         {
           type: 'meta',
           props: {

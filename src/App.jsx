@@ -39,12 +39,20 @@ const NoEncontradoPage = lazy(
   () => import('./pages/NoEncontradoPage')
 )
 
+const DeclaracionRiesgosNinjaPage = lazy(
+  () => import('./pages/DeclaracionRiesgosNinjaPage')
+)
+
 const CmrbolsaPage = lazy(
   () => import('./pages/internas/CmrbolsaPage')
 )
 
 const ComunidadPage = lazy(
   () => import('./pages/internas/ComunidadPage')
+)
+
+const ComunidadAlternativaPage = lazy(
+  () => import('./pages/internas/ComunidadAlternativaPage')
 )
 
 const MentoriaPage = lazy(
@@ -105,6 +113,11 @@ export default function App() {
           <Route
             path="/comunidad-pev"
             element={<ComunidadPage />}
+          />
+
+          <Route
+            path="/comunidad-pev-alternativa"
+            element={<ComunidadAlternativaPage />}
           />
 
           <Route
@@ -186,6 +199,11 @@ export default function App() {
             element={
               <LegalPage type="terminos" />
             }
+          />
+
+          <Route
+            path="/declaracion-de-riesgos-ninja-trader"
+            element={<DeclaracionRiesgosNinjaPage />}
           />
 
           <Route

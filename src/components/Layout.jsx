@@ -1,3 +1,7 @@
+import {
+  useLocation,
+} from 'react-router-dom'
+
 import Header from './Header'
 import Footer from './Footer'
 import BotonSubir from './BotonSubir'
@@ -6,15 +10,33 @@ import CookieConsent from './cookies/CookieConsent'
 export default function Layout({
   children,
 }) {
+  const {
+    pathname,
+  } = useLocation()
+
+  const esLandingSinNavegacion =
+    pathname ===
+    '/comunidad-pev-alternativa'
+
   return (
     <div className="min-h-screen bg-cmr-page text-cmr-text transition-colors duration-200">
-      <Header />
+      {!esLandingSinNavegacion && (
+        <Header />
+      )}
 
-      <main className="min-h-[calc(100vh-82px)] pt-[82px]">
+      <main
+        className={
+          esLandingSinNavegacion
+            ? 'min-h-screen'
+            : 'min-h-[calc(100vh-82px)] pt-[82px]'
+        }
+      >
         {children}
       </main>
 
-      <Footer />
+      {!esLandingSinNavegacion && (
+        <Footer />
+      )}
 
       <BotonSubir />
 

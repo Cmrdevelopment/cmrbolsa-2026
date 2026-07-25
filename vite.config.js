@@ -13,6 +13,7 @@ const rutasPrerender = [
   '/',
   '/cmrbolsa',
   '/comunidad-pev',
+  '/comunidad-pev-alternativa',
   '/mentoria-pev',
   '/solicitud-mentoria',
   '/sala-escrita',
@@ -26,6 +27,7 @@ const rutasPrerender = [
   '/politica-privacidad',
   '/politica_de_cookies',
   '/terminos_y_condiciones',
+  '/declaracion-de-riesgos-ninja-trader',
   '/404',
 ]
 

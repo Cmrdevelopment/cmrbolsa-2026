@@ -8,6 +8,8 @@ export const seoBase = {
     'https://res.cloudinary.com/dwbxywvdw/image/upload/v1784919487/cmrbolsa/cmrbolsa-imagen-social-premium_tnqe7n.png',
   defaultImageAlt:
     'CMRBolsa, formación en trading con el método PEV',
+  defaultRobots:
+    'noindex, nofollow',
 }
 
 export const seoPaginas = {
@@ -30,6 +32,15 @@ export const seoPaginas = {
       'Comunidad PEV | Formación y acompañamiento en trading',
     description:
       'Vídeos organizados, reuniones semanales, sala escrita, ejercicios y acompañamiento para aprender a entender el mercado con el método PEV.',
+  },
+
+  '/comunidad-pev-alternativa': {
+    title:
+      'Comunidad Trading PEV | Planes y acceso',
+    description:
+      'Conoce los planes disponibles para entrar en la Comunidad Trading PEV de CMRBolsa y aprender con formación, reuniones y sala escrita.',
+    robots:
+      'noindex, follow',
   },
 
   '/mentoria-pev': {
@@ -123,11 +134,20 @@ export const seoPaginas = {
       'Consulta los términos y condiciones aplicables a los contenidos, productos y servicios ofrecidos a través de CMRBolsa.',
   },
 
+  '/declaracion-de-riesgos-ninja-trader': {
+    title:
+      'Declaración de riesgos de futuros | CMRBolsa',
+    description:
+      'Consulta la declaración de riesgos aplicable a la operativa con futuros, forex y productos apalancados, junto con la información oficial de NinjaTrader.',
+  },
+
   '/404': {
     title:
       'Página no encontrada | CMRBolsa',
     description:
       'La página que buscas no existe o se ha salido del gráfico. Vuelve a CMRBolsa para seguir aprendiendo sobre trading y el método PEV.',
+    robots:
+      'noindex, follow',
   },
 }
 
