@@ -12,9 +12,9 @@ import {
   TrendingUp,
 } from 'lucide-react'
 
-import Placeholder from '../../components/Placeholder'
 import PageHero from '../../components/PageHero'
 import ArticulosSubstack from '../../components/substack/ArticulosSubstack'
+import UltimoArticuloSubstack from '../../components/substack/UltimoArticuloSubstack'
 
 const SUBSTACK_URL = 'https://cmrbolsa.substack.com/'
 
@@ -77,11 +77,7 @@ export default function SubstackPage() {
             <div className="pointer-events-none absolute -bottom-12 -right-10 h-56 w-56 rounded-full bg-cmr-gold/[0.14] blur-[70px]" />
 
             <div className="relative rounded-[2.5rem] border border-white/[0.16] bg-white/[0.10] p-5 shadow-darkGlow backdrop-blur-xl">
-              <Placeholder
-                label="SUBSTACK_SCREENSHOT_URL"
-                type="image"
-                className="min-h-[320px] border-cmr-green/25 bg-cmr-dark3 sm:min-h-[360px]"
-              />
+              <UltimoArticuloSubstack />
 
               <div className="mt-5 rounded-[1.75rem] border border-white/[0.12] bg-black/[0.18] p-5">
                 <div className="flex items-start gap-3">
