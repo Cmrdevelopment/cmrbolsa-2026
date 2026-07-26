@@ -40,11 +40,5 @@
       "destination": "/contacto?motivo=eventos",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
-    }
   ]
 }
