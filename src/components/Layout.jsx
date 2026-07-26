@@ -5,6 +5,7 @@ import {
 import Header from './Header'
 import Footer from './Footer'
 import BotonSubir from './BotonSubir'
+import MetricoolTracker from './MetricoolTracker'
 import CookieConsent from './cookies/CookieConsent'
 
 export default function Layout({
@@ -39,6 +40,8 @@ export default function Layout({
       )}
 
       <BotonSubir />
+
+      <MetricoolTracker />
 
       <CookieConsent />
     </div>
