@@ -141,6 +141,9 @@ export async function prerender({
     seo.robots ??
     seo.defaultRobots
 
+  const canonicalUrl =
+    `${seo.siteUrl}${seo.canonicalPath}`
+
   const ubicacion = [
     urlPrerender.pathname,
     urlPrerender.search,
@@ -174,6 +177,14 @@ export async function prerender({
       title,
 
       elements: new Set([
+        {
+          type: 'link',
+          props: {
+            rel: 'canonical',
+            href: canonicalUrl,
+          },
+        },
+
         {
           type: 'meta',
           props: {
@@ -211,6 +222,14 @@ export async function prerender({
           props: {
             property: 'og:site_name',
             content: seo.siteName,
+          },
+        },
+
+        {
+          type: 'meta',
+          props: {
+            property: 'og:url',
+            content: canonicalUrl,
           },
         },
 

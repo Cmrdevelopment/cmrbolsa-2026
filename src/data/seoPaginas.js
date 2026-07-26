@@ -1,5 +1,7 @@
 export const seoBase = {
   siteName: 'CMRBolsa',
+  siteUrl:
+    'https://cmrbolsa-2026.vercel.app',
   defaultTitle:
     'CMRBolsa | Formación en trading con el método PEV',
   defaultDescription:
@@ -152,12 +154,19 @@ export const seoPaginas = {
 }
 
 export function obtenerSeoPagina(pathname) {
+  const rutaSeo =
+    seoPaginas[pathname]
+      ? pathname
+      : '/404'
+
   const seoPagina =
-    seoPaginas[pathname] ??
-    seoPaginas['/404']
+    seoPaginas[rutaSeo]
 
   return {
     ...seoBase,
     ...seoPagina,
+    canonicalPath:
+      seoPagina.canonicalPath ??
+      rutaSeo,
   }
 }

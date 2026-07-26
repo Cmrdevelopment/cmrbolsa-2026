@@ -42,6 +42,34 @@ function actualizarMetaPropiedad(
   meta.setAttribute('content', content)
 }
 
+function actualizarCanonical(
+  href
+) {
+  let canonical =
+    document.head.querySelector(
+      'link[rel="canonical"]'
+    )
+
+  if (!canonical) {
+    canonical =
+      document.createElement('link')
+
+    canonical.setAttribute(
+      'rel',
+      'canonical'
+    )
+
+    document.head.appendChild(
+      canonical
+    )
+  }
+
+  canonical.setAttribute(
+    'href',
+    href
+  )
+}
+
 export default function Seo() {
   const {
     pathname,
@@ -78,7 +106,14 @@ export default function Seo() {
       seo.robots ??
       seo.defaultRobots
 
+    const canonicalUrl =
+      `${seo.siteUrl}${seo.canonicalPath}`
+
     document.title = title
+
+    actualizarCanonical(
+      canonicalUrl
+    )
 
     actualizarMetaNombre(
       'description',
@@ -103,6 +138,11 @@ export default function Seo() {
     actualizarMetaPropiedad(
       'og:site_name',
       seo.siteName
+    )
+
+    actualizarMetaPropiedad(
+      'og:url',
+      canonicalUrl
     )
 
     actualizarMetaPropiedad(
