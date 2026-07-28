@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Placeholder from '../components/Placeholder'
 import BunnyVideo from '../components/media/BunnyVideo'
 import TestimoniosCarousel from '../components/testimonios/TestimoniosCarousel'
 import PlataformasTrading from '../components/home/PlataformasTrading'

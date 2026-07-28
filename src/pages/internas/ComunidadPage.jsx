@@ -11,7 +11,7 @@ import {
   Video,
 } from 'lucide-react'
 
-import Placeholder from '../../components/Placeholder'
+import BunnyVideo from '../../components/media/BunnyVideo'
 import PageHero from '../../components/PageHero'
 import { siteConfig } from '../../data/siteConfig'
 
@@ -86,10 +86,13 @@ export default function ComunidadPage() {
             <div className="pointer-events-none absolute -inset-8 rounded-[3.5rem] bg-cmr-green/[0.20] blur-3xl" />
 
             <div className="relative rounded-[2.5rem] border border-white/[0.16] bg-white/[0.10] p-5 shadow-darkGlow backdrop-blur-xl">
-              <Placeholder
-                label="COMUNIDAD_VIDEO_URL"
-                type="video"
-                className="min-h-[320px] border-cmr-green/25 bg-cmr-dark3 sm:min-h-[360px]"
+              <BunnyVideo
+                libraryId="710893"
+                videoId="6e063b7e-bb15-4aa9-877f-d265eecdfc21"
+                title="Presentación de la Comunidad PEV"
+                posterUrl="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1784811599/cmrbolsa/cmrbolsa-comunidad-pev-reduced_zi5hx8.png"
+                className="border border-cmr-green/25"
+                cargaAlPulsar
               />
 
               <div className="mt-5 rounded-3xl border border-white/[0.12] bg-black/[0.18] p-5">
@@ -102,9 +105,8 @@ export default function ComunidadPage() {
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/[0.68]">
-                      Aquí irá el vídeo principal de la Comunidad PEV. Después
-                      añadiremos capturas reales de la sala, reuniones y ejemplos
-                      de mercado.
+                      Conoce por dentro la formación, las reuniones, la sala
+                      escrita y la forma de trabajar el mercado con PEV.
                     </p>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 
 import PageHero from '../../components/PageHero'
-import Placeholder from '../../components/Placeholder'
+import BunnyVideo from '../../components/media/BunnyVideo'
 
 const metodo = [
   {
@@ -363,19 +363,22 @@ export default function CmrbolsaPage() {
 
         <div className="section-shell relative grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
           <div className="relative">
-            <Placeholder
-              label="YOUTUBE_O_INSTAGRAM_REEL_URL"
-              type="video"
-              className="min-h-[420px] bg-white dark:border-white/[0.14] dark:bg-cmr-dark3"
+            <BunnyVideo
+              libraryId="710893"
+              videoId="516d4251-0cc0-4468-8111-7a08d53e593a"
+              title="Mi historia y el nacimiento de CMRBolsa"
+              posterUrl="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1785170918/cmrbolsa/cmrbolsa_historia_reduced_msgfo5.png"
+              className="border border-cmr-green/25"
+              cargaAlPulsar
             />
 
-            <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-cmr-line bg-white/[0.94] p-5 shadow-soft backdrop-blur transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3/[0.94] dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+            <div className="mt-5 rounded-3xl border border-cmr-line bg-white p-5 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
               <div className="flex items-start gap-3">
                 <MessageSquareText className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="text-sm font-semibold leading-6 text-cmr-muted dark:text-white/[0.66]">
-                  Aquí podremos poner un reel o vídeo donde se te vea hablando,
-                  explicando mercado o mostrando tu forma de trabajar.
+                  Mi historia, cómo llegué al mercado y cómo nació la forma de
+                  trabajar que hoy conocemos como CMRBolsa y el método PEV.
                 </p>
               </div>
             </div>

@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 
 import PageHero from '../../components/PageHero'
-import Placeholder from '../../components/Placeholder'
+import BunnyVideo from '../../components/media/BunnyVideo'
 
 const ventajasSala = [
   {
@@ -62,13 +62,16 @@ export default function SalaEscritaPage() {
           <div className="relative">
             <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-cmr-green/[0.12] blur-3xl dark:bg-cmr-green/[0.18]" />
 
-            <Placeholder
-              label="SALA_VIDEO_URL"
-              type="video"
-              className="relative min-h-[420px] bg-white dark:border-white/[0.14] dark:bg-cmr-dark3"
+            <BunnyVideo
+              libraryId="710893"
+              videoId="145644e2-ffd1-446d-bfaf-b268702e0525"
+              title="Presentación de la sala de trading escrita"
+              posterUrl="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1785171841/cmrbolsa/sala_de_trading_Escrita_reduced_hb3kbu.png"
+              className="relative border border-cmr-green/25"
+              cargaAlPulsar
             />
 
-            <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-cmr-line bg-white/[0.94] p-5 shadow-soft backdrop-blur transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3/[0.94] dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+            <div className="relative mt-5 rounded-3xl border border-cmr-line bg-white p-5 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
               <div className="flex items-start gap-3">
                 <Eye className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 

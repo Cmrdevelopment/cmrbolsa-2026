@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 
 import PageHero from '../../components/PageHero'
-import Placeholder from '../../components/Placeholder'
+import BunnyVideo from '../../components/media/BunnyVideo'
 
 const incluye = [
   'Proceso de aprendizaje organizado y guiado',
@@ -474,19 +474,22 @@ export default function MentoriaPage() {
 
         <div className="section-shell relative grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
           <div className="relative">
-            <Placeholder
-              label="MENTORIA_TESTIMONIO_VIDEO_URL"
-              type="video"
-              className="min-h-[420px] bg-white dark:border-white/[0.14] dark:bg-cmr-dark2"
+            <BunnyVideo
+              libraryId="710893"
+              videoId="a3d266db-42dc-4417-948e-b5a0a064367c"
+              title="Presentación de la Mentoría PEV"
+              posterUrl="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1785171609/cmrbolsa/Mentoria_PEV_reduced_whqywz.png"
+              className="border border-cmr-green/25"
+              cargaAlPulsar
             />
 
-            <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-cmr-line bg-white/[0.94] p-5 shadow-soft backdrop-blur transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2/[0.94] dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+            <div className="relative mt-5 rounded-3xl border border-cmr-line bg-white p-5 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
               <div className="flex items-start gap-3">
                 <MessageSquareText className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="text-sm font-semibold leading-6 text-cmr-muted dark:text-white/[0.66]">
-                  Aquí podremos poner un vídeo corto explicando el proceso o un
-                  testimonio de alumno.
+                  Conoce cómo funciona la Mentoría PEV, el trabajo personal,
+                  las correcciones y el proceso de aprendizaje.
                 </p>
               </div>
             </div>
