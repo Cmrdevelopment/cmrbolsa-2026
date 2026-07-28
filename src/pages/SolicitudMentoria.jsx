@@ -1,6 +1,4 @@
 import {
-  useEffect,
-  useRef,
   useState,
 } from 'react'
 import {
@@ -27,71 +25,20 @@ const CALENDLY_URL =
   'https://calendly.com/cmrbolsa/sesion-estrategica'
 
 function CalendlyEmbebido() {
-  const contenedorRef = useRef(null)
-
-  useEffect(() => {
-    const scriptUrl =
-      'https://assets.calendly.com/assets/external/widget.js'
-
-    function iniciarCalendly() {
-      if (
-        !contenedorRef.current ||
-        !window.Calendly
-      ) {
-        return
-      }
-
-      contenedorRef.current.innerHTML = ''
-
-      window.Calendly.initInlineWidget({
-        url: CALENDLY_URL,
-        parentElement: contenedorRef.current,
-      })
-    }
-
-    const scriptExistente = document.querySelector(
-      `script[src="${scriptUrl}"]`
-    )
-
-    if (scriptExistente) {
-      if (window.Calendly) {
-        iniciarCalendly()
-      } else {
-        scriptExistente.addEventListener(
-          'load',
-          iniciarCalendly,
-          { once: true }
-        )
-      }
-    } else {
-      const script = document.createElement('script')
-
-      script.src = scriptUrl
-      script.async = true
-
-      script.addEventListener(
-        'load',
-        iniciarCalendly,
-        { once: true }
-      )
-
-      document.body.appendChild(script)
-    }
-
-    return () => {
-      if (contenedorRef.current) {
-        contenedorRef.current.innerHTML = ''
-      }
-    }
-  }, [])
-
   return (
-    <div
-      ref={contenedorRef}
-      className="calendly-inline-widget min-h-[760px] w-full"
+    <iframe
+      src={CALENDLY_URL}
+      title="Reserva tu sesión estratégica con CMRBolsa"
+      className="h-[800px] w-full border-0"
+      style={{
+        minWidth: '320px',
+      }}
+      loading="eager"
     />
   )
 }
+
+
 
 function MensajeConfirmacion() {
   return (
