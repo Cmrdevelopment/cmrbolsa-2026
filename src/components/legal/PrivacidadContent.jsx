@@ -293,52 +293,76 @@ export default function PrivacidadContent() {
 
       <section>
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
-          7. Con quién pueden compartirse los datos
+          7. Proveedores que pueden tratar los datos
         </h2>
 
         <div className="mt-5 space-y-4 leading-8 text-cmr-muted dark:text-white/[0.68]">
           <p>
-            Los datos personales no se venderán a terceros.
+            Los datos personales no se venden a terceros.
           </p>
 
           <p>
-            Para poder prestar los servicios, algunos proveedores pueden tener
-            acceso limitado a determinados datos, siempre dentro de sus
-            funciones y bajo las garantías correspondientes. Entre ellos pueden
-            encontrarse:
+            Para poder gestionar la web, las comunicaciones, las reservas y los
+            servicios contratados, CMRBolsa utiliza proveedores tecnológicos
+            que pueden tratar determinados datos por cuenta del responsable y
+            únicamente para prestar sus servicios.
           </p>
 
-          <ul className="list-disc space-y-3 pl-6">
-            <li>
-              Proveedores de alojamiento web e infraestructura tecnológica.
-            </li>
+          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6 transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2">
+            <h3 className="font-display text-xl font-black text-cmr-ink dark:text-white">
+              Brevo
+            </h3>
 
-            <li>
-              Servicios de correo electrónico y comunicaciones.
-            </li>
+            <p className="mt-3">
+              Cuando una persona se apunta a la lista de interesados en la
+              Mentoría PEV, sus datos se incorporan a Brevo para gestionar el
+              correo de confirmación, comprobar que desea recibir las
+              comunicaciones y enviar información sobre próximas aperturas.
+            </p>
 
-            <li>
-              Proveedores de pago y facturación.
-            </li>
+            <p className="mt-3">
+              Los datos tratados pueden incluir el nombre, correo electrónico,
+              experiencia en trading, principal bloqueo indicado en el
+              formulario y la información necesaria para acreditar la
+              confirmación de la suscripción.
+            </p>
 
-            <li>
-              Herramientas de almacenamiento de imágenes, vídeos o archivos.
-            </li>
+            <p className="mt-3">
+              La persona puede retirar su consentimiento o solicitar que se
+              eliminen sus datos en cualquier momento.
+            </p>
+          </div>
 
-            <li>
-              Servicios de analítica, únicamente cuando hayan sido aceptados
-              por el usuario.
-            </li>
+          <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6 transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2">
+            <h3 className="font-display text-xl font-black text-cmr-ink dark:text-white">
+              Calendly
+            </h3>
 
-            <li>
-              Asesorías, profesionales o proveedores necesarios para cumplir
-              obligaciones legales, fiscales o administrativas.
-            </li>
-          </ul>
+            <p className="mt-3">
+              Cuando esté abierto el proceso de selección de la Mentoría PEV,
+              la reserva de la sesión estratégica podrá gestionarse mediante
+              Calendly, integrado dentro de esta web.
+            </p>
+
+            <p className="mt-3">
+              Calendly podrá tratar los datos que la persona introduzca al
+              reservar, como nombre, correo electrónico, zona horaria, fecha y
+              hora seleccionadas y respuestas incluidas en el formulario de
+              reserva.
+            </p>
+          </div>
 
           <p>
-            También podrán comunicarse datos a administraciones públicas,
-            juzgados o autoridades cuando exista una obligación legal.
+            También pueden tener acceso limitado a datos otros proveedores de
+            alojamiento web, infraestructura tecnológica, correo electrónico,
+            pagos, facturación, almacenamiento de archivos, vídeo y analítica,
+            dentro de las funciones necesarias para prestar cada servicio.
+          </p>
+
+          <p>
+            Asimismo, podrán comunicarse datos a asesorías, profesionales,
+            administraciones públicas, juzgados o autoridades cuando sea
+            necesario para cumplir una obligación legal.
           </p>
         </div>
       </section>
@@ -502,7 +526,7 @@ export default function PrivacidadContent() {
 
       <section className="border-t border-cmr-line pt-8 dark:border-white/[0.14]">
         <p className="text-sm leading-7 text-cmr-muted dark:text-white/[0.52]">
-          Última actualización: 21 de julio de 2026.
+          Última actualización: 28 de julio de 2026.
         </p>
       </section>
     </div>
