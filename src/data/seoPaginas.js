@@ -1,7 +1,7 @@
 export const seoBase = {
   siteName: 'CMRBolsa',
   siteUrl:
-    'https://cmrbolsa-2026.vercel.app',
+    'https://cmrbolsa.com',
   defaultTitle:
     'CMRBolsa | Formación en trading con el método PEV',
   defaultDescription:
