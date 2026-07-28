@@ -11,7 +11,7 @@ export const seoBase = {
   defaultImageAlt:
     'CMRBolsa, formación en trading con el método PEV',
   defaultRobots:
-    'noindex, nofollow',
+    'index, follow',
 }
 
 export const seoPaginas = {
