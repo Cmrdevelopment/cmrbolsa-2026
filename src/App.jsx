@@ -12,6 +12,7 @@ import Layout from './components/Layout'
 import ScrollToTop from './components/ScrollToTop'
 import Seo from './components/Seo'
 import DatosEstructurados from './components/DatosEstructurados'
+import MetaPixel from './components/MetaPixel'
 
 import Home from './pages/Home'
 
@@ -92,6 +93,7 @@ function CargandoPagina() {
 export default function App() {
   return (
     <Layout>
+      <MetaPixel />
       <ScrollToTop />
       <Seo />
       <DatosEstructurados />
