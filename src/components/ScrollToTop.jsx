@@ -7,15 +7,32 @@ export default function ScrollToTop() {
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '')
-      const element = document.getElementById(id)
+      let timeoutId
 
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 0)
+      const scrollToElement = (attempt = 0) => {
+        const element = document.getElementById(id)
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+
+          return
+        }
+
+        if (attempt < 20) {
+          timeoutId = setTimeout(() => {
+            scrollToElement(attempt + 1)
+          }, 50)
+        }
       }
 
-      return
+      scrollToElement()
+
+      return () => {
+        clearTimeout(timeoutId)
+      }
     }
 
     window.scrollTo({

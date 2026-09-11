@@ -259,6 +259,15 @@ export default function MentoriaPage() {
             ))}
           </div>
         </div>
+
+        <div className="section-shell relative mt-8 text-center">
+          <Link
+            to="/terminos_y_condiciones#mentoria-pev"
+            className="text-sm font-semibold text-cmr-muted underline decoration-cmr-green/30 underline-offset-4 transition hover:text-cmr-green dark:text-white/[0.62] dark:hover:text-[#79CFC4]"
+          >
+            Consulta las condiciones de la Mentoría PEV
+          </Link>
+        </div>
       </section>
 
       <section className="relative overflow-hidden bg-cmr-paper py-20 transition-colors duration-300 dark:bg-cmr-dark3">

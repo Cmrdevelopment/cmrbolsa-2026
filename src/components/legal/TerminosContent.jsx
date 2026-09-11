@@ -139,7 +139,7 @@ export default function TerminosContent() {
         </div>
       </section>
 
-      <section>
+      <section id="mentoria-pev" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
           5. Mentoría PEV
         </h2>
@@ -168,6 +168,35 @@ export default function TerminosContent() {
             dedicación, práctica, constancia y participación del alumno.
             Contratarla no garantiza resultados económicos ni elimina el riesgo
             propio de los mercados.
+          </p>
+
+          <p>
+            El seguimiento individual y la corrección de ejercicios requieren
+            que el alumno mantenga una participación activa y una continuidad
+            razonable en su formación. Si transcurren 90 días consecutivos sin
+            actividad, entrega de ejercicios o gráficos ni comunicación con
+            CMRBolsa, y no existe una pausa previamente comunicada y acordada,
+            se entenderá que el alumno ha interrumpido su seguimiento
+            personalizado.
+          </p>
+
+          <p>
+            En ese caso finalizarán la corrección individual de ejercicios y el
+            seguimiento personalizado. Esto no supone la pérdida del acceso a
+            los cursos y contenidos formativos incluidos en la Mentoría, ni de
+            la posibilidad de continuar perteneciendo a la Comunidad PEV y
+            participar en sus reuniones generales mientras mantenga dichos
+            accesos conforme a las condiciones aplicables.
+          </p>
+
+          <p>
+            Si el alumno desea retomar el seguimiento individual después de este
+            periodo de inactividad, deberá solicitar nuevamente su incorporación.
+            CMRBolsa valorará previamente su situación, su disposición para retomar
+            el trabajo con la constancia necesaria y las condiciones aplicables en
+            ese momento. En caso de ser aceptado de nuevo, se le informará antes de
+            continuar del importe que, en su caso, corresponda abonar para reactivar
+            el seguimiento personalizado.
           </p>
         </div>
       </section>
