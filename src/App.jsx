@@ -76,6 +76,13 @@ const LibroPage = lazy(
   () => import('./pages/internas/LibroPage')
 )
 
+const TradingSinAtajosWJD092026 = lazy(
+  () =>
+    import(
+      './pages/landings/TradingSinAtajosWJD092026'
+    )
+)
+
 function CargandoPagina() {
   return (
     <div className="flex min-h-[60vh] items-center justify-center bg-cmr-light px-6">
@@ -125,6 +132,11 @@ export default function App() {
           <Route
             path="/mentoria-pev"
             element={<MentoriaPage />}
+          />
+
+          <Route
+            path="/trading-sin-atajos-wjd-092026"
+            element={<TradingSinAtajosWJD092026 />}
           />
 
           <Route

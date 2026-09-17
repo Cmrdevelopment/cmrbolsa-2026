@@ -17,7 +17,9 @@ export default function Layout({
 
   const esLandingSinNavegacion =
     pathname ===
-    '/comunidad-pev-alternativa'
+      '/comunidad-pev-alternativa' ||
+    pathname ===
+      '/trading-sin-atajos-wjd-092026'
 
   return (
     <div className="min-h-screen bg-cmr-page text-cmr-text transition-colors duration-200">
@@ -39,7 +41,9 @@ export default function Layout({
         <Footer />
       )}
 
-      <BotonSubir />
+      {!esLandingSinNavegacion && (
+        <BotonSubir />
+      )}
 
       <MetricoolTracker />
 

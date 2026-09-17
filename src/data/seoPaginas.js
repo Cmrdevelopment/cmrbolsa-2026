@@ -52,6 +52,15 @@ export const seoPaginas = {
       'Un proceso completo con ejercicios, correcciones personales, reuniones, plan de trading y acompañamiento directo con Carlos Martín Rodríguez.',
   },
 
+  '/trading-sin-atajos-wjd-092026': {
+    title:
+      'Trading sin atajos | Mentoría PEV de CMRBolsa',
+    description:
+      'Conoce la Mentoría PEV de CMRBolsa: trabajo continuado, corrección de gráficos, reuniones y acompañamiento para aprender a leer el mercado.',
+    robots:
+      'noindex, follow',
+  },
+
   '/solicitud-mentoria': {
     title:
       'Solicitar valoración para la Mentoría PEV | CMRBolsa',
