@@ -78,7 +78,7 @@ export default function LibroPage() {
         eyebrow="Mi libro"
         title="Desgranando la esencia del mercado"
         text="No es un libro para memorizar una estrategia ni para buscar una entrada mágica. Es una introducción profunda a la lectura del mercado mediante el precio, el volumen y la estructura."
-        primaryLabel="Comprar el libro"
+        primaryLabel="Comprar el libro ebook"
         primaryTo={COMPRA_LIBRO_URL}
         secondaryLabel="Empezar leyendo en Substack"
         secondaryTo="/substack"
