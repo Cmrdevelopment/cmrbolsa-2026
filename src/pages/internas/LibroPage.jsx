@@ -427,7 +427,7 @@ export default function LibroPage() {
               rel="noreferrer"
               className="btn-primary"
             >
-              Comprar el libro
+              Comprar el ebook
 
               <ShoppingBag className="h-4 w-4" />
             </a>
