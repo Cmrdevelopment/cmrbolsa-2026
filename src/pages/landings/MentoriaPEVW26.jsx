@@ -96,11 +96,13 @@ const preguntas = [
     respuesta:
       'Si, si lo trabajas y te lo curras. El objetivo es que desarrolles conocimientos y criterio para interpretar los mercados y construir tus propios escenarios. Cada alumno avanza a un ritmo diferente. También tendrás que trabajar la gestión del riesgo, la disciplina y tu plan de trading. No hay garantías de rentabilidad.',
   },
+
   {
-    pregunta: '¿Por qué cuesta 1.000 € o 1.200 € en mensualidades?',
+    pregunta: '¿Qué diferencia hay entre pagar 1.000 € al contado o 200 € al mes?',
     respuesta:
-      'Con el pago único de 1.000 € tienes cubierto todo el programa de 12 meses. Con la modalidad mensual pagas 200 € durante un máximo de seis meses, pero puedes cancelar cuando quieras sin pagar las cuotas restantes. Si completas los seis pagos, mantendrás el acceso hasta finalizar tus 12 meses.',
+      'Con el pago único de 1.000 € tienes incluidos los 12 meses completos de formación, clases, acompañamiento y Sala de Trading. Solo la Sala de Trading tiene un valor de 240 € al año y ya está incluida en el precio. Con la modalidad mensual pagas 200 € al mes durante un máximo de seis meses (1.200 € en total), con la ventaja de poder cancelar cuando quieras, sin permanencia. Esta modalidad incluye la Sala de Trading durante los primeros seis meses. A partir del séptimo mes, si quieres seguir asistiendo a la sala, podrás hacerlo por solo 20 €/mes. Si completas las seis mensualidades, seguirás teniendo acceso a las clases y al acompañamiento hasta finalizar tus 12 meses de formación, aunque decidas no continuar en la sala. Por tanto, si quieres disfrutar de los 12 meses completos con Sala de Trading, el pago único supone un ahorro total de 320 € frente al pago mensual. Tú eliges: pagar menos por todo el año o empezar con 200 € y tener libertad para cancelar.',
   },
+
   
   {
     pregunta: '¿Y si quiero tutorías individuales y correcciones personalizadas?',
@@ -339,49 +341,88 @@ export default function MentoriaPEVW26() {
         </div>
       </section>
 
+
       {/* PRECIOS */}
       <section
         id="precios"
         className="scroll-mt-24 bg-white px-5 py-14 sm:px-8 sm:py-16"
       >
-        <div className="mx-auto max-w-[930px]">
+        <div className="mx-auto max-w-[1050px]">
 
-          <div className="mb-9 text-center">
+          <div className="mb-10 text-center">
             <p className="mb-3 text-xs font-black uppercase tracking-[.16em] text-[#438A71]">
-              Tú eliges
+              Tú eliges cómo empezar
             </p>
 
             <h2 className="font-display text-3xl font-black tracking-[-.04em] sm:text-4xl">
               La Mentoría PEV.
-              Dos formas de empezar.
+              <span className="block text-[#428F74]">
+                Dos formas de empezar.
+              </span>
             </h2>
 
-            <p className="mt-3 text-[#647B6D]">
-              El mismo programa y acompañamiento.
-              Tú eliges cómo pagarlo.
+            <p className="mx-auto mt-4 max-w-[650px] text-base leading-7 text-[#647B6D]">
+              La misma formación, clases y acompañamiento.
+              La diferencia está en cómo quieres pagar
+              y cuánto tiempo tienes incluida la Sala de Trading.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
 
             {/* PAGO ÚNICO */}
-            <article className="flex flex-col rounded-[25px] border border-[#DBEADF] bg-[#FAFCFA] p-7 sm:p-8">
+            <article className="relative flex h-full flex-col rounded-[28px] border-2 border-[#B8DDC5] bg-[#F7FBF7] p-7 shadow-[0_15px_45px_rgba(30,90,60,.07)] sm:p-9">
 
-              <p className="text-xs font-black uppercase tracking-[.15em] text-[#658070]">
+              <span className="absolute -top-3 right-6 rounded-full bg-[#DDF2DF] px-4 py-1.5 text-xs font-black text-[#216C4B]">
+                MAYOR AHORRO
+              </span>
+
+              <p className="text-sm font-black uppercase tracking-[.12em] text-[#39816C]">
                 Pago único
               </p>
 
-              <p className="mt-3 font-display text-5xl font-black tracking-[-.055em]">
+              <p className="mt-4 font-display text-6xl font-black tracking-[-.055em] text-[#163B30]">
                 1.000 €
               </p>
 
-              <p className="mt-4 flex-1 text-[15px] leading-7 text-[#5B7265]">
-                Un único pago y acceso a los 12 meses
-                completos de formación, clases,
-                sala de trading y acompañamiento.
+              <p className="mt-2 text-sm font-bold text-[#5F7868]">
+                Un solo pago. Todo tu año de formación.
               </p>
 
-              <div className="mt-7">
+              <div className="my-7 h-px bg-[#D8E9DC]" />
+
+              <ul className="space-y-4 text-[15px] leading-6 text-[#395C49]">
+                {[
+                  '12 meses de formación y acompañamiento.',
+                  'Clases de teoría y práctica durante todo el año.',
+                  '12 meses de Sala de Trading incluidos.',
+                  'Vídeos, ejercicios, grabaciones y comunidad.',
+                  'Sin cuotas adicionales durante el primer año.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check
+                      size={19}
+                      strokeWidth={3}
+                      className="mt-0.5 shrink-0 text-[#278963]"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 rounded-2xl bg-[#E3F2E6] p-5">
+                <p className="text-lg font-black text-[#176044]">
+                  Ahorras 320 €
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#52705B]">
+                  Frente a completar los seis pagos mensuales
+                  y contratar otros seis meses de Sala de Trading.
+                  Los 12 meses de sala, valorados en 240 €,
+                  ya están incluidos.
+                </p>
+              </div>
+
+              <div className="mt-auto pt-7">
                 <BotonPago modalidad="unico">
                   Elegir pago único
                 </BotonPago>
@@ -390,53 +431,90 @@ export default function MentoriaPEVW26() {
             </article>
 
             {/* PAGO MENSUAL */}
-            <article className="relative flex flex-col rounded-[25px] border-2 border-[#1A6954] bg-[#15594E] p-7 text-white shadow-[0_20px_55px_rgba(19,75,56,.15)] sm:p-8">
+            <article className="relative flex h-full flex-col rounded-[28px] border-2 border-[#15594E] bg-[#15594E] p-7 text-white shadow-[0_20px_55px_rgba(19,75,56,.17)] sm:p-9">
 
-              <span className="absolute -top-3 right-5 rounded-full bg-[#F7E5A6] px-4 py-1.5 text-xs font-black text-[#4B4B29]">
+              <span className="absolute -top-3 right-6 rounded-full bg-[#F7E5A6] px-4 py-1.5 text-xs font-black text-[#4B4B29]">
                 SIN PERMANENCIA
               </span>
 
-              <p className="text-xs font-black uppercase tracking-[.15em] text-[#C7E2D2]">
+              <p className="text-sm font-black uppercase tracking-[.12em] text-[#C7E2D2]">
                 Pago mensual
               </p>
 
-              <p className="mt-3 font-display text-5xl font-black tracking-[-.055em]">
+              <p className="mt-4 font-display text-6xl font-black tracking-[-.055em]">
                 200 €
-                <span className="ml-2 text-lg">
-                  / mes
+                <span className="ml-2 text-lg font-bold">
+                  /mes
                 </span>
               </p>
 
-              <p className="mt-4 flex-1 text-[15px] leading-7 text-white/85">
-                Hasta seis mensualidades.
-                Cancela cuando quieras y no pagues
-                las siguientes cuotas.
-
-                Si completas los seis pagos,
-                continuarás disfrutando del programa
-                hasta finalizar tus 12 meses.
+              <p className="mt-2 text-sm font-bold text-[#D0E9DA]">
+                Máximo seis pagos. Cancela cuando quieras.
               </p>
 
-              <div className="mt-7">
-                <BotonPago
-                  modalidad="mensual"
-                  destacado
-                >
+              <div className="my-7 h-px bg-white/20" />
+
+              <ul className="space-y-4 text-[15px] leading-6 text-white/90">
+                {[
+                  '12 meses de formación y acompañamiento si completas los seis pagos.',
+                  'Clases de teoría y práctica durante todo el año.',
+                  '6 meses de Sala de Trading incluidos.',
+                  'Vídeos, ejercicios, grabaciones y comunidad.',
+                  'Puedes cancelar sin pagar las siguientes mensualidades.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check
+                      size={19}
+                      strokeWidth={3}
+                      className="mt-0.5 shrink-0 text-[#A8E6BE]"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 rounded-2xl border border-white/15 bg-white/10 p-5">
+                <p className="text-lg font-black text-white">
+                  ¿Y después del sexto mes?
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-white/85">
+                  Seguirás asistiendo a las clases y reuniones
+                  hasta completar tus 12 meses, si has abonado
+                  las seis cuotas.
+                </p>
+
+                <p className="mt-3 text-sm leading-6 text-white/85">
+                  Si también quieres continuar en la Sala
+                  de Trading, podrás hacerlo por 20 €/mes.
+                  Es totalmente opcional.
+                </p>
+
+                <p className="mt-4 border-t border-white/20 pt-4 text-sm font-bold text-white">
+                  1.200 € de formación.
+                  Con otros seis meses de sala: 1.320 € en total.
+                </p>
+              </div>
+
+              <div className="mt-auto pt-7">
+                <BotonPago modalidad="mensual" destacado>
                   Empezar por 200 €/mes
                 </BotonPago>
               </div>
 
-            </article>
-          </div>
+              <p className="mt-3 text-center text-xs leading-5 text-white/70">
+                Si cancelas antes, el acceso termina
+                al finalizar el periodo que hayas pagado.
+              </p>
 
-          <p className="mt-5 text-center text-xs leading-5 text-[#78887C]">
-            Seis pagos mensuales suman 1.200 €.
-            Si cancelas antes, el acceso termina
-            al finalizar el periodo abonado.
-          </p>
+            </article>
+
+          </div>
 
         </div>
       </section>
+
+
 
       {/* PREGUNTAS FRECUENTES */}
       <section
@@ -455,7 +533,7 @@ export default function MentoriaPEVW26() {
             </h2>
 
             <p className="mt-3 text-[#647B6D]">
-              12 preguntas frecuentes.
+              16 preguntas frecuentes.
               Abre solamente las que necesites.
             </p>
           </div>
@@ -536,7 +614,7 @@ export default function MentoriaPEVW26() {
         <div className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-3">
 
           <p>
-            © CMRBolsa · Carlos Martín Rodríguez
+            © CMRBolsa 2026 · Carlos Martín Rodríguez
           </p>
 
           <div className="flex flex-wrap gap-4">
