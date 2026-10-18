@@ -19,7 +19,8 @@ export default function Layout({
     pathname ===
       '/comunidad-pev-alternativa' ||
     pathname ===
-      '/trading-sin-atajos-wjd-092026'
+      '/trading-sin-atajos-wjd-092026' ||
+    pathname === '/mentoria-pev-w26'
 
   return (
     <div className="min-h-screen bg-cmr-page text-cmr-text transition-colors duration-200">
