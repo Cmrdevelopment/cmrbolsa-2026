@@ -52,6 +52,7 @@ export const seoPaginas = {
       'Un proceso completo con ejercicios, correcciones personales, reuniones, plan de trading y acompañamiento directo con Carlos Martín Rodríguez.',
   },
 
+
   '/trading-sin-atajos-wjd-092026': {
     title:
       'Trading sin atajos | Mentoría PEV de CMRBolsa',
@@ -61,7 +62,17 @@ export const seoPaginas = {
       'noindex, follow',
   },
 
+  '/mentoria-pev-w26': {
+    title:
+      'Mentoría PEV 2026 | Aprende a leer el mercado | CMRBolsa',
+    description:
+      'Aprende a interpretar los mercados con el Método PEV. 12 meses de formación, clases en directo, ejercicios y sala de trading. Pago único o mensual sin permanencia.',
+    robots:
+      'noindex, follow',
+  },
+
   '/solicitud-mentoria': {
+
     title:
       'Solicitar valoración para la Mentoría PEV | CMRBolsa',
     description:
