@@ -15,6 +15,7 @@ const rutasPrerender = [
   '/comunidad-pev',
   '/comunidad-pev-alternativa',
   '/mentoria-pev',
+  '/mentoria-pev-w26',
   '/solicitud-mentoria',
   '/sala-escrita',
   '/eventos',
