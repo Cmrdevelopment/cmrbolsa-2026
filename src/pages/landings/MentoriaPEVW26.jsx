@@ -24,7 +24,7 @@ const FOTO_CARLOS =
 // Lo cambiaremos cuando grabes el nuevo.
 const VIDEO = {
   libraryId: '710893',
-  videoId: 'a3d266db-42dc-4417-948e-b5a0a064367c',
+  videoId: '01c6fae1-6754-47d5-b638-13994e79bbf0',
   posterUrl:
     'https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1200/v1785171609/cmrbolsa/Mentoria_PEV_reduced_whqywz.png',
 }
@@ -107,7 +107,7 @@ const preguntas = [
   {
     pregunta: '¿Y si quiero tutorías individuales y correcciones personalizadas?',
     respuesta:
-      'Si buscas un acompañamiento más personalizado, también tienes la posibilidad de acceder a la Mentoría PEV Premium. Esta modalidad está pensada para quienes quieren trabajar de forma más individual conmigo, profundizar en sus dificultades y recibir correcciones personalizadas de sus gráficos y ejercicios. La Mentoría Premiun tiene unas condiciones y un precio propios que se explican por separado.',
+      'Si buscas un acompañamiento más personalizado, puedes acceder con la Mentoría PEV Premium. La Premium está pensada para quienes quieren trabajar de forma más individual conmigo, profundizar en sus dificultades y recibir correcciones personalizadas de sus gráficos y ejercicios. La Mentoría Premiun tiene un precio propios que se explican por separado. Y si decides entrar durante o después de hacer la formación solo págarás al diferencia de la mentoria PEV a la mentoria Premium',
   },
   {
     pregunta: 'Si los contenidos duran seis meses, ¿qué ocurre durante los otros seis?',
