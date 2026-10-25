@@ -409,7 +409,7 @@ export default function Footer() {
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-white/76">
-                  Vídeos, reuniones, sala escrita y acompañamiento.
+                  clase online semanal en directo, sala escrita diaria y vídeos de apoyo.
                 </p>
 
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green">
@@ -435,7 +435,7 @@ export default function Footer() {
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-white/76">
-                  Para quien quiere corrección, orden y un proceso más directo.
+                  clases online semanales de teoría y práctica, con correcciones y sala de trading según plan.
                 </p>
 
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-cmr-green">

@@ -43,7 +43,7 @@ const caminos = {
     puntos: [
       'Una clase semanal de teoría en directo',
       'Otra clase semanal de práctica y correcciones',
-      'Sala de trading en directo según modalidad',
+      'Sala de trading en directo de lunes a jueves, según modalidad',
       'Seguimiento individual adicional solo en Premium',
     ],
     enlacePrincipal: '/mentoria-pev',

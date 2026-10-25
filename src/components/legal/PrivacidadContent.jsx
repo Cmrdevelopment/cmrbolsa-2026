@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 
 export default function PrivacidadContent() {
@@ -87,7 +88,13 @@ export default function PrivacidadContent() {
 
             <li>
               Información sobre tu experiencia, objetivos y disponibilidad
-              cuando solicites una valoración para la Mentoría PEV.
+              cuando solicites una sesión estratégica para la modalidad
+              PEV Premium.
+            </li>
+
+            <li>
+              Datos de reserva de citas, como fecha, hora, zona horaria y
+              respuestas que facilites al reservar una sesión estratégica.
             </li>
 
             <li>
@@ -132,13 +139,15 @@ export default function PrivacidadContent() {
             </li>
 
             <li>
-              Revisar las solicitudes de acceso a la Mentoría PEV y valorar si
-              el servicio puede encajar con la persona interesada.
+              Gestionar las reservas de sesiones estratégicas y valorar,
+              exclusivamente para la modalidad PEV Premium, si el
+              acompañamiento personalizado encaja con la persona interesada.
             </li>
 
             <li>
-              Gestionar el registro, la contratación y el acceso a la Comunidad
-              Trading PEV o a la Mentoría PEV.
+              Gestionar las consultas sobre los planes PEV Anual y PEV
+              Flexible, así como el registro, la contratación y el acceso a
+              la Comunidad PEV o a las modalidades de la Mentoría PEV.
             </li>
 
             <li>
@@ -191,8 +200,8 @@ export default function PrivacidadContent() {
               <strong className="text-cmr-ink dark:text-white">
                 Aplicación de medidas precontractuales:
               </strong>{' '}
-              cuando solicitas información o envías una solicitud para la
-              Mentoría.
+              cuando solicitas información sobre las formaciones o reservas
+              una sesión estratégica para PEV Premium.
             </li>
 
             <li>
@@ -248,7 +257,10 @@ export default function PrivacidadContent() {
             Entre estos datos pueden encontrarse el nombre, correo electrónico,
             información fiscal, producto contratado, estado del acceso,
             facturas, pagos, participación en la comunidad y progreso en los
-            contenidos.
+            contenidos. En el caso de las citas para PEV Premium, Comudia
+            permite gestionar los datos de la reserva, su confirmación,
+            modificación y cancelación, así como las comunicaciones
+            relacionadas con la cita.
           </p>
 
           <p>
@@ -314,41 +326,48 @@ export default function PrivacidadContent() {
             </h3>
 
             <p className="mt-3">
-              Cuando una persona se apunta a la lista de interesados en la
-              Mentoría PEV, sus datos se incorporan a Brevo para gestionar el
-              correo de confirmación, comprobar que desea recibir las
-              comunicaciones y enviar información sobre próximas aperturas.
+              Brevo se ha utilizado para gestionar los registros en la antigua
+              lista de personas interesadas en la Mentoría PEV, confirmar
+              las suscripciones y enviar las comunicaciones autorizadas.
+              Aunque ese formulario ya no sea la vía actual de contratación,
+              pueden conservarse datos de quienes se registraron
+              anteriormente, de acuerdo con las finalidades y los plazos
+              aplicables.
             </p>
 
             <p className="mt-3">
-              Los datos tratados pueden incluir el nombre, correo electrónico,
-              experiencia en trading, principal bloqueo indicado en el
+              Estos datos pueden incluir nombre, correo electrónico,
+              experiencia en trading, respuestas facilitadas en el antiguo
               formulario y la información necesaria para acreditar la
-              confirmación de la suscripción.
+              confirmación de las comunicaciones.
             </p>
 
             <p className="mt-3">
-              La persona puede retirar su consentimiento o solicitar que se
-              eliminen sus datos en cualquier momento.
+              La persona puede retirar su consentimiento y solicitar la baja
+              de las comunicaciones en cualquier momento, así como ejercer
+              sus derechos de protección de datos.
             </p>
           </div>
 
           <div className="rounded-3xl border border-cmr-line bg-cmr-light p-6 transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2">
             <h3 className="font-display text-xl font-black text-cmr-ink dark:text-white">
-              Calendly
+              Reservas de PEV Premium en Comudia
             </h3>
 
             <p className="mt-3">
-              Cuando esté abierto el proceso de selección de la Mentoría PEV,
-              la reserva de la sesión estratégica podrá gestionarse mediante
-              Calendly, integrado dentro de esta web.
+              La sesión estratégica previa a la contratación de PEV Premium
+              se reserva directamente a través del sistema de citas de Comudia.
+              Las modalidades PEV Anual y PEV Flexible no requieren esta
+              reunión previa para contratarse.
             </p>
 
             <p className="mt-3">
-              Calendly podrá tratar los datos que la persona introduzca al
-              reservar, como nombre, correo electrónico, zona horaria, fecha y
-              hora seleccionadas y respuestas incluidas en el formulario de
-              reserva.
+              Para gestionar la reserva se podrán tratar los datos que la
+              persona facilite, como nombre, correo electrónico, zona horaria,
+              fecha y hora elegidas, así como las respuestas incluidas en el
+              formulario. También se utilizarán los datos necesarios para
+              confirmar la cita, enviar en su caso recordatorios y gestionar
+              cambios o cancelaciones.
             </p>
           </div>
 
@@ -526,7 +545,7 @@ export default function PrivacidadContent() {
 
       <section className="border-t border-cmr-line pt-8 dark:border-white/[0.14]">
         <p className="text-sm leading-7 text-cmr-muted dark:text-white/[0.52]">
-          Última actualización: 28 de julio de 2026.
+          Última actualización: 25 de octubre de 2026.
         </p>
       </section>
     </div>

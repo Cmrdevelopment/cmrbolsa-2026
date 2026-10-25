@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 
 import {
@@ -16,28 +17,28 @@ const ventajasSala = [
   {
     titulo: 'Mercado explicado por escrito',
     texto:
-      'Zonas, escenarios, imágenes y comentarios para entender qué estamos mirando y por qué puede ser importante.',
+      'Durante los días de mercado compartimos zonas, escenarios, imágenes y comentarios para entender qué estamos mirando y por qué puede ser importante.',
     icono: MessageSquareText,
   },
   {
     titulo: 'Imágenes y gráficos reales',
     texto:
-      'No se trata solo de decir qué ocurre. Se muestran gráficos para que puedas seguir el razonamiento.',
+      'No se trata solo de decir qué ocurre. Se muestran gráficos para que puedas seguir el razonamiento y aprender a plantear tus propias hipótesis.',
     icono: Images,
   },
   {
     titulo: 'Puedes revisarlo después',
     texto:
-      'Si no puedes seguir el mercado en ese momento, puedes volver más tarde y revisar cómo se desarrolló.',
+      'Si no puedes seguir el mercado en ese momento, puedes volver más tarde y revisar cómo se desarrollaron los escenarios que habíamos planteado.',
     icono: Clock,
   },
 ]
 
 const puntosSala = [
-  'Comentarios escritos durante el mercado',
+  'Análisis escritos durante los días de mercado',
   'Imágenes y gráficos con contexto',
-  'Escenarios antes de que ocurra el movimiento',
-  'Entradas cuando realmente aparecen',
+  'Hipótesis antes de que ocurra el movimiento',
+  'Operaciones comentadas con su razonamiento, no señales',
   'Stops, errores y operaciones que no funcionan',
   'Participación y preguntas de los alumnos',
 ]
@@ -48,7 +49,7 @@ export default function SalaEscritaPage() {
       <PageHero
         eyebrow="Sala escrita"
         title="Mercado en directo, pero por escrito y con contexto"
-        text="No es una sala para copiar señales. Es un espacio para seguir el razonamiento: zonas, escenarios, imágenes, entradas cuando aparecen y errores cuando toca."
+        text="Durante los días de mercado compartimos análisis, gráficos, zonas y escenarios. No es una sala para copiar señales. Es un espacio para aprender a interpretar el mercado, entender las decisiones y saber cuándo es mejor no operar."
         primaryLabel="Ver Comunidad PEV"
         primaryTo="/comunidad-pev"
         secondaryLabel="Volver al inicio"
@@ -76,7 +77,9 @@ export default function SalaEscritaPage() {
                 <Eye className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="text-sm font-semibold leading-6 text-cmr-muted dark:text-white/[0.68]">
-                  No vengas a copiar entradas. Ven a entender el motivo.
+                  No vengas a copiar entradas. Ven a entender por qué
+                  hacemos algo y, especialmente, por qué otras veces
+                  decidimos no hacer absolutamente nada.
                 </p>
               </div>
             </div>
@@ -88,20 +91,28 @@ export default function SalaEscritaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              Lo importante no es saber dónde entro yo, sino entender qué estoy
-              viendo
+              Lo importante no es saber dónde entro yo, sino entender
+              qué estoy viendo
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              Durante el mercado comparto zonas, imágenes, posibilidades y
-              razonamientos. Algunas veces habrá operación y otras veces lo
-              correcto será no tocar nada.
+              Durante los días de mercado comparto zonas, imágenes,
+              posibilidades y razonamientos basados en el precio,
+              la estructura y el volumen.
             </p>
 
             <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              También se muestran errores, stops y operaciones que no salen
-              bien. Porque aprender mercado no consiste en enseñar únicamente
-              lo bonito.
+              Planteamos hipótesis sobre lo que puede ocurrir y
+              observamos cómo responde el mercado. Algunas veces
+              habrá una operación y otras veces lo correcto será
+              quedarnos fuera.
+            </p>
+
+            <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
+              También se muestran errores, stops y operaciones que
+              no salen bien. Porque aprender trading no consiste
+              en enseñar únicamente lo bonito, sino en comprender
+              todo lo que sucede.
             </p>
 
             <div className="mt-8 grid gap-3">
@@ -136,8 +147,17 @@ export default function SalaEscritaPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              La sala está pensada para acompañar la formación. No sustituye el
-              estudio, los ejercicios ni el trabajo personal.
+              La sala escrita complementa la clase online semanal
+              de la Comunidad PEV. En clase profundizamos en la
+              metodología, resolvemos dudas y corregimos gráficos
+              y ejercicios. Durante los días de mercado, seguimos
+              aplicando esos conocimientos en la sala escrita.
+            </p>
+
+            <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
+              La sala no sustituye el estudio ni la práctica personal.
+              Te ayuda a comprobar cómo se comporta el mercado y a
+              desarrollar tu propia capacidad de análisis.
             </p>
           </div>
 
@@ -180,13 +200,23 @@ export default function SalaEscritaPage() {
               </span>
 
               <h2 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.025em] text-white sm:text-5xl">
-                La sala forma parte de un proceso más amplio
+                Una clase semanal en directo y una sala escrita
+                para seguir el mercado cada día
               </h2>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/[0.70]">
-                Dentro de la Comunidad también tienes formación, reuniones,
-                ejercicios, calendario y el resto de herramientas necesarias
-                para aprender progresivamente.
+                Dentro de la Comunidad PEV tienes una clase online
+                semanal en directo conmigo para profundizar en la
+                metodología, resolver dudas y corregir gráficos y
+                ejercicios. Durante los días de mercado analizamos
+                lo que sucede en esta sala escrita.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/[0.70]">
+                Además, dispones de más de 200 vídeos organizados
+                para preparar las clases y repasar lo aprendido.
+                Son un recurso de apoyo: lo importante es aprender
+                a interpretar el mercado y desarrollar tu criterio.
               </p>
             </div>
 

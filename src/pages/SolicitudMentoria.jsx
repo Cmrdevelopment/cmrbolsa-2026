@@ -132,7 +132,7 @@ export default function SolicitudMentoria() {
                     {[
                       'Una clase semanal de teoría en directo',
                       'Una clase semanal de práctica con correcciones',
-                      'Sala de trading en directo según tu modalidad',
+                      'Sala de trading en directo de lunes a jueves, según modalidad',
                       'Formación estructurada y clases grabadas',
                       'Pago único o modalidad mensual sin permanencia',
                     ].map((item) => (

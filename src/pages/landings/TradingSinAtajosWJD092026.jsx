@@ -73,7 +73,7 @@ const incluye = [
   'Otra clase semanal de práctica con correcciones grupales',
   'Seis meses de contenidos que se abren progresivamente',
   'Clases grabadas y videolecciones para preparar y repasar',
-  'Sala de trading en directo: aprendemos del mercado real, sin señales',
+  'Sala de trading en directo de lunes a jueves: aprendemos del mercado real',
   'Ejercicios de gráficos y elaboración de tu plan de trading',
   'Comunidad privada y reuniones grupales durante tu acceso',
   'Anual: 12 meses de acceso y sala de trading',

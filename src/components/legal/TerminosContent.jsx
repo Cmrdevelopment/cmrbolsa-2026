@@ -403,6 +403,7 @@ export default function TerminosContent() {
         </div>
       </section>
 
+
       <section>
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
           10. Suscripciones, renovaciones y cancelación
@@ -410,34 +411,76 @@ export default function TerminosContent() {
 
         <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
           <p>
-            Cuando se contrate un plan de suscripción, este se renovará con la
-            periodicidad indicada durante la contratación hasta que sea
-            cancelado.
+            CMRBolsa ofrece modalidades de pago único y de suscripción. En
+            los planes de suscripción se distinguirá entre cuotas periódicas
+            continuas y cuotas mensuales limitadas a un número determinado
+            de pagos. La modalidad, el importe, el número de cuotas, la
+            duración del acceso y las condiciones de cancelación serán los
+            mostrados en Comudia antes de contratar.
           </p>
 
           <p>
-            El usuario podrá consultar desde Comudia el estado de su
-            suscripción y las opciones disponibles para cancelarla.
+            <strong>Suscripciones continuas:</strong> cuando el plan tenga
+            carácter indefinido, los cobros se efectuarán con la periodicidad
+            indicada hasta que el usuario cancele la suscripción, conforme
+            a las condiciones contratadas. La cuota de continuidad en la
+            sala de trading, cuando se contrate, es una suscripción distinta
+            del período inicialmente incluido en la Mentoría PEV.
           </p>
 
           <p>
-            La cancelación impide nuevas renovaciones, pero no supone
-            necesariamente la devolución de los importes correspondientes al
-            periodo ya iniciado.
+            <strong>PEV Flexible:</strong> se contrata mediante un máximo de
+            seis cuotas mensuales, sin permanencia. El usuario puede cancelar
+            la suscripción para evitar los siguientes cobros. Si completa las
+            seis cuotas, cesarán los cobros de ese plan y conservará 12 meses
+            de acceso a la formación, las clases y reuniones grupales en las
+            condiciones contratadas. La sala de trading se incluye durante
+            los seis meses de pago mientras la suscripción esté activa.
           </p>
 
           <p>
-            Salvo que se indique otra cosa durante la contratación, el usuario
-            podrá continuar utilizando el servicio hasta que termine el periodo
-            que ya haya abonado.
+            Si PEV Flexible se cancela antes de completar las seis cuotas,
+            no se cobrarán las cuotas futuras y el acceso a la formación y
+            los demás servicios incluidos quedará limitado al período que
+            corresponda a los pagos efectivamente realizados, conforme a
+            las condiciones del plan. La cancelación anticipada no concede
+            automáticamente los 12 meses previstos para quienes completan
+            todos los pagos.
           </p>
 
           <p>
-            La cancelación de un plan no elimina automáticamente la cuenta del
-            usuario ni las facturas que deban conservarse por obligación legal.
+            <strong>Pagos únicos:</strong> las modalidades contratadas
+            mediante pago único, como PEV Anual, no generan por sí mismas
+            cuotas mensuales automáticas por la Mentoría. El acceso
+            contratado se mantiene durante el período correspondiente.
+            Una eventual continuidad posterior en la sala de trading
+            requiere contratar su suscripción específica.
+          </p>
+
+          <p>
+            El usuario podrá consultar en Comudia el estado de sus
+            suscripciones y las opciones disponibles para cancelarlas. La
+            cancelación de una suscripción impide los cobros futuros que
+            correspondan a ella, sin cancelar automáticamente otros planes
+            o servicios que el usuario mantenga contratados.
+          </p>
+
+          <p>
+            La cancelación no implica por sí sola la devolución de los
+            importes ya abonados, sin perjuicio del derecho de desistimiento,
+            los derechos del consumidor y las devoluciones que legalmente
+            procedan. El acceso después de cancelar dependerá de la modalidad
+            y de los períodos de servicio efectivamente contratados y pagados.
+          </p>
+
+          <p>
+            Cancelar una suscripción tampoco elimina automáticamente la
+            cuenta del usuario ni las facturas y documentos que deban
+            conservarse por obligación legal.
           </p>
         </div>
       </section>
+
 
       <section>
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">

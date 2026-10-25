@@ -1,17 +1,12 @@
-import {
-  useState,
-} from 'react'
-import {
-  Link,
-} from 'react-router-dom'
+
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import {
   ArrowRight,
-  CheckCircle2,
   Copy,
   ExternalLink,
   GraduationCap,
-  LockKeyhole,
   MessageSquareText,
   PlayCircle,
   ShieldCheck,
@@ -20,9 +15,7 @@ import {
   Video,
 } from 'lucide-react'
 
-import {
-  siteConfig,
-} from '../../data/siteConfig'
+import { siteConfig } from '../../data/siteConfig'
 
 const LANDING_URL =
   'https://cmrbolsa.com/comunidad-pev-alternativa'
@@ -31,8 +24,7 @@ const mediaItems = [
   {
     id: 'presentacion',
     type: 'video',
-    title:
-      'Presentación de la Comunidad Trading PEV',
+    title: 'Presentación de la Comunidad Trading PEV',
     thumbnail:
       'https://img.youtube.com/vi/MhkClUgg3Tk/hqdefault.jpg',
     url:
@@ -41,8 +33,7 @@ const mediaItems = [
   {
     id: 'plataforma',
     type: 'image',
-    title:
-      'Vista del área de alumnos',
+    title: 'Vista del área de alumnos',
     thumbnail:
       'https://res.cloudinary.com/dwbxywvdw/image/upload/v1707864716/cmrbolsa/Presentacion-de-formaciones-de-cmrbolsa-high-1_tawnht.gif',
     url:
@@ -51,8 +42,7 @@ const mediaItems = [
   {
     id: 'sesion',
     type: 'video',
-    title:
-      'Ejemplo de sesión en directo',
+    title: 'Ejemplo de sesión en directo',
     thumbnail:
       'https://img.youtube.com/vi/yq-86EuSImg/hqdefault.jpg',
     url:
@@ -60,89 +50,76 @@ const mediaItems = [
   },
 ]
 
-const planes = [
+const pilares = [
   {
-    nombre: 'Básico',
+    nombre: 'Clase semanal en directo',
     texto:
-      'Una opción para comenzar a conocer la metodología PEV y entrar en la comunidad.',
-    icon: PlayCircle,
-  },
-  {
-    nombre: 'Plus',
-    texto:
-      'Para avanzar con más formación, participación y acompañamiento dentro de la comunidad.',
+      'Cada semana nos conectamos online para trabajar la metodología PEV, responder preguntas y corregir ejercicios y gráficos contigo.',
     icon: UsersRound,
+    destacado: true,
   },
   {
-    nombre: 'Premium',
+    nombre: 'Sala escrita diaria',
     texto:
-      'La opción más completa para quien quiere aprovechar al máximo los contenidos y recursos disponibles.',
-    icon: Sparkles,
-    destacado: true,
+      'Seguimos el mercado cada día de sesión con análisis, zonas, escenarios e hipótesis sobre precio, estructura y volumen. Sin señales.',
+    icon: MessageSquareText,
+  },
+  {
+    nombre: 'Vídeos para reforzar',
+    texto:
+      'Más de 200 vídeos organizados para preparar las clases, repasar conceptos y seguir aprendiendo a tu ritmo. Un apoyo, no el centro de la Comunidad.',
+    icon: Video,
   },
 ]
 
 const incluidos = [
   {
-    title:
-      'Formación organizada',
+    title: 'Una clase online en directo cada semana',
     text:
-      'Más de 200 vídeos estructurados por niveles para avanzar con orden.',
-    icon: Video,
-  },
-  {
-    title:
-      'Reuniones semanales',
-    text:
-      'Sesiones conmigo para resolver dudas, ver mercado y trabajar la metodología.',
+      'Trabajamos juntos la metodología PEV, resolvemos preguntas y corregimos ejercicios y gráficos en la sesión semanal.',
     icon: UsersRound,
   },
   {
-    title:
-      'Sala de trading escrita',
+    title: 'Sala de trading escrita cada día de mercado',
     text:
-      'Zonas, escenarios, imágenes, contexto y razonamiento aplicado al mercado.',
+      'Compartimos lecturas del mercado, hipótesis, zonas y razonamientos basados en precio, estructura y volumen.',
     icon: MessageSquareText,
   },
   {
-    title:
-      'Ejercicios y ejemplos',
+    title: 'Práctica y correcciones',
     text:
-      'Retos, análisis y casos prácticos para convertir la teoría en criterio propio.',
+      'Revisamos gráficos, analizamos errores y aprendemos de las preguntas y del trabajo de los demás.',
     icon: GraduationCap,
   },
   {
-    title:
-      'Actualizaciones',
+    title: 'Más de 200 vídeos de apoyo',
     text:
-      'Nuevos contenidos y mejoras dentro de la formación cuando sean necesarios.',
+      'Material pregrabado para estudiar conceptos, preparar preguntas y repasar lo trabajado en directo.',
+    icon: Video,
+  },
+  {
+    title: 'Aprender a pensar por ti mismo',
+    text:
+      'Buscamos interpretar el mercado con criterio propio, no copiar operaciones ni depender de señales.',
     icon: Sparkles,
   },
   {
-    title:
-      'Sin permanencia',
+    title: 'Participación en la Comunidad',
     text:
-      'Puedes entrar, probar la comunidad y cancelar cuando quieras.',
+      'Un espacio para compartir dudas, análisis y experiencias con personas que trabajan la metodología PEV.',
     icon: ShieldCheck,
   },
 ]
 
 export default function ComunidadAlternativaPage() {
-  const [
-    selectedMedia,
-    setSelectedMedia,
-  ] = useState(mediaItems[0])
+  const [selectedMedia, setSelectedMedia] =
+    useState(mediaItems[0])
 
-  const [
-    copied,
-    setCopied,
-  ] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   async function copiarEnlace() {
     try {
-      await navigator.clipboard.writeText(
-        LANDING_URL
-      )
+      await navigator.clipboard.writeText(LANDING_URL)
 
       setCopied(true)
 
@@ -171,102 +148,79 @@ export default function ComunidadAlternativaPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-white/[0.74]">
-              Formación, reuniones semanales, sala escrita, ejercicios y
-              acompañamiento para aprender a entender el mercado con precio,
-              estructura y volumen.
+              Una clase online semanal en directo conmigo y una sala
+              escrita cada día de mercado. Analizamos precio, estructura
+              y volumen, resolvemos dudas y corregimos ejercicios.
+              Los vídeos sirven de apoyo.
             </p>
 
             <div className="mt-7">
               <div className="relative aspect-video overflow-hidden rounded-[1.5rem] border border-white/[0.14] bg-black">
-                {selectedMedia.type ===
-                'video' ? (
+                {selectedMedia.type === 'video' ? (
                   <iframe
-                    key={
-                      selectedMedia.id
-                    }
-                    title={
-                      selectedMedia.title
-                    }
-                    src={
-                      selectedMedia.url
-                    }
+                    key={selectedMedia.id}
+                    title={selectedMedia.title}
+                    src={selectedMedia.url}
                     className="h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 ) : (
                   <img
-                    src={
-                      selectedMedia.url
-                    }
-                    alt={
-                      selectedMedia.title
-                    }
+                    src={selectedMedia.url}
+                    alt={selectedMedia.title}
                     className="h-full w-full object-cover"
                   />
                 )}
               </div>
 
               <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
-                {mediaItems.map(
-                  (item) => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      aria-label={`Mostrar ${item.title}`}
-                      aria-pressed={
-                        selectedMedia.id ===
-                        item.id
-                      }
-                      onClick={() =>
-                        setSelectedMedia(
-                          item
-                        )
-                      }
-                      className={`relative h-20 w-32 shrink-0 overflow-hidden rounded-xl border-2 bg-black transition ${
-                        selectedMedia.id ===
-                        item.id
-                          ? 'border-cmr-green'
-                          : 'border-white/[0.14] hover:border-white/40'
-                      }`}
-                    >
-                      <img
-                        src={
-                          item.thumbnail
-                        }
-                        alt=""
-                        className="h-full w-full object-cover"
-                      />
+                {mediaItems.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    aria-label={`Mostrar ${item.title}`}
+                    aria-pressed={selectedMedia.id === item.id}
+                    onClick={() => setSelectedMedia(item)}
+                    className={`relative h-20 w-32 shrink-0 overflow-hidden rounded-xl border-2 bg-black transition ${
+                      selectedMedia.id === item.id
+                        ? 'border-cmr-green'
+                        : 'border-white/[0.14] hover:border-white/40'
+                    }`}
+                  >
+                    <img
+                      src={item.thumbnail}
+                      alt=""
+                      className="h-full w-full object-cover"
+                    />
 
-                      {item.type ===
-                        'video' && (
-                        <span className="absolute inset-0 flex items-center justify-center bg-black/25">
-                          <PlayCircle
-                            className="h-8 w-8 text-white"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      )}
-                    </button>
-                  )
-                )}
+                    {item.type === 'video' && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/25">
+                        <PlayCircle
+                          className="h-8 w-8 text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    )}
+                  </button>
+                ))}
               </div>
             </div>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/[0.12] bg-white/[0.07] p-4">
-                <LockKeyhole className="h-5 w-5 text-[#79CFC4]" />
+                <UsersRound className="h-5 w-5 text-[#79CFC4]" />
 
                 <p className="mt-3 font-bold">
-                  Comunidad privada
+                  Clase semanal en directo
                 </p>
               </div>
 
               <div className="rounded-2xl border border-white/[0.12] bg-white/[0.07] p-4">
-                <UsersRound className="h-5 w-5 text-[#79CFC4]" />
+                <MessageSquareText className="h-5 w-5 text-[#79CFC4]" />
 
                 <p className="mt-3 font-bold">
-                  Tres planes
+                  Sala escrita diaria
                 </p>
               </div>
 
@@ -274,7 +228,7 @@ export default function ComunidadAlternativaPage() {
                 <ShieldCheck className="h-5 w-5 text-[#79CFC4]" />
 
                 <p className="mt-3 font-bold">
-                  Sin permanencia
+                  Sin señales
                 </p>
               </div>
             </div>
@@ -284,9 +238,7 @@ export default function ComunidadAlternativaPage() {
             <div className="overflow-hidden rounded-[2rem] border border-white/[0.16] bg-white/[0.10] shadow-darkGlow backdrop-blur">
               <div className="flex min-h-36 items-center justify-center bg-cmr-green/20 p-6">
                 <img
-                  src={
-                    siteConfig.logoUrl
-                  }
+                  src={siteConfig.logoUrl}
                   alt="CMRBolsa"
                   className="max-h-24 w-auto rounded-2xl bg-white p-4 shadow-soft"
                 />
@@ -304,14 +256,10 @@ export default function ComunidadAlternativaPage() {
 
                   <button
                     type="button"
-                    onClick={
-                      copiarEnlace
-                    }
+                    onClick={copiarEnlace}
                     className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-white/[0.14] bg-white/[0.08] px-2 py-1 font-bold text-white transition hover:bg-white/[0.14]"
                   >
-                    {copied
-                      ? 'Copiado'
-                      : 'Copiar'}
+                    {copied ? 'Copiado' : 'Copiar'}
 
                     <Copy
                       className="h-3.5 w-3.5"
@@ -321,26 +269,24 @@ export default function ComunidadAlternativaPage() {
                 </div>
 
                 <p className="mt-5 leading-7 text-white/[0.70]">
-                  Una comunidad para aprender a trabajar el mercado con más
-                  orden, criterio y una estructura clara.
+                  Cada semana trabajamos en directo y cada día de mercado
+                  analizamos escenarios en la sala escrita. Los vídeos
+                  pregrabados te ayudan a preparar y repasar lo aprendido.
                 </p>
 
                 <div className="mt-6 rounded-2xl border border-cmr-gold/30 bg-cmr-gold/[0.10] p-4">
                   <p className="font-bold text-cmr-gold">
-                    Plazas sujetas a disponibilidad
+                    Consulta la disponibilidad
                   </p>
 
                   <p className="mt-2 text-sm leading-6 text-white/[0.65]">
-                    Consulta en Comudia los planes, condiciones y disponibilidad
-                    actualizados.
+                    Los planes, precios y condiciones vigentes se
+                    muestran directamente en Comudia.
                   </p>
                 </div>
 
                 <a
-                  href={
-                    siteConfig.urls
-                      .comunidadCheckout
-                  }
+                  href={siteConfig.urls.comunidadCheckout}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary mt-6 w-full justify-center"
@@ -354,8 +300,8 @@ export default function ComunidadAlternativaPage() {
                 </a>
 
                 <p className="mt-3 text-center text-xs leading-5 text-white/[0.48]">
-                  Los precios y condiciones vigentes se muestran siempre en
-                  Comudia.
+                  Consulta el plan disponible y sus condiciones
+                  antes de contratar.
                 </p>
               </div>
             </div>
@@ -367,82 +313,76 @@ export default function ComunidadAlternativaPage() {
         <div className="section-shell">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow">
-              Planes disponibles
+              Los pilares de la Comunidad
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              Elige cómo quieres entrar
+              Lo importante ocurre en directo y en la sala escrita
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              Puedes empezar con una opción sencilla o elegir un plan con más
-              formación, recursos y acompañamiento.
+              El aprendizaje se apoya en tres recursos que se complementan.
+              Consulta en Comudia los planes de acceso disponibles
+              y sus condiciones.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {planes.map(
-              (plan) => {
-                const Icon =
-                  plan.icon
+            {pilares.map((pilar) => {
+              const Icon = pilar.icon
 
-                return (
-                  <article
-                    key={
-                      plan.nombre
-                    }
-                    className={`relative flex h-full flex-col rounded-[2rem] border p-7 shadow-soft transition hover:-translate-y-1 dark:shadow-[0_24px_70px_rgba(0,0,0,0.26)] ${
-                      plan.destacado
-                        ? 'border-cmr-green bg-cmr-greenSoft dark:bg-cmr-green/[0.12]'
-                        : 'border-cmr-line bg-white dark:border-white/[0.14] dark:bg-cmr-dark3'
-                    }`}
+              return (
+                <article
+                  key={pilar.nombre}
+                  className={`relative flex h-full flex-col rounded-[2rem] border p-7 shadow-soft transition hover:-translate-y-1 dark:shadow-[0_24px_70px_rgba(0,0,0,0.26)] ${
+                    pilar.destacado
+                      ? 'border-cmr-green bg-cmr-greenSoft dark:bg-cmr-green/[0.12]'
+                      : 'border-cmr-line bg-white dark:border-white/[0.14] dark:bg-cmr-dark3'
+                  }`}
+                >
+                  {pilar.destacado && (
+                    <span className="absolute right-5 top-5 rounded-full bg-cmr-green px-3 py-1 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
+                      Pilar principal
+                    </span>
+                  )}
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cmr-green text-white">
+                    <Icon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <h3 className="mt-6 font-display text-3xl font-black text-cmr-ink dark:text-white">
+                    {pilar.nombre}
+                  </h3>
+
+                  <p className="mt-4 flex-1 leading-7 text-cmr-muted dark:text-white/[0.68]">
+                    {pilar.texto}
+                  </p>
+
+                  <a
+                    href={siteConfig.urls.comunidadCheckout}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary mt-7 w-full justify-center"
                   >
-                    {plan.destacado && (
-                      <span className="absolute right-5 top-5 rounded-full bg-cmr-green px-3 py-1 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
-                        Más completo
-                      </span>
-                    )}
+                    Consultar acceso en Comudia
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cmr-green text-white">
-                      <Icon
-                        className="h-6 w-6"
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <h3 className="mt-6 font-display text-3xl font-black text-cmr-ink dark:text-white">
-                      {plan.nombre}
-                    </h3>
-
-                    <p className="mt-4 flex-1 leading-7 text-cmr-muted dark:text-white/[0.68]">
-                      {plan.texto}
-                    </p>
-
-                    <a
-                      href={
-                        siteConfig.urls
-                          .comunidadCheckout
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary mt-7 w-full justify-center"
-                    >
-                      Ver plan y acceder
-
-                      <ArrowRight
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  </article>
-                )
-              }
-            )}
+                    <ArrowRight
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </article>
+              )
+            })}
           </div>
 
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-6 text-cmr-muted dark:text-white/[0.56]">
-            Consulta en Comudia qué incluye actualmente cada plan y sus
-            condiciones vigentes.
+            Los planes y precios vigentes se consultan directamente
+            en Comudia. Estas tarjetas describen los recursos de
+            la Comunidad, no modalidades de pago.
           </p>
         </div>
       </section>
@@ -456,13 +396,15 @@ export default function ComunidadAlternativaPage() {
               </span>
 
               <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-                Formación, mercado y acompañamiento
+                Clase semanal, sala diaria y vídeos de apoyo
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-                La idea no es que copies una entrada. Es que entiendas qué
-                estamos mirando, por qué importa una zona y cuándo lo mejor es
-                no tocar nada.
+                En la clase online semanal resolvemos dudas y corregimos
+                gráficos. Durante los días de mercado seguimos el análisis
+                en la sala escrita. Los vídeos te ayudan a preparar
+                y repasar, pero lo esencial es aprender a leer
+                el mercado por ti mismo.
               </p>
 
               <div className="mt-7 rounded-[1.75rem] border border-cmr-green/25 bg-cmr-greenSoft p-6 dark:bg-cmr-green/[0.10]">
@@ -471,42 +413,37 @@ export default function ComunidadAlternativaPage() {
                 </p>
 
                 <p className="mt-3 leading-7 text-cmr-muted dark:text-white/[0.68]">
-                  La base empieza en el intradía porque los movimientos se
-                  repiten con más frecuencia. Después esa misma lógica puede
-                  trasladarse a swing, corto, medio y largo plazo.
+                  La base empieza en el intradía porque los movimientos
+                  se repiten con más frecuencia. Después esa misma lógica
+                  puede trasladarse a swing, corto, medio y largo plazo.
                 </p>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {incluidos.map(
-                (item) => {
-                  const Icon =
-                    item.icon
+              {incluidos.map((item) => {
+                const Icon = item.icon
 
-                  return (
-                    <article
-                      key={
-                        item.title
-                      }
-                      className="rounded-[1.75rem] border border-cmr-line bg-white p-6 shadow-soft dark:border-white/[0.14] dark:bg-cmr-dark2 dark:shadow-[0_20px_60px_rgba(0,0,0,0.24)]"
-                    >
-                      <Icon
-                        className="h-6 w-6 text-cmr-green dark:text-[#79CFC4]"
-                        aria-hidden="true"
-                      />
+                return (
+                  <article
+                    key={item.title}
+                    className="rounded-[1.75rem] border border-cmr-line bg-white p-6 shadow-soft dark:border-white/[0.14] dark:bg-cmr-dark2 dark:shadow-[0_20px_60px_rgba(0,0,0,0.24)]"
+                  >
+                    <Icon
+                      className="h-6 w-6 text-cmr-green dark:text-[#79CFC4]"
+                      aria-hidden="true"
+                    />
 
-                      <h3 className="mt-5 font-display text-xl font-black text-cmr-ink dark:text-white">
-                        {item.title}
-                      </h3>
+                    <h3 className="mt-5 font-display text-xl font-black text-cmr-ink dark:text-white">
+                      {item.title}
+                    </h3>
 
-                      <p className="mt-3 text-sm leading-7 text-cmr-muted dark:text-white/[0.66]">
-                        {item.text}
-                      </p>
-                    </article>
-                  )
-                }
-              )}
+                    <p className="mt-3 text-sm leading-7 text-cmr-muted dark:text-white/[0.66]">
+                      {item.text}
+                    </p>
+                  </article>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -519,21 +456,19 @@ export default function ComunidadAlternativaPage() {
           </span>
 
           <h2 className="mx-auto mt-5 max-w-4xl font-display text-4xl font-black leading-tight tracking-[-0.025em] sm:text-5xl">
-            Si quieres aprender a mirar el mercado con más orden, puedes empezar
-            por aquí.
+            Una clase conmigo cada semana. El mercado, día a día,
+            en la sala escrita.
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/[0.70]">
-            Revisa los planes actuales en Comudia y elige el que mejor encaje
-            con el apoyo que necesitas.
+            Aprende la metodología PEV con clases en directo, correcciones,
+            análisis del mercado y una biblioteca de vídeos para reforzar
+            lo aprendido. Consulta las condiciones de acceso en Comudia.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href={
-                siteConfig.urls
-                  .comunidadCheckout
-              }
+              href={siteConfig.urls.comunidadCheckout}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
