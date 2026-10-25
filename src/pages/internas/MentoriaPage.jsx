@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 
 import {
@@ -17,66 +18,69 @@ import {
 import PageHero from '../../components/PageHero'
 import BunnyVideo from '../../components/media/BunnyVideo'
 
+const urlPlanesMentoria = 'https://www.comudia.com/c/mentoria-pev-de-cmrbolsa'
+const urlReservaPremium = 'https://www.comudia.com/reservar/sesion-estrategica-mentoria-pev-92df06'
+
 const incluye = [
-  'Proceso de aprendizaje organizado y guiado',
-  'Corrección personal de ejercicios y gráficos',
-  'Trabajo sobre Precio, Estructura y Volumen',
-  'Plan de trading adaptado a tu evolución',
-  'Reuniones y seguimiento directo',
-  'Comunidad PEV incluida',
-  'Sala de trading incluida durante el primer año',
-  'Acompañamiento y ayuda constante',
+  'Una clase semanal de teoría online en directo conmigo',
+  'Otra clase semanal de práctica, con correcciones grupales de gráficos y ejercicios',
+  'Sala de trading en directo para analizar el mercado; duración según modalidad',
+  'Seis meses de contenidos que se desbloquean progresivamente',
+  'Vídeos de apoyo y grabaciones de las clases para preparar y repasar',
+  'Ejercicios y sesiones grupales para trabajar tu plan de trading',
+  'Comunidad privada para compartir dudas, análisis y experiencias',
+  'Duración y acompañamiento según la modalidad contratada',
 ]
 
 const pasos = [
   {
-    title: 'Primero vemos si te encaja',
-    text: 'No todo el mundo necesita la Mentoría PEV de CMRBolsa. Antes de entrar hay que ver tu punto actual, tus objetivos y si tiene sentido empezar un proceso más serio.',
+    title: 'Aprendes desde tu nivel',
+    text: 'Tanto si comienzas desde cero como si ya operas, trabajamos la metodología PEV desde los fundamentos hasta conceptos avanzados. Los contenidos se abren progresivamente durante seis meses.',
     icon: ClipboardCheck,
   },
   {
-    title: 'Después trabajamos desde la base',
-    text: 'Trabajamos desde cero: precio, volumen y estructura, haciendo entre 500 y 800 gráficos. Sin esa base, todo lo demás se cae.',
+    title: 'Una clase semanal de teoría en directo',
+    text: 'Profundizamos en precio, volumen y estructura, aprendemos distintas entradas y salidas y resolvemos dudas contigo en clase.',
     icon: Eye,
   },
   {
-    title: 'Luego trabajamos el timing',
-    text: 'No basta con entender el mercado. Hay que aprender a entrar, saber dónde se invalida, dónde salir y por qué esa operación tiene sentido.',
+    title: 'Otra clase semanal de práctica',
+    text: 'Revisamos y corregimos ejercicios y gráficos en grupo para entender los errores y aprender a mejorar las decisiones.',
     icon: Target,
   },
   {
-    title: 'Y se trabaja la cabeza',
-    text: 'Porque las prisas, el miedo, la revancha o querer recuperar rápido pueden romper una buena lectura del mercado y también tu bolsillo.',
+    title: 'Sala de trading y apoyo para repasar',
+    text: 'Observas análisis e hipótesis en directo sobre el mercado. Además, tienes grabaciones y vídeos de apoyo para preparar las clases, según tu acceso contratado.',
     icon: ShieldCheck,
   },
 ]
 
 const paraQuien = [
-  'Para quien ya sabe que ver vídeos sueltos no es suficiente.',
-  'Para quien quiere recibir correcciones personales y no limitarse a mirar contenido.',
-  'Para quien está dispuesto a mandar gráficos, hacer ejercicios y dejarse corregir.',
-  'Para quien quiere construir una forma de trabajar, no copiar entradas.',
+  'Para quien empieza desde cero y quiere aprender a interpretar el precio, el volumen y la estructura.',
+  'Para quien ya tiene experiencia y quiere mejorar sus entradas, salidas, decisiones y gestión emocional.',
+  'Para quien quiere dejar de depender de indicadores o señales y desarrollar criterio propio.',
+  'Para quien desea aplicar PEV a futuros, acciones o criptomonedas y está dispuesto a dedicarle tiempo.',
 ]
 
 const noEsPara = [
-  'No es para quien busca señales.',
-  'No es para quien quiere resultados rápidos sin trabajar.',
-  'No es para quien no va a mandar ejercicios ni gráficos.',
-  'No es para quien solo quiere mirar sin implicarse.',
+  'No es para quien busca señales ni operaciones para copiar.',
+  'No es para quien espera ganar dinero rápido o sin esfuerzo.',
+  'No es para quien no quiere practicar, equivocarse ni aceptar correcciones.',
+  'No es para quien busca una estrategia infalible o rentabilidad garantizada.',
 ]
 
 const trabajo = [
   {
     title: 'Conocimiento',
-    text: 'Leer el mercado con Precio, Estructura y Volumen.',
+    text: 'Aprender a interpretar el precio, el volumen y la estructura del mercado, desde lo básico hasta lo avanzado.',
   },
   {
-    title: 'Timing',
-    text: 'Entender dónde entrar, dónde salir y cuándo no tocar nada.',
+    title: 'Entradas y salidas',
+    text: 'Conocer diferentes formas de entrar y salir con PEV, gestionar el riesgo y adaptar las decisiones a tu situación.',
   },
   {
     title: 'Emociones',
-    text: 'Detectar lo que te dispara para que no rompa tu plan.',
+    text: 'Reconocer el miedo, la impaciencia, la revancha y otros sesgos para aprender a gestionarlos.',
   },
 ]
 
@@ -85,10 +89,10 @@ export default function MentoriaPage() {
     <div className="bg-cmr-light text-cmr-ink transition-colors duration-300 dark:bg-cmr-dark dark:text-white">
       <PageHero
         eyebrow="Mentoría PEV"
-        title="No necesitas más contenido. Necesitas que te corrijan de verdad."
-        text="La Mentoría PEV es un proceso personal para aprender a leer el mercado, trabajar sobre tus propios errores y construir una forma de operar que puedas entender y repetir."
-        primaryLabel="Solicitar valoración"
-        primaryTo="/solicitud-mentoria"
+        title="Aprende a interpretar el mercado con dos clases en directo cada semana."
+        text="Tanto si empiezas desde cero como si ya tienes experiencia, cada semana tendrás una clase de teoría y otra de práctica en directo conmigo. Corregimos gráficos y ejercicios, analizamos el mercado en la sala de trading y trabajamos para que aprendas a aplicar PEV con criterio propio. Los contenidos grabados te ayudan a preparar y repasar las clases."
+        primaryLabel="Ver modalidades de Mentoría"
+        primaryTo={urlPlanesMentoria}
         secondaryLabel="Ver cómo funciona"
         secondaryTo="/mentoria-pev#que-incluye"
         contenidoLateral={
@@ -106,7 +110,7 @@ export default function MentoriaPage() {
                   />
 
                   <span className="text-xs font-extrabold uppercase tracking-[0.14em] text-cmr-gold">
-                    Proceso personal
+                    Clases online en directo
                   </span>
                 </div>
 
@@ -142,8 +146,8 @@ export default function MentoriaPage() {
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/[0.68]">
-                      Mandas gráficos, recibes correcciones y trabajamos sobre
-                      lo que realmente estás haciendo delante del mercado.
+                      Dos clases semanales: teoría para aprender y práctica
+                      para revisar y corregir gráficos y ejercicios en grupo.
                     </p>
                   </div>
                 </div>
@@ -191,7 +195,7 @@ export default function MentoriaPage() {
                   </p>
 
                   <p className="mt-1 text-xs leading-5 text-white/[0.52]">
-                    Una estructura para operar
+                    Aprender a operar con criterio
                   </p>
                 </div>
               </div>
@@ -202,7 +206,7 @@ export default function MentoriaPage() {
                   aria-hidden="true"
                 />
 
-                Solicitud previa · Sin compra directa
+                Modalidad Premium: reunión previa conmigo
               </div>
             </div>
           </div>
@@ -222,24 +226,28 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              Una mentoría para ordenar cómo miras, decides y ejecutas.
+              Clases en directo, práctica y mercado real para aprender PEV.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              La diferencia no está en que haya más vídeos. La diferencia está
-              en que hay proceso, corrección, seguimiento y trabajo sobre tus
-              errores reales.
+              Cada semana tenemos una clase online de teoría para profundizar
+              en la metodología y resolver dudas, y otra de práctica en la que
+              corregimos ejercicios y gráficos de los alumnos. También está la
+              sala de trading, donde analizamos el mercado en directo. Los
+              contenidos se abren durante seis meses y las grabaciones y
+              videolecciones sirven para preparar y repasar las clases.
             </p>
 
             <div className="mt-8 rounded-[2rem] border border-cmr-line bg-cmr-paper p-6 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-white/[0.06] dark:shadow-[0_20px_60px_rgba(0,0,0,0.24)]">
               <p className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink dark:text-white">
-                No se trata de operar más.
+                No se trata de copiar operaciones.
               </p>
 
               <p className="mt-3 leading-7 text-cmr-muted dark:text-white/[0.66]">
-                Se trata de entender mejor qué haces, por qué lo haces y qué
-                parte de tu operativa está fallando: lectura, timing, gestión o
-                cabeza.
+                En la sala de trading planteamos hipótesis, seguimos precio,
+                volumen y estructura, y vemos operaciones reales explicadas
+                con fines formativos. No damos señales: quiero que aprendas
+                por qué actuamos y cuándo es mejor quedarnos fuera.
               </p>
             </div>
           </div>
@@ -258,6 +266,97 @@ export default function MentoriaPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="section-shell relative mt-12">
+          <div className="mb-7 max-w-3xl">
+            <span className="eyebrow">
+              Modalidades de Mentoría PEV
+            </span>
+
+            <h3 className="mt-4 font-display text-3xl font-black leading-tight text-cmr-ink dark:text-white sm:text-4xl">
+              La misma formación, distintas formas de acompañarte.
+            </h3>
+
+            <p className="mt-4 leading-7 text-cmr-muted dark:text-white/[0.68]">
+              Las tres modalidades comparten la metodología PEV y las clases
+              grupales. Lo que cambia es la duración del acceso y el tipo de
+              seguimiento que necesitas.
+            </p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            <div className="card-paper flex flex-col p-6 dark:border-white/[0.15]">
+              <h4 className="font-display text-2xl font-black text-cmr-ink dark:text-white">
+                PEV Anual
+              </h4>
+
+              <p className="mt-3 flex-1 leading-7 text-cmr-muted dark:text-white/[0.68]">
+                Un pago único y 12 meses de acceso a la formación, las clases
+                grupales y la sala de trading en directo.
+              </p>
+
+              <a
+                href={urlPlanesMentoria}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-6 justify-center"
+              >
+                Ver plan Anual
+              </a>
+            </div>
+
+            <div className="card-paper flex flex-col p-6 dark:border-white/[0.15]">
+              <h4 className="font-display text-2xl font-black text-cmr-ink dark:text-white">
+                PEV Flexible
+              </h4>
+
+              <p className="mt-3 flex-1 leading-7 text-cmr-muted dark:text-white/[0.68]">
+                Hasta seis pagos mensuales, sin permanencia. Si completas los
+                seis, tienes 12 meses de formación y clases. La sala está
+                incluida durante los seis meses de pago activo. Si cancelas
+                antes, el acceso depende de las cuotas abonadas.
+              </p>
+
+              <a
+                href={urlPlanesMentoria}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-6 justify-center"
+              >
+                Ver plan Flexible
+              </a>
+            </div>
+
+            <div className="card-paper flex flex-col p-6 dark:border-white/[0.15]">
+              <h4 className="font-display text-2xl font-black text-cmr-ink dark:text-white">
+                PEV Premium
+              </h4>
+
+              <p className="mt-3 flex-1 leading-7 text-cmr-muted dark:text-white/[0.68]">
+                14 meses de acompañamiento personalizado, correcciones
+                individuales continuas, reuniones 1:1 cuando sean necesarias
+                y plan de trading individual. Sala durante 12 meses y acceso
+                permanente a los contenidos. Requiere una reunión previa.
+              </p>
+
+              <a
+                href={urlReservaPremium}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-6 justify-center"
+              >
+                Reservar reunión Premium
+              </a>
+            </div>
+          </div>
+
+          <p className="mt-5 text-sm leading-7 text-cmr-muted dark:text-white/[0.62]">
+            Cuando termine el período incluido, podrás continuar en la sala
+            mediante su cuota mensual. Mientras mantengas activa esa
+            suscripción, también conservarás el acceso a la formación y a las
+            clases y reuniones grupales de la Mentoría PEV.
+          </p>
         </div>
 
         <div className="section-shell relative mt-8 text-center">
@@ -280,12 +379,13 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              No empieza con una compra. Empieza viendo si tiene sentido.
+              Una clase de teoría, otra de práctica y mercado para aprender.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              Por eso hay solicitud de valoración. La Mentoría tiene que encajar
-              con tu momento, tus objetivos y tu disposición real a trabajar.
+              Puedes empezar desde cero o profundizar si ya tienes experiencia.
+              Trabajamos en directo cada semana, con ejercicios y correcciones
+              grupales. Las clases quedan grabadas para volver a verlas.
             </p>
           </div>
 
@@ -333,24 +433,27 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-white sm:text-5xl">
-              Las tres patas también se trabajan aquí.
+              Conocimiento, entradas y salidas, y emociones.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/[0.72]">
-              Sin conocimiento no entiendes el mercado. Sin timing entras tarde
-              o sales mal. Y sin gestión emocional, aunque veas la operación,
-              puedes romper tu propio plan.
+              Quiero que entiendas el precio, el volumen y la estructura; que
+              conozcas distintas entradas y salidas y cómo gestionar el riesgo;
+              y que aprendas a reconocer los sesgos emocionales que te afectan.
+              No para operar como yo, sino para aprender a decidir por ti mismo.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/solicitud-mentoria"
+              <a
+                href={urlPlanesMentoria}
+                target="_blank"
+                rel="noreferrer"
                 className="btn-primary"
               >
-                Solicitar valoración
+                Ver modalidades
 
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
 
               <Link
                 to="/cmrbolsa"
@@ -390,7 +493,7 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              Para quien quiere que le miren el trabajo de cerca.
+              Tanto si empiezas de cero como si ya operas.
             </h2>
 
             <div className="mt-8 grid gap-3">
@@ -417,7 +520,7 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              Si solo quieres mirar, mejor empieza por Comunidad.
+              Si buscas señales o atajos, esta mentoría no es para ti.
             </h2>
 
             <div className="mt-8 grid gap-3">
@@ -448,30 +551,30 @@ export default function MentoriaPage() {
                 </span>
 
                 <h3 className="mt-4 font-display text-2xl font-black leading-tight tracking-[-0.02em] text-cmr-ink dark:text-white sm:text-3xl">
-                  La Mentoría exige constancia, trabajo en equipo y pausa
-                  operativa.
+                  Primero aprende a interpretar el mercado. Después, a operar.
                 </h3>
 
                 <p className="mt-4 text-base leading-7 text-cmr-muted dark:text-white/[0.66]">
-                  Para entrar necesitas estar dispuesto a trabajar con
-                  constancia, participar en el proceso y dejarte corregir.
-                  Durante el aprendizaje puede ser necesario no operar, operar
-                  menos o esperar hasta que tu lectura del mercado tenga más
-                  sentido.
+                  Durante la formación te recomiendo no operar ni en real ni
+                  en demo hasta que tengas la preparación necesaria. Es mejor
+                  dedicar este tiempo a estudiar, analizar gráficos, hacer
+                  ejercicios y aprender de las correcciones y de la sala.
                 </p>
               </div>
 
               <div className="rounded-[1.5rem] border border-cmr-line bg-white p-5 shadow-[0_14px_40px_rgba(20,32,29,0.06)] transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark2 dark:shadow-[0_18px_55px_rgba(0,0,0,0.25)]">
                 <p className="font-display text-xl font-black leading-tight text-cmr-ink dark:text-white">
-                  Si ahora no puedes asumir eso, empieza por Comunidad.
+                  No importa tu nivel de partida. Importa que quieras aprender.
                 </p>
 
-                <Link
-                  to="/comunidad-pev"
+                <a
+                  href={urlPlanesMentoria}
+                  target="_blank"
+                  rel="noreferrer"
                   className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-cmr-line bg-white px-6 py-3 text-sm font-extrabold text-cmr-ink shadow-soft transition duration-200 hover:-translate-y-0.5 hover:border-cmr-green/40 hover:text-cmr-green dark:border-white/[0.16] dark:bg-white/[0.08] dark:text-white dark:hover:border-cmr-green/45 dark:hover:bg-white/[0.12] dark:hover:text-[#79CFC4]"
                 >
-                  Ver Comunidad PEV
-                </Link>
+                  Ver modalidades de Mentoría
+                </a>
               </div>
             </div>
           </div>
@@ -497,8 +600,8 @@ export default function MentoriaPage() {
                 <MessageSquareText className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="text-sm font-semibold leading-6 text-cmr-muted dark:text-white/[0.66]">
-                  Conoce cómo funciona la Mentoría PEV, el trabajo personal,
-                  las correcciones y el proceso de aprendizaje.
+                  Conoce las clases semanales de teoría y práctica, las
+                  correcciones y el análisis en directo en la sala de trading.
                 </p>
               </div>
             </div>
@@ -510,13 +613,14 @@ export default function MentoriaPage() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
-              La diferencia está en que dejas de corregirte tú solo.
+              Aprende a tomar tus propias decisiones con PEV.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              Cuando aprendes solo, muchas veces repites errores sin darte
-              cuenta. En Mentoría trabajamos sobre tus gráficos, tus decisiones,
-              tus dudas y tu forma de enfrentarte al mercado.
+              Analizamos gráficos y ejercicios en clase para que entiendas
+              por qué una lectura tiene o no sentido. Aprenderás a plantear
+              hipótesis, reconocer entradas y salidas y gestionar tus emociones
+              sin depender de señales ni de las operaciones de otros.
             </p>
 
             <div className="mt-8 grid gap-3">
@@ -524,8 +628,9 @@ export default function MentoriaPage() {
                 <FileText className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="font-semibold leading-7 text-cmr-ink dark:text-white/[0.86]">
-                  No se corrige una teoría: se corrige cómo estás mirando tú el
-                  mercado.
+                  En las clases prácticas corregimos gráficos y ejercicios
+                  de forma grupal. Premium añade correcciones individuales
+                  continuas durante su período de acompañamiento.
                 </p>
               </div>
 
@@ -533,7 +638,9 @@ export default function MentoriaPage() {
                 <LineChart className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="font-semibold leading-7 text-cmr-ink dark:text-white/[0.86]">
-                  No se busca operar más: se busca tomar mejores decisiones.
+                  Aplicamos la metodología PEV a futuros, acciones y
+                  criptomonedas; no se trata de operar más, sino de entender
+                  cuándo entrar, salir o permanecer fuera.
                 </p>
               </div>
 
@@ -541,8 +648,9 @@ export default function MentoriaPage() {
                 <UsersRound className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
 
                 <p className="font-semibold leading-7 text-cmr-ink dark:text-white/[0.86]">
-                  No es una formación masiva: tiene sentido solo si puedo
-                  acompañarte bien.
+                  La misma metodología y clases para las tres modalidades;
+                  la diferencia está en la duración del acceso y el nivel
+                  de acompañamiento.
                 </p>
               </div>
             </div>
@@ -554,36 +662,40 @@ export default function MentoriaPage() {
         <div className="section-shell">
           <div className="mx-auto max-w-4xl text-center">
             <span className="eyebrow-dark">
-              Solicitud de valoración
+              Mentoría PEV
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-[-0.02em] sm:text-5xl">
-              Si quieres entrar en la Mentoría, primero vemos si tiene sentido
-              para 🫵
+              Aprende a leer el mercado y elige cómo quieres formarte.
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/[0.72]">
-              Cuéntame en qué punto estás, qué has probado, qué te está
-              bloqueando y qué buscas. Si encaja, hablamos del proceso. Si no
-              encaja, te diré por dónde empezar.
+              Empieza desde cero o profundiza si ya tienes experiencia.
+              Tienes dos clases en directo cada semana, práctica, correcciones
+              y sala de trading según tu modalidad. Anual y Flexible se pueden
+              consultar en Comudia; Premium requiere una reunión previa conmigo.
             </p>
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link
-                to="/solicitud-mentoria"
+              <a
+                href={urlPlanesMentoria}
+                target="_blank"
+                rel="noreferrer"
                 className="btn-primary"
               >
-                Solicitar valoración
+                Ver planes de Mentoría
 
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
 
-              <Link
-                to="/por-donde-empezar"
+              <a
+                href={urlReservaPremium}
+                target="_blank"
+                rel="noreferrer"
                 className="btn-secondary-dark"
               >
-                Hacer mini test
-              </Link>
+                Reservar reunión Premium
+              </a>
             </div>
           </div>
         </div>

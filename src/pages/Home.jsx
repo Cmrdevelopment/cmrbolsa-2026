@@ -34,9 +34,11 @@ const pains = [
 ]
 
 const communityItems = [
-  'Más de 200 vídeos organizados por niveles',
-  'Reuniones semanales conmigo en directo',
-  'Sala escrita para comentar el mercado',
+  'Una clase online en directo cada semana conmigo',
+  'Sala de trading diaria para seguir y analizar el mercado',
+  'Corrección de ejercicios y gráficos durante las clases',
+  'Análisis de mercado, preguntas y resolución de dudas',
+  'Más de 200 vídeos pregrabados como material de apoyo',
   'Formación prevista para 16-18 meses',
   'Retos, ejercicios, ejemplos y análisis',
   'Sin permanencia: entras y sales cuando quieras',
@@ -212,10 +214,10 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 gap-3 text-sm text-white/[0.78]">
                       {[
-                        'Sala de trading',
-                        'Reuniones semanales',
+                        'Sala de trading diaria',
+                        'Clases online en directo',
                         'Comunidad PEV',
-                        'Mentoría ilimitada',
+                        'Corrección de gráficos',
                       ].map((item) => (
                         <div
                           key={item}
@@ -397,7 +399,7 @@ export default function Home() {
               dark
               kicker="Comunidad PEV"
               title="Aprende a leer el mercado antes de meterle mano"
-              text="Dentro tienes vídeos, reuniones semanales conmigo, sala escrita, dudas, ejemplos, ejercicios y actualizaciones para entender el mercado paso a paso. No vengas a copiar entradas: ven a aprender qué mirar, por qué importa y cuándo una operación puede tener sentido."
+              text="En la Comunidad PEV tienes una clase online en directo cada semana conmigo. Trabajamos la metodología, analizamos el mercado, resolvemos dudas y corregimos ejercicios y gráficos de los alumnos. Y no acaba ahí: en la sala de trading diaria seguimos el precio, comentamos escenarios y aprendemos a tomar decisiones con criterio. Además, dispones de más de 200 vídeos pregrabados como material de apoyo para preparar las clases y repasar lo aprendido. Aquí no vienes a copiar operaciones: vienes a entender el mercado."
             />
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -481,8 +483,14 @@ export default function Home() {
             </h3>
 
             <p className="mt-4 leading-7 text-cmr-muted dark:text-white/[0.70]">
-              La Mentoría PEV es para quien quiere corrección personal, proceso completo, plan de trading y acompañamiento
-              más directo. Si no vas a mandar gráficos, no tiene sentido.
+              En la Mentoría PEV tienes dos clases online en directo cada
+              semana conmigo. Una de teoría, para profundizar en el método
+              y resolver dudas; y otra de práctica, para analizar y corregir
+              los ejercicios y gráficos de los alumnos. Además, cuentas
+              con clases pregrabadas de apoyo para preparar los contenidos
+              y repasar lo aprendido, y acceso a la sala de trading según
+              el plan contratado. Aquí se viene a trabajar: si no vas a
+              hacer gráficos, la Mentoría no tiene sentido.
             </p>
 
             <Link
@@ -499,14 +507,15 @@ export default function Home() {
             <SectionHeader
               kicker="Mentoría PEV"
               title="Para quien quiere que le corrija, le ordene y le apriete cuando haga falta"
-              text="La Comunidad te permite entrar en la forma de trabajar. La Mentoría es otra cosa: proceso, ejercicios, correcciones, plan, seguimiento y una relación mucho más directa."
+              text="Dos clases online semanales en directo conmigo: una de teoría para profundizar en PEV y resolver dudas, y otra de práctica para revisar gráficos, detectar errores y corregir ejercicios. El aprendizaje se construye en esas clases, con trabajo real sobre tu operativa. Las clases pregrabadas sirven como apoyo para llegar preparado y repasar los contenidos."
             />
 
             <div className="mt-8 grid gap-4">
               {[
-                'Vídeo → entender → hacer y enviar gráfico',
-                'Mandas ejercicios y se corrigen',
-                'Reuniones: Precio → Volumen → Estructura',
+                'Una clase online semanal de teoría y resolución de dudas',
+                'Una clase online semanal de práctica y corrección de gráficos',
+                'Seguimiento del mercado en la sala de trading según tu plan',
+                'Clases pregrabadas de apoyo para preparar y repasar',
                 'Plan de trading y paso progresivo a operar',
               ].map((step, index) => (
                 <div

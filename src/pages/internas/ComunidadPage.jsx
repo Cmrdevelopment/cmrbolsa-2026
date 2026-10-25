@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 
 import {
@@ -16,9 +17,10 @@ import PageHero from '../../components/PageHero'
 import { siteConfig } from '../../data/siteConfig'
 
 const includes = [
-  'Más de 200 vídeos organizados por niveles',
-  'Reuniones semanales conmigo en directo',
-  'Sala de trading escrita para comentar el mercado',
+  'Una clase online semanal en directo conmigo',
+  'Corrección de ejercicios y gráficos durante las clases',
+  'Sala de trading escrita activa cada día de mercado',
+  'Más de 200 vídeos pregrabados de apoyo, organizados por niveles',
   'Formación prevista para 16-18 meses',
   'Retos, ejercicios, ejemplos y análisis',
   'Sin permanencia: entras y sales cuando quieras',
@@ -26,24 +28,24 @@ const includes = [
 
 const steps = [
   {
-    title: 'Ves la formación',
-    text: 'Vídeos organizados para avanzar paso a paso, sin saltar de un sitio a otro sin orden.',
-    icon: Video,
-  },
-  {
-    title: 'Vienes a las reuniones',
-    text: 'Cada semana resolvemos dudas, vemos mercado y aterrizamos la metodología PEV.',
+    title: 'Vienes a la clase semanal en directo',
+    text: 'Cada semana profundizamos en PEV, resolvemos dudas y corregimos ejercicios y gráficos de los alumnos.',
     icon: UsersRound,
   },
   {
-    title: 'Sigues la sala de trading',
-    text: 'Zonas, contexto, escenarios, imágenes y razonamiento. No es copiar señales.',
+    title: 'Sigues la sala de trading a diario',
+    text: 'Durante los días de mercado compartimos zonas, contexto, escenarios e imágenes para aprender a razonar, no a copiar señales.',
     icon: MessageSquareText,
   },
   {
-    title: 'Vas construyendo criterio',
-    text: 'La idea no es que dependas de mí, sino que aprendas a entender qué estás viendo.',
+    title: 'Practicas y aprendes de tus errores',
+    text: 'Trabajas tus propios gráficos y aprovechamos las clases para revisar qué has entendido y qué necesitas mejorar.',
     icon: ShieldCheck,
+  },
+  {
+    title: 'Tienes vídeos de apoyo',
+    text: 'Más de 200 vídeos pregrabados, organizados por niveles, para preparar los contenidos y repasarlos a tu ritmo.',
+    icon: Video,
   },
 ]
 
@@ -57,6 +59,16 @@ const faqs = [
     question: '¿Puedo cancelar cuando quiera?',
     answer:
       'Sí. No hay permanencia. Entras, pruebas, aprendes y sigues solo si realmente te aporta.',
+  },
+  {
+    question: '¿Qué hacemos en la clase online semanal?',
+    answer:
+      'Cada semana tenemos una clase en directo conmigo. Profundizamos en la metodología PEV, analizamos el mercado, resolvemos dudas y corregimos ejercicios y gráficos de los alumnos.',
+  },
+  {
+    question: '¿Para qué sirven los vídeos pregrabados?',
+    answer:
+      'Son material de apoyo. Puedes utilizarlos a tu ritmo para preparar las clases en directo, repasar conceptos y reforzar aquello que necesites trabajar.',
   },
   {
     question: '¿Por dónde empieza la formación?',
@@ -76,7 +88,7 @@ export default function ComunidadPage() {
       <PageHero
         eyebrow="Comunidad PEV"
         title="Comunidad Trading PEV de CMRBolsa"
-        text="La puerta de entrada para aprender cómo trabajamos el mercado por dentro: vídeos, reuniones semanales, sala de trading escrita, contexto, imágenes, dudas, ejercicios y participación."
+        text="Cada semana tenemos una clase online en directo conmigo para aprender, resolver dudas y corregir ejercicios y gráficos. Además, en la sala de trading escrita seguimos y analizamos el mercado cada día de negociación. Y tienes más de 200 vídeos pregrabados como material de apoyo para estudiar y repasar a tu ritmo."
         primaryLabel="Entrar en Comunidad"
         primaryTo={siteConfig.urls.comunidadCheckout}
         secondaryLabel="Ver qué incluye"
@@ -105,8 +117,8 @@ export default function ComunidadPage() {
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/[0.68]">
-                      Conoce por dentro la formación, las reuniones, la sala
-                      escrita y la forma de trabajar el mercado con PEV.
+                      Conoce la clase semanal en directo, las correcciones y
+                      el trabajo diario en la sala de trading escrita.
                     </p>
                   </div>
                 </div>
@@ -165,9 +177,12 @@ export default function ComunidadPage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              La Comunidad PEV combina formación, reuniones, sala de trading
-              escrita y seguimiento de mercado para que no aprendas de forma
-              desordenada ni dependas de una operación puntual.
+              En la Comunidad PEV tienes una clase online en directo cada semana
+              conmigo. Explicamos la metodología, resolvemos dudas, analizamos
+              el mercado y corregimos ejercicios y gráficos. Además, trabajamos
+              el mercado a diario en la sala de trading escrita. Los más de
+              200 vídeos pregrabados están ahí como apoyo para preparar las
+              clases, reforzar conceptos y avanzar a tu ritmo.
             </p>
 
             <div className="mt-8 rounded-[2rem] border border-cmr-line bg-cmr-paper p-6 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-white/[0.06] dark:shadow-[0_20px_60px_rgba(0,0,0,0.24)]">
@@ -214,9 +229,10 @@ export default function ComunidadPage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
-              La idea es que tengas una estructura clara: formación, reuniones,
-              sala de trading escrita y práctica. No una montaña de contenido sin
-              saber por dónde empezar.
+              La clase semanal en directo y el trabajo diario en la sala
+              de trading son el centro de la Comunidad. Practicas, preguntas,
+              compartes gráficos y aprendes de las correcciones. Los vídeos
+              pregrabados te ayudan a preparar y repasar lo que trabajamos.
             </p>
           </div>
 
@@ -265,9 +281,10 @@ export default function ComunidadPage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/[0.72]">
-              La sala de trading escrita no está pensada para que copies una
-              entrada. Está pensada para que veas qué zona importa, qué escenario
-              se está formando y cuándo lo mejor es no tocar nada.
+              Durante los días de mercado trabajamos en la sala de trading
+              escrita: compartimos zonas, contexto, escenarios, imágenes y
+              razonamientos. No se trata de copiar una entrada, sino de entender
+              qué estamos viendo, por qué importa y cuándo es mejor no hacer nada.
             </p>
 
             <Link
@@ -463,8 +480,9 @@ export default function ComunidadPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/[0.72]">
-              Entras, ves cómo trabajamos, preguntas, revisas en diferido y
-              decides si esta forma de aprender trading encaja contigo.
+              Vienes a la clase semanal, participas en las correcciones y
+              sigues el mercado en la sala de trading escrita. Además, tienes
+              los vídeos de apoyo para repasar cuando lo necesites.
             </p>
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">

@@ -139,6 +139,7 @@ export default function TerminosContent() {
         </div>
       </section>
 
+
       <section id="mentoria-pev" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
           5. Mentoría PEV
@@ -146,60 +147,140 @@ export default function TerminosContent() {
 
         <div className="mt-5 space-y-4 leading-8 text-cmr-muted">
           <p>
-            La Mentoría PEV es un proceso formativo más amplio que puede incluir
-            cursos, ejercicios, correcciones, reuniones, acompañamiento,
-            acceso a la Comunidad y otros recursos descritos antes de la
-            contratación.
+            La Mentoría PEV de CMRBolsa es un programa de formación y
+            acompañamiento dirigido tanto a personas que empiezan desde
+            cero como a traders con experiencia. Su finalidad es aprender
+            a interpretar los mercados financieros y desarrollar una
+            operativa propia utilizando la metodología PEV.
           </p>
 
           <p>
-            El envío de una solicitud no obliga a CMRBolsa a aceptar al
-            solicitante ni obliga a la persona interesada a contratar.
+            La formación incluye dos clases online semanales en directo:
+            una de teoría, donde se profundiza en la metodología y se
+            resuelven dudas, y otra de práctica, donde se analizan gráficos,
+            se corrigen ejercicios y se trabajan los errores de los alumnos.
           </p>
 
           <p>
-            Antes de formalizar la contratación se informará de las
-            características concretas de la Mentoría, su duración, precio,
-            forma de pago y contenidos incluidos.
+            Los contenidos formativos se organizan en seis meses, con
+            desbloqueo progresivo de los módulos. Los alumnos disponen
+            también de videolecciones de apoyo, grabaciones de las clases,
+            ejercicios, reuniones grupales y una comunidad privada,
+            conforme a las condiciones de su modalidad.
           </p>
 
           <p>
-            El aprovechamiento de la Mentoría depende, entre otras cosas, de la
-            dedicación, práctica, constancia y participación del alumno.
-            Contratarla no garantiza resultados económicos ni elimina el riesgo
-            propio de los mercados.
+            La Mentoría incluye acceso a una sala de trading en directo
+            durante el período establecido para cada modalidad. En ella
+            se analiza el mercado utilizando la metodología PEV, se
+            plantean hipótesis y se explican situaciones reales de
+            operativa. Esta sala tiene una finalidad formativa y no
+            constituye un servicio de señales.
           </p>
 
           <p>
-            El seguimiento individual y la corrección de ejercicios requieren
-            que el alumno mantenga una participación activa y una continuidad
-            razonable en su formación. Si transcurren 90 días consecutivos sin
-            actividad, entrega de ejercicios o gráficos ni comunicación con
-            CMRBolsa, y no existe una pausa previamente comunicada y acordada,
-            se entenderá que el alumno ha interrumpido su seguimiento
-            personalizado.
+            La Mentoría PEV dispone de tres modalidades de contratación,
+            que comparten la misma metodología y formación, pero se
+            diferencian en su duración y nivel de acompañamiento:
+          </p>
+
+          <ul className="list-disc space-y-3 pl-6">
+            <li>
+              <strong>PEV Anual:</strong> contratación mediante pago único,
+              con 12 meses de acceso a la formación, las clases y
+              reuniones grupales, y la sala de trading.
+            </li>
+
+            <li>
+              <strong>PEV Flexible:</strong> modalidad de hasta seis cuotas
+              mensuales, sin permanencia. Al completar los seis pagos,
+              el alumno dispone de 12 meses de acceso a la formación
+              y a las clases y reuniones grupales. La sala de trading
+              está incluida durante los seis meses de pago, mientras
+              la suscripción permanezca activa. Si se cancela antes,
+              el acceso se limitará al período correspondiente a las
+              cuotas efectivamente abonadas.
+            </li>
+
+            <li>
+              <strong>PEV Premium:</strong> incluye 14 meses de mentoría
+              y acompañamiento personalizado, correcciones continuas
+              e individualizadas de gráficos, reuniones individuales
+              cuando sean necesarias y elaboración y seguimiento
+              personalizado del plan de trading. La sala de trading
+              está incluida durante 12 meses y el acceso a los
+              contenidos formativos es permanente.
+            </li>
+          </ul>
+
+          <p>
+            Las modalidades PEV Anual y PEV Flexible incluyen correcciones
+            grupales durante las clases prácticas y reuniones específicas
+            para trabajar los planes de trading. No incluyen seguimiento
+            individual diario ni reuniones individuales.
           </p>
 
           <p>
-            En ese caso finalizarán la corrección individual de ejercicios y el
-            seguimiento personalizado. Esto no supone la pérdida del acceso a
-            los cursos y contenidos formativos incluidos en la Mentoría, ni de
-            la posibilidad de continuar perteneciendo a la Comunidad PEV y
-            participar en sus reuniones generales mientras mantenga dichos
-            accesos conforme a las condiciones aplicables.
+            Las reuniones individuales y las correcciones continuas
+            personalizadas son servicios exclusivos de PEV Premium.
+            Esta modalidad requiere una reunión previa con CMRBolsa
+            para valorar las necesidades del alumno antes de formalizar
+            su contratación.
           </p>
 
           <p>
-            Si el alumno desea retomar el seguimiento individual después de este
-            periodo de inactividad, deberá solicitar nuevamente su incorporación.
-            CMRBolsa valorará previamente su situación, su disposición para retomar
-            el trabajo con la constancia necesaria y las condiciones aplicables en
-            ese momento. En caso de ser aceptado de nuevo, se le informará antes de
-            continuar del importe que, en su caso, corresponda abonar para reactivar
-            el seguimiento personalizado.
+            Finalizado el período de acceso incluido en la modalidad
+            contratada, el alumno podrá continuar en la sala de trading
+            mediante el pago de la cuota mensual correspondiente.
+            Mientras dicha suscripción permanezca activa, conservará
+            también el acceso a los contenidos formativos y a las
+            clases y reuniones grupales de la Mentoría PEV.
+          </p>
+
+          <p>
+            Las condiciones particulares, precios, modalidades de pago,
+            duración de los accesos y servicios incluidos serán los
+            indicados en Comudia en el momento de la contratación.
+          </p>
+
+          <p>
+            El aprovechamiento de la Mentoría depende de la dedicación,
+            práctica, constancia y participación del alumno. La
+            contratación no garantiza resultados económicos ni elimina
+            los riesgos inherentes a la operativa en los mercados
+            financieros.
+          </p>
+
+          <p>
+            En la modalidad PEV Premium, el seguimiento individualizado
+            requiere una participación activa y una continuidad razonable
+            durante el proceso formativo. Si transcurren 90 días
+            consecutivos sin actividad, entrega de ejercicios o gráficos
+            ni comunicación con CMRBolsa, y no existe una pausa
+            previamente comunicada y acordada, se entenderá que el
+            alumno ha interrumpido su seguimiento personalizado.
+          </p>
+
+          <p>
+            En ese caso finalizarán las correcciones individuales y
+            el seguimiento personalizado. Esto no supondrá la pérdida
+            del acceso a los contenidos formativos ni de otros servicios
+            que el alumno tenga contratados y cuyo período de acceso
+            continúe vigente.
+          </p>
+
+          <p>
+            Si el alumno desea retomar el seguimiento individual después
+            de este período de inactividad, deberá solicitar nuevamente
+            su incorporación. CMRBolsa valorará su situación y las
+            condiciones aplicables en ese momento. En caso de ser
+            aceptado, se le informará previamente del importe que,
+            en su caso, corresponda abonar para reactivar dicho
+            seguimiento.
           </p>
         </div>
       </section>
+
 
       <section>
         <h2 className="font-display text-2xl font-black tracking-[-0.02em] text-cmr-ink">
