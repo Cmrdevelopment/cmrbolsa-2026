@@ -1,3 +1,4 @@
+
 export const seoBase = {
   siteName: 'CMRBolsa',
   siteUrl:
@@ -5,7 +6,7 @@ export const seoBase = {
   defaultTitle:
     'CMRBolsa | Formación en trading con el método PEV',
   defaultDescription:
-    'Aprende a entender el mercado con el método PEV: precio, estructura y volumen. Comunidad, Mentoría PEV, sala escrita, eventos y contenidos de CMRBolsa.',
+    'Aprende trading con el método PEV: precio, estructura y volumen. Clases online en directo, Comunidad PEV, Mentoría PEV y análisis de mercado.',
   defaultImage:
     'https://res.cloudinary.com/dwbxywvdw/image/upload/v1784919487/cmrbolsa/cmrbolsa-imagen-social-premium_tnqe7n.png',
   defaultImageAlt:
@@ -19,7 +20,7 @@ export const seoPaginas = {
     title:
       'CMRBolsa | Formación en trading con el método PEV',
     description:
-      'Aprende a leer el mercado con precio, estructura y volumen. Descubre la Comunidad PEV, la Mentoría, la sala escrita y los contenidos de CMRBolsa.',
+      'Aprende el método PEV con clases online en directo. Comunidad con clase semanal y sala escrita; Mentoría con teoría y práctica cada semana.',
   },
 
   '/cmrbolsa': {
@@ -31,59 +32,48 @@ export const seoPaginas = {
 
   '/comunidad-pev': {
     title:
-      'Comunidad PEV | Formación y acompañamiento en trading',
+      'Comunidad PEV | Clase semanal y sala escrita | CMRBolsa',
     description:
-      'Vídeos organizados, reuniones semanales, sala escrita, ejercicios y acompañamiento para aprender a entender el mercado con el método PEV.',
+      'Una clase online semanal en directo con Carlos Martín Rodríguez, sala de trading escrita durante los días de mercado y vídeos de apoyo. Sin señales.',
   },
 
   '/comunidad-pev-alternativa': {
     title:
-      'Comunidad Trading PEV | Planes y acceso',
+      'Comunidad Trading PEV | Clase en directo y sala escrita',
     description:
-      'Conoce los planes disponibles para entrar en la Comunidad Trading PEV de CMRBolsa y aprender con formación, reuniones y sala escrita.',
+      'Descubre la Comunidad PEV: una clase online semanal, análisis diarios en la sala escrita y más de 200 vídeos de apoyo. Consulta el acceso en Comudia.',
     robots:
       'noindex, follow',
   },
 
   '/mentoria-pev': {
     title:
-      'Mentoría PEV | Formación personal en trading con CMRBolsa',
+      'Mentoría PEV | Clases de trading en directo | CMRBolsa',
     description:
-      'Un proceso completo con ejercicios, correcciones personales, reuniones, plan de trading y acompañamiento directo con Carlos Martín Rodríguez.',
+      'Dos clases online semanales de teoría y práctica con correcciones grupales. Sala de trading en directo de lunes a jueves, según modalidad. Método PEV.',
   },
-
 
   '/trading-sin-atajos-wjd-092026': {
     title:
       'Trading sin atajos | Mentoría PEV de CMRBolsa',
     description:
-      'Conoce la Mentoría PEV de CMRBolsa: trabajo continuado, corrección de gráficos, reuniones y acompañamiento para aprender a leer el mercado.',
-    robots:
-      'noindex, follow',
-  },
-
-  '/mentoria-pev-w26': {
-    title:
-      'Mentoría PEV 2026 | Aprende a leer el mercado | CMRBolsa',
-    description:
-      'Aprende a interpretar los mercados con el Método PEV. 12 meses de formación, clases en directo, ejercicios y sala de trading. Pago único o mensual sin permanencia.',
+      'Aprende el método PEV con dos clases semanales en directo, ejercicios y correcciones grupales. Consulta los planes o reserva una cita para Premium.',
     robots:
       'noindex, follow',
   },
 
   '/solicitud-mentoria': {
-
     title:
-      'Solicitar valoración para la Mentoría PEV | CMRBolsa',
+      'Planes y reserva de Mentoría PEV | CMRBolsa',
     description:
-      'Cuéntame tu experiencia, tus dificultades y el tiempo que puedes dedicar para valorar si la Mentoría PEV tiene sentido para ti.',
+      'Consulta PEV Anual y PEV Flexible en Comudia o reserva una sesión estratégica para PEV Premium. Formación de trading con clases en directo.',
   },
 
   '/sala-escrita': {
     title:
-      'Sala de trading escrita | Análisis de mercado con PEV',
+      'Sala escrita PEV | Análisis de mercado sin señales',
     description:
-      'Sigue análisis, zonas, escenarios e hipótesis de mercado aplicando precio, estructura y volumen en la sala escrita de CMRBolsa.',
+      'Sala de trading escrita de la Comunidad PEV: gráficos, zonas e hipótesis durante los días de mercado. Complementa la clase online semanal en directo.',
   },
 
   '/eventos': {
@@ -102,9 +92,9 @@ export const seoPaginas = {
 
   '/por-donde-empezar': {
     title:
-      'Por dónde empezar en CMRBolsa | Comunidad, Mentoría o libro',
+      'Por dónde empezar en CMRBolsa | Comunidad o Mentoría PEV',
     description:
-      'Responde unas preguntas y descubre qué opción puede encajar mejor contigo: Comunidad PEV, Mentoría, libro, Substack o contenidos gratuitos.',
+      'Responde cuatro preguntas y descubre qué puede encajar contigo: Comunidad PEV, Mentoría PEV o empezar leyendo nuestros contenidos gratuitos.',
   },
 
   '/desgranando-la-esencia-del-mercado': {
@@ -153,7 +143,7 @@ export const seoPaginas = {
     title:
       'Términos y condiciones | CMRBolsa',
     description:
-      'Consulta los términos y condiciones aplicables a los contenidos, productos y servicios ofrecidos a través de CMRBolsa.',
+      'Consulta las condiciones de contratación, acceso, pagos y cancelaciones de la Comunidad PEV, la Mentoría PEV y otros servicios de CMRBolsa.',
   },
 
   '/declaracion-de-riesgos-ninja-trader': {
