@@ -1,44 +1,21 @@
-import {
-  useState,
-} from 'react'
-import {
-  Link,
-  useSearchParams,
-} from 'react-router-dom'
 
-import CampoFormulario from '../components/forms/CampoFormulario'
+import { Link, useSearchParams } from 'react-router-dom'
+
+import {
+  ArrowRight,
+  CalendarDays,
+  CheckCircle2,
+  GraduationCap,
+  UsersRound,
+} from 'lucide-react'
+
 import PageHero from '../components/PageHero'
 
-/*
-|--------------------------------------------------------------------------
-| INTERRUPTOR DE LA MENTORÍA
-|--------------------------------------------------------------------------
-|
-| true  → muestra Calendly para reservar la sesión estratégica.
-| false → muestra el formulario de lista de espera conectado con Brevo.
-|
-*/
+const COMUDIA_MENTORIA_URL =
+  'https://www.comudia.com/c/mentoria-pev-de-cmrbolsa'
 
-const MENTORIA_ABIERTA = false
-
-const CALENDLY_URL =
-  'https://calendly.com/cmrbolsa/sesion-estrategica'
-
-function CalendlyEmbebido() {
-  return (
-    <iframe
-      src={CALENDLY_URL}
-      title="Reserva tu sesión estratégica con CMRBolsa"
-      className="h-[800px] w-full border-0"
-      style={{
-        minWidth: '320px',
-      }}
-      loading="eager"
-    />
-  )
-}
-
-
+const COMUDIA_CITA_PREMIUM_URL =
+  'https://www.comudia.com/reservar/sesion-estrategica-mentoria-pev-92df06'
 
 function MensajeConfirmacion() {
   return (
@@ -56,256 +33,22 @@ function MensajeConfirmacion() {
       </h2>
 
       <p className="mx-auto mt-5 max-w-2xl leading-8 text-cmr-muted dark:text-white/[0.68]">
-        Ya formas parte de la lista de personas interesadas. Cuando
-        vuelva a abrir nuevas plazas, recibirás la información por
-        correo.
+        Gracias por confirmar tu interés. Ya puedes consultar
+        las modalidades disponibles de la Mentoría PEV y
+        elegir la que mejor encaje contigo.
       </p>
 
-      <Link
-        to="/"
+      <a
+        href={COMUDIA_MENTORIA_URL}
+        target="_blank"
+        rel="noreferrer"
         className="btn-primary mt-8 inline-flex"
       >
-        Volver a inicio
-      </Link>
+        Ver modalidades de Mentoría
+
+        <ArrowRight className="h-4 w-4" />
+      </a>
     </div>
-  )
-}
-
-function FormularioListaEspera() {
-  const [estadoEnvio, setEstadoEnvio] =
-    useState('inicial')
-
-  const [mensajeError, setMensajeError] =
-    useState('')
-
-  async function enviarSolicitud(event) {
-    event.preventDefault()
-
-    if (estadoEnvio === 'enviando') {
-      return
-    }
-
-    const formulario = event.currentTarget
-    const datosFormulario = new FormData(formulario)
-
-    const datos = {
-      nombre: String(
-        datosFormulario.get('nombre') || ''
-      ).trim(),
-
-      email: String(
-        datosFormulario.get('email') || ''
-      ).trim(),
-
-      experienciaTrading: String(
-        datosFormulario.get('experienciaTrading') || ''
-      ).trim(),
-
-      bloqueoPrincipal: String(
-        datosFormulario.get('bloqueoPrincipal') || ''
-      ).trim(),
-
-      aceptaComunicaciones:
-        datosFormulario.get('aceptaComunicaciones') ===
-        'on',
-
-      sitioWeb: String(
-        datosFormulario.get('sitioWeb') || ''
-      ).trim(),
-    }
-
-    setEstadoEnvio('enviando')
-    setMensajeError('')
-
-    try {
-      const respuesta = await fetch(
-        '/api/mentoria-interes',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(datos),
-        }
-      )
-
-      const resultado = await respuesta
-        .json()
-        .catch(() => ({}))
-
-      if (!respuesta.ok) {
-        throw new Error(
-          resultado.error ||
-            'No se pudo enviar el formulario.'
-        )
-      }
-
-      formulario.reset()
-      setEstadoEnvio('enviado')
-    } catch (error) {
-      setMensajeError(
-        error.message ||
-          'Ha ocurrido un error. Inténtalo de nuevo.'
-      )
-
-      setEstadoEnvio('error')
-    }
-  }
-
-  if (estadoEnvio === 'enviado') {
-    return (
-      <div className="mx-auto max-w-3xl rounded-[2rem] border border-cmr-green/25 bg-white p-8 text-center shadow-soft transition-colors duration-300 dark:border-cmr-green/35 dark:bg-cmr-dark3 sm:p-12">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-cmr-green/10 text-3xl text-cmr-green dark:bg-cmr-green/20 dark:text-[#79CFC4]">
-          ✓
-        </div>
-
-        <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.18em] text-cmr-green dark:text-[#79CFC4]">
-          Solicitud recibida
-        </p>
-
-        <h2 className="mt-3 font-display text-3xl font-black tracking-[-0.025em] text-cmr-ink dark:text-white">
-          Revisa ahora tu correo
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-xl leading-8 text-cmr-muted dark:text-white/[0.68]">
-          Te he enviado un correo para confirmar que quieres
-          recibir información sobre las próximas aperturas de la
-          Mentoría PEV.
-        </p>
-
-        <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-cmr-muted dark:text-white/[0.58]">
-          Tu registro no quedará confirmado hasta que pulses el
-          botón incluido en ese correo.
-        </p>
-      </div>
-    )
-  }
-
-  return (
-    <form
-      className="mx-auto grid max-w-3xl gap-6 rounded-[2rem] border border-cmr-line bg-white p-6 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 dark:shadow-[0_28px_90px_rgba(0,0,0,0.30)] sm:p-8"
-      onSubmit={enviarSolicitud}
-    >
-      <div>
-        <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cmr-green dark:text-[#79CFC4]">
-          Próximas aperturas
-        </p>
-
-        <h2 className="mt-3 font-display text-3xl font-black tracking-[-0.025em] text-cmr-ink dark:text-white">
-          Avísame cuando vuelva a abrir la Mentoría PEV
-        </h2>
-
-        <p className="mt-3 leading-7 text-cmr-muted dark:text-white/[0.68]">
-          Ahora mismo no hay nuevas plazas. Déjame tus datos
-          para avisarte cuando vuelva a abrir el proceso de
-          selección.
-        </p>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <CampoFormulario
-          id="nombre"
-          name="nombre"
-          label="Nombre y apellidos"
-          placeholder="Tu nombre completo"
-          autoComplete="name"
-          required
-        />
-
-        <CampoFormulario
-          id="email"
-          name="email"
-          label="Correo electrónico"
-          type="email"
-          placeholder="nombre@correo.com"
-          autoComplete="email"
-          required
-        />
-      </div>
-
-      <CampoFormulario
-        id="experienciaTrading"
-        name="experienciaTrading"
-        label="¿Qué experiencia tienes en trading?"
-        formato="textarea"
-        rows={4}
-        placeholder="Cuánto tiempo llevas, qué mercados trabajas y si operas actualmente."
-        required
-      />
-
-      <CampoFormulario
-        id="bloqueoPrincipal"
-        name="bloqueoPrincipal"
-        label="¿Cuál es tu principal bloqueo ahora mismo?"
-        formato="textarea"
-        rows={4}
-        placeholder="Cuéntame brevemente qué es lo que más te está impidiendo avanzar."
-        required
-      />
-
-      <div
-        className="hidden"
-        aria-hidden="true"
-      >
-        <label htmlFor="sitioWeb">
-          No rellenar este campo
-        </label>
-
-        <input
-          id="sitioWeb"
-          name="sitioWeb"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-        />
-      </div>
-
-      <div className="rounded-3xl border border-cmr-line bg-cmr-light p-5 transition-colors duration-300 dark:border-white/[0.12] dark:bg-white/[0.06]">
-        <label className="flex cursor-pointer items-start gap-3">
-          <input
-            type="checkbox"
-            name="aceptaComunicaciones"
-            required
-            className="mt-1 h-5 w-5 shrink-0 accent-cmr-green"
-          />
-
-          <span className="text-sm font-normal leading-7 text-cmr-muted dark:text-white/[0.68]">
-            Quiero recibir por correo información sobre próximas
-            aperturas de la Mentoría PEV y acepto el tratamiento
-            de mis datos conforme a la{' '}
-
-            <Link
-              to="/politica-privacidad"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-cmr-green underline decoration-cmr-green/30 underline-offset-4 dark:text-[#79CFC4]"
-            >
-              Política de privacidad
-            </Link>
-            .
-          </span>
-        </label>
-      </div>
-
-      {mensajeError && (
-        <div
-          className="rounded-2xl border border-red-300 bg-red-50 px-5 py-4 text-sm font-bold text-red-700 dark:border-red-400/30 dark:bg-red-400/10 dark:text-red-200"
-          role="alert"
-        >
-          {mensajeError}
-        </div>
-      )}
-
-      <button
-        type="submit"
-        disabled={estadoEnvio === 'enviando'}
-        className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-      >
-        {estadoEnvio === 'enviando'
-          ? 'Enviando…'
-          : 'Avisarme de próximas aperturas'}
-      </button>
-    </form>
   )
 }
 
@@ -315,32 +58,24 @@ export default function SolicitudMentoria() {
   const confirmacionCompletada =
     parametrosBusqueda.get('confirmado') === '1'
 
-  const contenidoHero = confirmacionCompletada
-    ? {
-        eyebrow: 'Confirmación',
-        title: 'Interés confirmado',
-        text: 'Tu registro para recibir información sobre la Mentoría PEV ha quedado confirmado.',
-      }
-    : MENTORIA_ABIERTA
-      ? {
-          eyebrow: 'Sesión estratégica',
-          title: 'Reserva tu sesión estratégica',
-          text: 'Selecciona directamente el día y la hora disponibles que mejor te encajen.',
-        }
-      : {
-          eyebrow: 'Mentoría PEV',
-          title: 'Las plazas están cerradas ahora mismo',
-          text: 'Déjame tus datos y te avisaré cuando vuelva a abrir el proceso de selección.',
-        }
-
   return (
     <div className="bg-cmr-light text-cmr-ink transition-colors duration-300 dark:bg-cmr-dark dark:text-white">
       <PageHero
-        eyebrow={contenidoHero.eyebrow}
-        title={contenidoHero.title}
-        text={contenidoHero.text}
-        primaryLabel="Volver a inicio"
-        primaryTo="/"
+        eyebrow="Mentoría PEV"
+        title={
+          confirmacionCompletada
+            ? 'Tu interés ha quedado confirmado'
+            : 'Elige cómo quieres aprender con la Mentoría PEV'
+        }
+        text={
+          confirmacionCompletada
+            ? 'Gracias por tu interés. Consulta las modalidades disponibles y descubre cómo puedes participar.'
+            : 'Tanto si empiezas desde cero como si ya tienes experiencia, puedes aprender la metodología PEV con dos clases semanales en directo, ejercicios, correcciones y sala de trading. Elige la modalidad de formación y acompañamiento que mejor encaje contigo.'
+        }
+        primaryLabel="Ver modalidades de Mentoría"
+        primaryTo={COMUDIA_MENTORIA_URL}
+        secondaryLabel="Conocer la Mentoría PEV"
+        secondaryTo="/mentoria-pev"
       />
 
       <section className="relative overflow-hidden bg-cmr-light py-20 transition-colors duration-300 dark:bg-cmr-dark2">
@@ -351,12 +86,182 @@ export default function SolicitudMentoria() {
         <div className="section-shell relative">
           {confirmacionCompletada ? (
             <MensajeConfirmacion />
-          ) : MENTORIA_ABIERTA ? (
-            <div className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-cmr-line bg-white p-3 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 sm:p-6">
-              <CalendlyEmbebido />
-            </div>
           ) : (
-            <FormularioListaEspera />
+            <>
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="eyebrow">
+                  Modalidades de Mentoría PEV
+                </span>
+
+                <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-[-0.025em] text-cmr-ink dark:text-white sm:text-5xl">
+                  La misma metodología, distintas formas de acompañarte
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-cmr-muted dark:text-white/[0.68]">
+                  Todas las modalidades incluyen clases online de
+                  teoría y práctica en directo, ejercicios,
+                  correcciones grupales y formación PEV.
+                  La diferencia está en la duración del acceso
+                  y en el nivel de acompañamiento.
+                </p>
+              </div>
+
+              <div className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-2">
+                <div className="flex flex-col rounded-[2rem] border border-cmr-line bg-white p-7 shadow-soft transition-colors duration-300 dark:border-white/[0.14] dark:bg-cmr-dark3 sm:p-9">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cmr-greenSoft text-cmr-green dark:bg-cmr-green/[0.16] dark:text-[#79CFC4]">
+                    <UsersRound className="h-7 w-7" />
+                  </div>
+
+                  <span className="mt-6 text-sm font-extrabold uppercase tracking-[0.16em] text-cmr-green dark:text-[#79CFC4]">
+                    Formación y clases grupales
+                  </span>
+
+                  <h3 className="mt-3 font-display text-3xl font-black text-cmr-ink dark:text-white">
+                    PEV Anual y PEV Flexible
+                  </h3>
+
+                  <p className="mt-5 leading-8 text-cmr-muted dark:text-white/[0.68]">
+                    Aprende la metodología PEV con dos clases online
+                    semanales en directo: una de teoría y otra de
+                    práctica, donde corregimos ejercicios y gráficos.
+                    También tendrás sala de trading, grabaciones y
+                    contenidos de apoyo según la modalidad contratada.
+                  </p>
+
+                  <div className="mt-7 flex-1 space-y-4">
+                    {[
+                      'Una clase semanal de teoría en directo',
+                      'Una clase semanal de práctica con correcciones',
+                      'Sala de trading en directo según tu modalidad',
+                      'Formación estructurada y clases grabadas',
+                      'Pago único o modalidad mensual sin permanencia',
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
+
+                        <p className="leading-7 text-cmr-muted dark:text-white/[0.72]">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href={COMUDIA_MENTORIA_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary mt-9 w-full justify-center"
+                  >
+                    Ver planes en Comudia
+
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+
+                  <p className="mt-4 text-center text-sm leading-6 text-cmr-muted dark:text-white/[0.55]">
+                    Consulta los planes y sus condiciones antes de contratar.
+                  </p>
+                </div>
+
+                <div className="flex flex-col rounded-[2rem] border border-cmr-green/30 bg-white p-7 shadow-soft transition-colors duration-300 dark:border-cmr-green/35 dark:bg-cmr-dark3 sm:p-9">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cmr-greenSoft text-cmr-green dark:bg-cmr-green/[0.16] dark:text-[#79CFC4]">
+                    <GraduationCap className="h-7 w-7" />
+                  </div>
+
+                  <span className="mt-6 text-sm font-extrabold uppercase tracking-[0.16em] text-cmr-green dark:text-[#79CFC4]">
+                    Acompañamiento personalizado
+                  </span>
+
+                  <h3 className="mt-3 font-display text-3xl font-black text-cmr-ink dark:text-white">
+                    Mentoría PEV Premium
+                  </h3>
+
+                  <p className="mt-5 leading-8 text-cmr-muted dark:text-white/[0.68]">
+                    Si buscas un acompañamiento más personalizado,
+                    Premium añade seguimiento individual, correcciones
+                    continuas de gráficos, reuniones conmigo cuando
+                    sean necesarias y elaboración y seguimiento de
+                    tu propio plan de trading.
+                  </p>
+
+                  <div className="mt-7 flex-1 space-y-4">
+                    {[
+                      '14 meses de acompañamiento personalizado',
+                      'Correcciones individuales continuas de gráficos',
+                      'Reuniones individuales cuando sean necesarias',
+                      'Elaboración y seguimiento de tu plan de trading',
+                      '12 meses de sala de trading incluida',
+                      'Acceso permanente a los contenidos formativos',
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
+
+                        <p className="leading-7 text-cmr-muted dark:text-white/[0.72]">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 rounded-2xl border border-cmr-green/20 bg-cmr-greenSoft/40 p-5 dark:border-cmr-green/25 dark:bg-cmr-green/[0.10]">
+                    <div className="flex items-start gap-3">
+                      <CalendarDays className="mt-1 h-6 w-6 shrink-0 text-cmr-green dark:text-[#79CFC4]" />
+
+                      <div>
+                        <p className="font-display text-lg font-black text-cmr-ink dark:text-white">
+                          Primero hablamos personalmente
+                        </p>
+
+                        <p className="mt-2 text-sm leading-7 text-cmr-muted dark:text-white/[0.68]">
+                          Antes de acceder a Premium, tendremos
+                          una reunión para conocer tu situación,
+                          tus objetivos y valorar si necesitas
+                          este tipo de acompañamiento.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href={COMUDIA_CITA_PREMIUM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary mt-6 w-full justify-center"
+                  >
+                    Reservar sesión estratégica
+
+                    <CalendarDays className="h-4 w-4" />
+                  </a>
+
+                  <p className="mt-4 text-center text-sm leading-6 text-cmr-muted dark:text-white/[0.55]">
+                    Reserva tu cita directamente en Comudia.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mx-auto mt-10 max-w-3xl text-center">
+                <p className="text-sm leading-7 text-cmr-muted dark:text-white/[0.60]">
+                  La Mentoría PEV es una formación para aprender
+                  a interpretar los mercados y tomar tus propias
+                  decisiones. No es un servicio de señales ni
+                  garantiza resultados económicos.
+                </p>
+
+                <Link
+                  to="/mentoria-pev"
+                  className="mt-5 inline-flex items-center gap-2 font-bold text-cmr-green transition hover:underline dark:text-[#79CFC4]"
+                >
+                  Conocer todos los detalles de la Mentoría
+
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </section>

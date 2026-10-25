@@ -1,3 +1,4 @@
+
 import {
   useEffect,
   useRef,
@@ -11,8 +12,10 @@ import {
 } from 'lucide-react'
 
 import BunnyVideo from '../../components/media/BunnyVideo'
-import { siteConfig } from '../../data/siteConfig'
 import { obtenerTestimonios } from '../../data/testimonios'
+
+const PLANES_URL =
+  'https://www.comudia.com/c/mentoria-pev-de-cmrbolsa'
 
 const RESERVA_URL =
   'https://www.comudia.com/reservar/sesion-estrategica-mentoria-pev-92df06'
@@ -22,25 +25,25 @@ const proceso = [
     numero: '01',
     titulo: 'Primero, aprender a leer',
     texto:
-      'Precio, estructura y volumen. Antes de pensar en entrar tienes que saber qué está haciendo el mercado y dónde estás metido.',
+      'Precio, estructura y volumen. Tanto si empiezas desde cero como si ya operas, tienes que entender qué está haciendo el mercado antes de pensar en entrar.',
   },
   {
     numero: '02',
-    titulo: 'Después, gráficos. Muchos.',
+    titulo: 'Dos clases en directo cada semana',
     texto:
-      'Aquí no SOLO aprendes mirándome a mí. Aprendes trabajando 🫵 . Vas a hacer entre 500 y 700 gráficos y muchos ejercicios durante el apredizaje.',
+      'Una de teoría para profundizar en la metodología PEV y resolver dudas. Otra de práctica para trabajar ejercicios y analizar gráficos conmigo.',
   },
   {
     numero: '03',
-    titulo: 'Te los corrijo',
+    titulo: 'Gráficos, práctica y correcciones',
     texto:
-      'Mandas los gráficos y te los reviso. Te digo qué estás viendo bien, dónde te estás equivocando y qué necesitas volver a trabajar.',
+      'Aquí aprendes trabajando. Corregimos gráficos y ejercicios en las clases prácticas grupales. En Premium, además, tienes correcciones individuales continuas.',
   },
   {
     numero: '04',
-    titulo: 'Y después, a operar',
+    titulo: 'Aprender a decidir por ti mismo',
     texto:
-      'Cuando la lectura empieza a estar asentada entramos en timing, gestión, plan de trading y operativa, poco a poco y sin correr.',
+      'Trabajamos entradas, salidas, gestión del riesgo y emociones. Y en la sala de trading analizamos el mercado real para entender qué hacer y cuándo no operar.',
   },
 ]
 
@@ -49,48 +52,49 @@ const resultadosMentoria = [
     numero: '01',
     titulo: 'Conseguir un extra',
     texto:
-      'Puedes llegar a utilizar el trading como una fuente adicional de ingresos y convertir lo aprendido en una habilidad que te acompañe durante muchos años.',
+      'Podrías plantearte obtener ingresos complementarios si con el tiempo desarrollas conocimientos, experiencia y consistencia. No hay garantías de conseguirlo.',
   },
   {
     numero: '02',
     titulo: 'Intentar rentabilizar tu capital',
     texto:
-      'Puedes aprender a operar tu propio dinero con más conocimiento, criterio y control, sin depender de que otra persona tenga que decidir por ti.',
+      'Puedes aprender a analizar y gestionar tu propio capital, comprendiendo que cualquier operación puede generar pérdidas.',
   },
   {
     numero: '03',
     titulo: 'Llevarlo mucho más lejos',
     texto:
-      'Si alcanzas el nivel, la consistencia y los resultados necesarios, puedes incluso plantearte convertirlo en una actividad profesional y ganar más libertad sobre tu tiempo y tus decisiones.',
+      'Si desarrollas experiencia y resultados sostenibles, podrías plantearte dedicarte profesionalmente al trading. Es una posibilidad exigente, no un resultado prometido.',
   },
 ]
 
 const incluye = [
-  'Formación completa del método PEV',
-  'Entre 500 y 700 gráficos y ejercicios',
-  'Corrección personal del trabajo que me mandes',
-  'Mis operaciones reales para que puedas verlas, trabajarlas y entender por qué las hago',
-  'Reuniones grupales semanales para revisar cómo vas',
-  'Sesiones 1 a 1 si realmente te bloqueas, porpuestas por mi',
-  'Acceso a la Comunidad PEV',
-  'Sala de trading incluida durante el primer año, después 20€/mes',
-  'Timing, gestión y parte emocional cuando llegue el momento',
+  'Una clase semanal de teoría online en directo conmigo',
+  'Otra clase semanal de práctica con correcciones grupales',
+  'Seis meses de contenidos que se abren progresivamente',
+  'Clases grabadas y videolecciones para preparar y repasar',
+  'Sala de trading en directo: aprendemos del mercado real, sin señales',
+  'Ejercicios de gráficos y elaboración de tu plan de trading',
+  'Comunidad privada y reuniones grupales durante tu acceso',
+  'Anual: 12 meses de acceso y sala de trading',
+  'Flexible: hasta seis pagos; 12 meses de formación si completas todos',
+  'Premium: 14 meses de seguimiento individual y 12 meses de sala',
 ]
 
 const siEs = [
-  'Aprender a leer el mercado y entender qué está pasando',
-  'Trabajar sobre gráficos reales y recibir correcciones',
-  'Ver y aprender en la sala de trading de la operativa y análisis diario',
-  'Tener seguimiento y acompañamiento durante el aprendizaje',
-  'Tomar tus propias decisiones con todo lo aprendido',
+  'Empezar desde cero o profundizar si ya tienes experiencia',
+  'Aprender con dos clases online semanales en directo',
+  'Hacer gráficos y recibir correcciones grupales en clase',
+  'Analizar el mercado real en la sala de trading',
+  'Desarrollar tu criterio y aprender a decidir por ti mismo',
 ]
 
 const noEs = [
   'Buscar dinero fácil o resultados rápidos',
-  'Ver unos cuantos vídeos y pensar que ya sabes operar',
+  'Pensar que mirar unos vídeos basta para saber operar',
   'Copiar operaciones sin entender lo que estás haciendo',
-  'Entrar pensando que el trabajo lo voy a hacer yo por ti',
-  'Creer que se puede ser rentable sin esfuerzo y trabajo',
+  'Evitar la práctica, los errores o las correcciones',
+  'Creer que existe una metodología que garantiza beneficios',
 ]
 
 const operativaReal = [
@@ -227,32 +231,42 @@ const preguntas = [
   {
     pregunta: '¿Cuánto dura la Mentoría PEV?',
     respuesta:
-      'No tiene una fecha cerrada. Lo habitual es que una persona tarde entre 8 y 14 meses, aunque cada alumno lleva su propio ritmo. Mientras estés trabajando, seas constante y podamos mantener un seguimiento real, seguimos. Si dejas de trabajar, desapareces o no hay continuidad, se da por finalizada la parte de seguimiento y corrección de ejercicios.',
+      'Los contenidos se desbloquean progresivamente durante seis meses. PEV Anual incluye 12 meses de formación, clases y sala. PEV Flexible permite hasta seis pagos mensuales sin permanencia: si completas los seis, tienes 12 meses de formación y clases, con sala incluida durante los meses de pago activo. PEV Premium incluye 14 meses de acompañamiento personalizado, 12 meses de sala y acceso permanente a los contenidos formativos.',
   },
   {
     pregunta: '¿Cuánto tiempo tengo que dedicar?',
     respuesta:
-      'Como referencia, entre 4 y 6 horas a la semana. No tienes que estar todo el día delante del gráfico, pero sí necesitas sacar tiempo para trabajar, hacer ejercicios y mantener continuidad.',
+      'Como orientación, unas 4 a 6 horas semanales. Tendrás una clase de teoría y otra de práctica en directo cada semana. Además, necesitarás tiempo para estudiar, analizar gráficos y hacer ejercicios. Cada persona avanza a su ritmo.',
   },
   {
     pregunta: '¿Tengo que tener experiencia?',
     respuesta:
-      'No. Puedes empezar desde bastante abajo. Lo importante es que estés dispuesto a aprender desde la base, trabajar y seguir los pasos sin querer correr más de la cuenta.',
+      'No. La Mentoría PEV está dirigida tanto a quienes empiezan desde cero como a traders con experiencia. Comenzamos por los fundamentos y avanzamos progresivamente con la metodología PEV.',
   },
   {
     pregunta: '¿Voy a poder ver tus operaciones?',
     respuesta:
-      'Sí. En la Sala de Trading vas a ver mis operaciones en tiempo real, cómo las planteo, cómo las analizo y por qué tomo cada decisión. Los alumnos más avanzados también comparten su operativa. El objetivo es aprender de todo ello hasta que seas tú quien plantee y tome sus propias decisiones.',
+      'Sí. En la sala de trading analizamos el mercado en directo. Verás operaciones reales mías y de alumnos avanzados con sus razonamientos, entradas y salidas. Es un entorno de aprendizaje, no un servicio de señales. Durante la formación te recomiendo no copiar operaciones ni precipitarte a operar en real o en demo.',
   },
   {
-    pregunta: '¿Qué ocurre si me bloqueo?',
+    pregunta: '¿Cómo se corrigen los gráficos? ¿Hay reuniones individuales?',
     respuesta:
-      'Lo vemos. Si con las correcciones y las reuniones no conseguimos salir del atasco, nos sentamos uno a uno, vemos dónde está el problema y trabajamos desde ahí.',
+      'En PEV Anual y PEV Flexible corregimos gráficos y ejercicios en las clases grupales de práctica. PEV Premium incorpora, además, correcciones individuales continuas, reuniones 1 a 1 cuando sean necesarias y seguimiento de tu plan de trading durante 14 meses. Las reuniones individuales no forman parte de Anual ni de Flexible.',
+  },
+  {
+    pregunta: '¿Qué pasa cuando termine mi período de acceso?',
+    respuesta:
+      'Puedes continuar en la sala de trading mediante su cuota mensual. Mientras mantengas activa esa suscripción, también conservas el acceso a los contenidos y a las clases y reuniones grupales. Premium mantiene además el acceso permanente a los contenidos formativos, aunque termine el seguimiento personalizado.',
+  },
+  {
+    pregunta: '¿Necesito reservar una reunión antes de entrar?',
+    respuesta:
+      'Solo para PEV Premium. PEV Anual y PEV Flexible se pueden consultar y contratar directamente en Comudia. Para Premium primero tenemos una sesión estratégica conmigo y valoramos si necesitas ese acompañamiento individual.',
   },
 ]
 
 function Cta({
-  children = 'Reservar cita',
+  children = 'Ver modalidades de Mentoría',
   className = '',
 }) {
   const irAReserva = () => {
@@ -280,23 +294,22 @@ function Cta({
 }
 
 export default function TradingSinAtajosWJD092026() {
-
   const [mostrarSubir, setMostrarSubir] =
-    useState(false)  
-  const [respuestaFiltro, setRespuestaFiltro] =
-    useState(null)
+    useState(false)
+
   const [
     videoTestimonioActivoId,
     setVideoTestimonioActivoId,
   ] = useState(
     testimoniosVideoMentoria[0]?.id ?? null
   )
+
   const [
     reproduciendoTestimonio,
     setReproduciendoTestimonio,
   ] = useState(false)
 
-    const operativaScrollRef = useRef(null)
+  const operativaScrollRef = useRef(null)
 
   const moverOperativa = (direccion) => {
     const contenedor =
@@ -319,7 +332,7 @@ export default function TradingSinAtajosWJD092026() {
     })
   }
 
-    const testimoniosScrollRef = useRef(null)
+  const testimoniosScrollRef = useRef(null)
 
   const moverTestimonios = (direccion) => {
     const contenedor =
@@ -392,16 +405,12 @@ export default function TradingSinAtajosWJD092026() {
           aria-hidden="true"
         >
           <div className="absolute left-0 top-[150px] h-px w-[28%] bg-white/[0.07]" />
-
           <div className="absolute right-0 top-[150px] h-px w-[42%] bg-white/[0.07]" />
-
           <div className="absolute bottom-0 left-0 h-px w-full bg-white/[0.09]" />
-
           <div className="absolute bottom-0 left-[14%] h-px w-[30%] bg-cmr-gold/45" />
         </div>
 
         <div className="relative mx-auto w-full max-w-[1180px] px-5 pb-20 pt-10 sm:px-8 sm:pb-24 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-14">
-
           <div className="mx-auto max-w-[980px] text-center">
 
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-[#91D3CB]">
@@ -420,8 +429,9 @@ export default function TradingSinAtajosWJD092026() {
             </p>
 
             <p className="mx-auto mt-4 max-w-[760px] text-lg leading-8 text-white/[0.68] sm:text-xl sm:leading-8">
-              Desde conseguir un extra hasta poder plantearte
-              dedicarte a ello
+              Tanto si empiezas desde cero como si ya tienes experiencia:
+              una clase online de teoría y otra de práctica cada semana,
+              correcciones y sala de trading para aprender con el mercado real.
             </p>
 
             <p className="mx-auto mt-4 max-w-[760px] text-sm font-bold leading-6 text-white/[0.58] sm:text-base sm:leading-7">
@@ -431,7 +441,6 @@ export default function TradingSinAtajosWJD092026() {
             </p>
 
             <div className="mx-auto mt-9 w-full max-w-[960px] overflow-hidden rounded-[24px] border border-white/[0.14] bg-black shadow-[0_28px_80px_rgba(0,0,0,0.34)] sm:mt-10 sm:rounded-[28px]">
-
               <BunnyVideo
                 libraryId="710893"
                 videoId="a3d266db-42dc-4417-948e-b5a0a064367c"
@@ -440,21 +449,16 @@ export default function TradingSinAtajosWJD092026() {
                 className="aspect-video overflow-hidden"
                 cargaAlPulsar
               />
-
             </div>
 
             <div className="mt-7 flex justify-center">
-
               <Cta className="w-full sm:w-auto">
-                Quiero saber si la Mentoría encaja conmigo
+                Ver modalidades de Mentoría PEV
               </Cta>
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
       {/* TRABAJO + PROCESO */}
@@ -475,25 +479,24 @@ export default function TradingSinAtajosWJD092026() {
 
             <div className="max-w-3xl border-l border-white/[0.14] pl-6 sm:pl-9">
               <p className="text-lg leading-8 text-white/[0.74] sm:text-xl sm:leading-9">
-                Ver vídeos y entender lo que te explican es
-                relativamente fácil. Lo difícil llega cuando
-                te pongo un gráfico delante y eres tú quien
-                tiene que decirme qué está pasando ahí.
+                Cada semana tenemos dos clases online en directo:
+                una de teoría para profundizar en la metodología PEV
+                y otra de práctica para trabajar los gráficos y corregir
+                los ejercicios de los alumnos.
               </p>
 
               <p className="mt-5 text-base leading-7 text-white/[0.52] sm:text-lg sm:leading-8">
-                Por eso aquí vas a hacer gráficos. Muchos.
-                Me los mandas, los corrijo, vemos qué has
-                entendido, qué no, y vuelves a trabajar.
-                Así una vez detrás de otra hasta que lo que
-                antes no veías empiece a ser evidente.
+                Aprendes haciendo gráficos. Muchos. En las clases
+                prácticas revisamos errores y repetimos el trabajo
+                hasta que empieces a ver lo que antes no veías.
+                Si eliges Premium, además, trabajamos con correcciones
+                individuales continuas.
               </p>
             </div>
 
           </div>
 
           <div className="mt-12 border-t border-white/[0.13] lg:mt-14">
-
             {proceso.map((item) => (
               <div
                 key={item.numero}
@@ -512,11 +515,9 @@ export default function TradingSinAtajosWJD092026() {
                 </p>
               </div>
             ))}
-
           </div>
 
-                  <div className="mt-10 grid gap-0 border-y border-white/[0.13] sm:grid-cols-2">
-
+          <div className="mt-10 grid gap-0 border-y border-white/[0.13] sm:grid-cols-2">
             <div className="py-7 text-center sm:border-r sm:border-white/[0.13] sm:px-8">
               <p className="font-display text-3xl font-black text-white sm:text-4xl">
                 4–6 h
@@ -529,15 +530,14 @@ export default function TradingSinAtajosWJD092026() {
 
             <div className="border-t border-white/[0.13] py-7 text-center sm:border-t-0 sm:px-8">
               <p className="font-display text-3xl font-black text-white sm:text-4xl">
-                Sin fecha cerrada
+                6 meses
               </p>
 
               <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.18em] text-cmr-gold">
-                mientras haya trabajo y continuidad
+                de contenidos progresivos; acceso según tu plan
               </p>
             </div>
-
-          </div>  
+          </div>
 
         </div>
       </section>
@@ -546,9 +546,7 @@ export default function TradingSinAtajosWJD092026() {
       <section className="bg-[#F1EEE5] py-20 text-cmr-ink sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12">
 
-          {/* INTRO */}
           <div className="mx-auto max-w-[900px] text-center">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-cmr-greenDark">
               Hasta dónde puedes llevarlo
             </p>
@@ -561,8 +559,9 @@ export default function TradingSinAtajosWJD092026() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-[760px] text-base leading-7 text-cmr-muted sm:text-lg sm:leading-8">
-              Puedes conseguir un extra, intentar rentabilizar tu capital
-              o incluso llegar a plantearte vivir de ello.
+              Puedes plantearte objetivos como gestionar mejor tu capital,
+              buscar ingresos complementarios o incluso dedicarte al trading.
+              Ninguno de ellos está garantizado.
             </p>
 
             <p className="mx-auto mt-4 max-w-[760px] text-base leading-7 text-cmr-muted sm:text-lg sm:leading-8">
@@ -570,12 +569,9 @@ export default function TradingSinAtajosWJD092026() {
               con todo lo que vas a aprender. Porque quien va a entrar
               al mercado, tomar las decisiones y gestionar su dinero eres tú.
             </p>
-
           </div>
 
-          {/* RESULTADOS */}
           <div className="mx-auto mt-14 max-w-[1080px] border-y border-cmr-ink/12 lg:grid lg:grid-cols-3">
-
             {resultadosMentoria.map((resultado, index) => (
               <div
                 key={resultado.numero}
@@ -585,7 +581,6 @@ export default function TradingSinAtajosWJD092026() {
                     : ''
                 }`}
               >
-
                 <p className="font-display text-lg font-black tracking-[0.06em] text-cmr-green/55">
                   {resultado.numero}
                 </p>
@@ -599,15 +594,11 @@ export default function TradingSinAtajosWJD092026() {
                 <p className="mt-4 max-w-[310px] text-base leading-7 text-cmr-muted">
                   {resultado.texto}
                 </p>
-
               </div>
             ))}
-
           </div>
 
-          {/* MI PARTE */}
           <div className="mx-auto mt-16 max-w-[1120px] overflow-hidden rounded-[32px] bg-[#10231F] px-6 py-10 text-white shadow-[0_28px_80px_rgba(7,21,18,0.18)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
-
             <div className="mx-auto max-w-[850px] text-center">
 
               <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-cmr-gold">
@@ -619,21 +610,20 @@ export default function TradingSinAtajosWJD092026() {
               </h3>
 
               <p className="mx-auto mt-6 max-w-[760px] text-base leading-7 text-white/[0.64] sm:text-lg sm:leading-8">
-                Te voy a dar el método, las herramientas, mi experiencia,
-                mis operaciones, correcciones, reuniones y acompañamiento.
-                Todo lo que esté en mi mano para ayudarte a avanzar.
+                Cada semana tendrás conmigo una clase online de teoría y
+                otra de práctica, con ejercicios y correcciones grupales.
+                Verás análisis y operaciones reales en la sala de trading,
+                y tendrás clases grabadas como apoyo. En Premium, además,
+                tendrás seguimiento personalizado y correcciones individuales.
               </p>
-
             </div>
 
             <div className="mx-auto mt-10 grid max-w-[980px] gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
-
               {incluye.map((item) => (
                 <div
                   key={item}
                   className="flex items-start gap-3 border-t border-white/[0.13] py-5"
                 >
-
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#8FD1C9]/12">
                     <Check
                       className="h-3.5 w-3.5 text-[#8FD1C9]"
@@ -644,15 +634,11 @@ export default function TradingSinAtajosWJD092026() {
                   <p className="text-sm font-bold leading-6 text-white/[0.76] sm:text-base sm:leading-7">
                     {item}
                   </p>
-
                 </div>
               ))}
-
             </div>
 
-            {/* COMPROMISO DE LOS DOS */}
             <div className="mx-auto mt-10 max-w-[850px] border-t border-white/[0.14] pt-10 text-center">
-
               <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.24em] text-[#8FD1C9]">
                 Ahora viene tu parte
               </p>
@@ -668,14 +654,12 @@ export default function TradingSinAtajosWJD092026() {
               </p>
 
               <div className="mx-auto mt-8 max-w-[760px] border-y border-white/[0.14] py-8">
-
                 <p className="font-display text-2xl font-black leading-[1.15] text-white sm:text-3xl">
                   Yo voy a poner todo de mi parte.
                   <span className="mt-1 block text-[#8FD1C9]">
                     Ahora necesito que tú pongas todo de la tuya.
                   </span>
                 </p>
-
               </div>
 
               <p className="mx-auto mt-7 max-w-[700px] text-base leading-7 text-white/[0.54] sm:text-lg sm:leading-8">
@@ -685,15 +669,11 @@ export default function TradingSinAtajosWJD092026() {
               </p>
 
               <div className="mt-8 flex justify-center">
-
                 <Cta className="w-full sm:w-auto">
-                  Quiero saber si la Mentoría encaja conmigo
+                  Ver modalidades de Mentoría PEV
                 </Cta>
-
               </div>
-
             </div>
-
           </div>
 
         </div>
@@ -704,7 +684,6 @@ export default function TradingSinAtajosWJD092026() {
         <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12">
 
           <div className="mx-auto max-w-[880px] text-center">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-cmr-gold">
               Antes de seguir
             </p>
@@ -717,14 +696,11 @@ export default function TradingSinAtajosWJD092026() {
               Prefiero que tengas claro lo que vas a encontrar dentro
               de la Mentoría y también lo que no.
             </p>
-
           </div>
 
           <div className="mx-auto mt-14 grid max-w-[1080px] gap-10 lg:grid-cols-2 lg:gap-0">
 
-            {/* SÍ */}
             <div className="lg:pr-12">
-
               <div className="text-center lg:text-left">
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#8FD1C9]">
                   Esto sí vas a encontrar
@@ -736,7 +712,6 @@ export default function TradingSinAtajosWJD092026() {
               </div>
 
               <div className="mt-7">
-
                 {siEs.map((item, index) => (
                   <div
                     key={item}
@@ -751,14 +726,10 @@ export default function TradingSinAtajosWJD092026() {
                     </p>
                   </div>
                 ))}
-
               </div>
-
             </div>
 
-            {/* NO */}
             <div className="border-t border-white/[0.13] pt-10 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-
               <div className="text-center lg:text-left">
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-cmr-gold">
                   Esto no
@@ -770,7 +741,6 @@ export default function TradingSinAtajosWJD092026() {
               </div>
 
               <div className="mt-7">
-
                 {noEs.map((item, index) => (
                   <div
                     key={item}
@@ -785,15 +755,12 @@ export default function TradingSinAtajosWJD092026() {
                     </p>
                   </div>
                 ))}
-
               </div>
-
             </div>
 
           </div>
 
           <div className="mx-auto mt-14 max-w-[880px] border-t border-white/[0.13] pt-9 text-center">
-
             <p className="mx-auto max-w-[680px] text-base leading-7 text-white/[0.58] sm:text-lg sm:leading-8">
               Si buscas aprender de verdad, trabajar y llegar a entender
               por qué haces cada cosa, entonces sí estamos hablando
@@ -802,10 +769,9 @@ export default function TradingSinAtajosWJD092026() {
 
             <div className="mt-7 flex justify-center">
               <Cta className="w-full sm:w-auto">
-                Quiero saber si la Mentoría encaja conmigo
+                Ver modalidades de Mentoría PEV
               </Cta>
             </div>
-
           </div>
 
         </div>
@@ -815,27 +781,20 @@ export default function TradingSinAtajosWJD092026() {
       <section className="bg-[#F1EEE5] py-20 text-cmr-ink sm:py-24 lg:py-28">
         <div className="mx-auto grid w-full max-w-[1220px] gap-12 px-5 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:items-center lg:gap-20 lg:px-12">
 
-          {/* FOTO */}
           <div className="relative mx-auto w-full max-w-[420px] lg:mx-0">
-
             <div className="pointer-events-none absolute -inset-6 rounded-[3rem] bg-cmr-green/[0.08] blur-[42px]" />
 
             <div className="relative overflow-hidden rounded-[30px] border border-cmr-ink/[0.08] bg-white shadow-[0_24px_70px_rgba(7,21,18,0.14)]">
-
               <img
                 src="https://res.cloudinary.com/dwbxywvdw/image/upload/f_auto/q_auto/c_limit,w_1000/v1784914913/cmrbolsa/CARLOS_IMAGE_URL_02_reduced_fk9h9f.png"
                 alt="Carlos Martín Rodríguez"
                 className="aspect-[4/5] w-full object-cover object-center"
                 loading="lazy"
               />
-
             </div>
-
           </div>
 
-          {/* TEXTO */}
           <div className="max-w-[700px]">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-cmr-greenDark">
               Quién está al otro lado
             </p>
@@ -849,13 +808,12 @@ export default function TradingSinAtajosWJD092026() {
             </p>
 
             <div className="mt-7 max-w-[650px] space-y-5">
-
               <p className="text-base leading-7 text-cmr-muted sm:text-lg sm:leading-8">
                 Opero en los mercados y trabajo contigo para enseñarte
                 a entender qué está pasando delante de un gráfico y por qué.
               </p>
 
-                <p className="text-base leading-7 text-cmr-muted sm:text-lg sm:leading-8">
+              <p className="text-base leading-7 text-cmr-muted sm:text-lg sm:leading-8">
                 Dentro de la Sala de Trading vas a ver mis operaciones en
                 tiempo real, cómo las planteo, cómo las analizo y por qué
                 tomo cada decisión. Y no solo las mías: los alumnos más
@@ -874,9 +832,7 @@ export default function TradingSinAtajosWJD092026() {
                 entiendas lo que tienes delante y seas capaz de tomar
                 tus propias decisiones.
               </p>
-
             </div>
-
           </div>
 
         </div>
@@ -887,30 +843,28 @@ export default function TradingSinAtajosWJD092026() {
         <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12">
 
           <div className="mx-auto max-w-[980px] text-center">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-cmr-gold">
               Operativa real
             </p>
 
             <h2 className="mt-4 font-display text-4xl font-black leading-[1.06] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
-              Esto es lo que puedes
+              Así trabajamos el mercado.
               <span className="block text-[#8FD1C9]">
-                llegar a hacer.
+                Operaciones reales, con contexto.
               </span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-[780px] text-base leading-7 text-white/[0.62] sm:text-lg sm:leading-8">
-              Pero para llegar hasta aquí necesitas trabajar, ser constante
-              y conseguir que funcionen juntas las tres patas del trading:
-              conocimiento, entradas y salidas, y emociones.
+              Estos son ejemplos de operaciones concretas, no resultados
+              habituales ni una promesa de rentabilidad. En trading también
+              hay pérdidas. Trabajamos tres patas: conocimiento, entradas y
+              salidas, y emociones.
             </p>
-
           </div>
 
           <div className="mx-auto mt-12 grid max-w-[1120px] gap-5 lg:grid-cols-3">
 
             <div className="rounded-[24px] border border-white/[0.12] bg-white/[0.035] p-6 sm:p-7">
-
               <p className="font-display text-sm font-black tracking-[0.12em] text-cmr-gold">
                 01
               </p>
@@ -928,11 +882,9 @@ export default function TradingSinAtajosWJD092026() {
               <p className="mt-4 text-sm font-bold leading-6 text-[#8FD1C9]">
                 Aquí puedo ayudarte muchísimo.
               </p>
-
             </div>
 
             <div className="rounded-[24px] border border-white/[0.12] bg-white/[0.035] p-6 sm:p-7">
-
               <p className="font-display text-sm font-black tracking-[0.12em] text-cmr-gold">
                 02
               </p>
@@ -950,11 +902,9 @@ export default function TradingSinAtajosWJD092026() {
               <p className="mt-4 text-sm font-bold leading-6 text-[#8FD1C9]">
                 Yo te ayudo a construir esa parte paso a paso.
               </p>
-
             </div>
 
             <div className="rounded-[24px] border border-white/[0.12] bg-white/[0.035] p-6 sm:p-7">
-
               <p className="font-display text-sm font-black tracking-[0.12em] text-cmr-gold">
                 03
               </p>
@@ -972,20 +922,17 @@ export default function TradingSinAtajosWJD092026() {
               <p className="mt-4 text-sm font-bold leading-6 text-[#8FD1C9]">
                 Aquí puedo acompañarte, pero no hacerlo por ti.
               </p>
-
             </div>
 
           </div>
 
           <div className="mx-auto mt-10 max-w-[820px] text-center">
-
             <p className="font-display text-xl font-black leading-[1.3] text-white sm:text-2xl">
-              Si consigues desarrollar las tres patas,
+              No se trata de copiar estos resultados.
               <span className="mt-1 block text-[#8FD1C9]">
-                podrás llegar a plantear operaciones como las que ves aquí.
+                Se trata de entender cada decisión y gestionar el riesgo.
               </span>
             </p>
-
           </div>
 
           <div className="relative mt-12 sm:mt-14">
@@ -994,40 +941,31 @@ export default function TradingSinAtajosWJD092026() {
               ref={operativaScrollRef}
               className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-
               {operativaReal.map((operativa, index) => (
                 <article
                   key={operativa.id}
                   className="w-[92%] shrink-0 snap-center sm:w-[76%] lg:w-[68%]"
                 >
-
                   <div className="overflow-hidden rounded-[28px] border border-white/[0.13] bg-[#0B1C18] shadow-[0_30px_90px_rgba(0,0,0,0.34)]">
 
-                    {/* CABECERA */}
                     <div className="flex flex-col gap-4 border-b border-white/[0.10] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
 
                       <div className="flex items-center gap-3">
-
                         <span className="h-2 w-2 rounded-full bg-[#8FD1C9]" />
 
                         <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/[0.72]">
                           Operativa real · ES
                         </p>
-
                       </div>
 
                       <div className="flex items-center gap-3">
-
                         <div className="rounded-full border border-[#8FD1C9]/25 bg-[#8FD1C9]/10 px-4 py-2">
-
                           <p className="font-display text-base font-black text-[#8FD1C9] sm:text-lg">
                             +{operativa.puntos} pts
                           </p>
-
                         </div>
 
                         <div className="text-right">
-
                           <p className="text-xs font-bold uppercase tracking-[0.12em] text-white/[0.38]">
                             1 contrato ES
                           </p>
@@ -1035,16 +973,12 @@ export default function TradingSinAtajosWJD092026() {
                           <p className="mt-0.5 font-display text-lg font-black text-cmr-gold">
                             ≈ {operativa.beneficio}
                           </p>
-
                         </div>
-
                       </div>
 
                     </div>
 
-                    {/* IMAGEN */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-[#071512]">
-
                       <img
                         src={operativa.imagen}
                         alt={`Ejemplo de operativa real ${index + 1}`}
@@ -1061,21 +995,18 @@ export default function TradingSinAtajosWJD092026() {
                         className="relative z-10 h-full w-full object-contain"
                         loading="lazy"
                       />
-
                     </div>
 
                   </div>
-
                 </article>
               ))}
-
             </div>
 
             <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-1 sm:px-3">
               <button
                 type="button"
                 onClick={() => moverOperativa(-1)}
-                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:-translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark"
+                className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:-translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark sm:h-12 sm:w-12"
                 aria-label="Operación anterior"
               >
                 <ArrowRight
@@ -1087,7 +1018,7 @@ export default function TradingSinAtajosWJD092026() {
               <button
                 type="button"
                 onClick={() => moverOperativa(1)}
-                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark"
+                className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark sm:h-12 sm:w-12"
                 aria-label="Siguiente operación"
               >
                 <ArrowRight
@@ -1097,11 +1028,7 @@ export default function TradingSinAtajosWJD092026() {
               </button>
             </div>
 
-            {/* CONTROLES */}
-
-            {/* CONTROLES */}
             <div className="mt-5 flex items-center justify-center gap-4">
-
               <button
                 type="button"
                 onClick={() => moverOperativa(-1)}
@@ -1129,21 +1056,22 @@ export default function TradingSinAtajosWJD092026() {
                   strokeWidth={2.4}
                 />
               </button>
-
             </div>
-          <p className="mx-auto mt-6 max-w-[720px] text-center text-xs leading-5 text-white/[0.38] sm:text-sm sm:leading-6">
-            Equivalencia orientativa calculada con 1 contrato del futuro ES
-            a 50 $ por punto. El resultado económico cambia según el instrumento,
-            el número de contratos y la gestión de cada operación.
-          </p>
+
+            <p className="mx-auto mt-6 max-w-[720px] text-center text-xs leading-5 text-white/[0.38] sm:text-sm sm:leading-6">
+              Equivalencia orientativa calculada con 1 contrato del futuro ES
+              a 50 $ por punto. El resultado económico cambia según el instrumento,
+              el número de contratos y la gestión de cada operación.
+              No incluyen comisiones y no representan resultados futuros.
+            </p>
           </div>
 
           <div className="mx-auto mt-12 max-w-[860px] border-t border-white/[0.12] pt-9 text-center">
 
             <p className="font-display text-2xl font-black leading-[1.2] text-white sm:text-3xl">
-              Una operación es lo de menos cuando vas a hacer
+              Una operación aislada no define a un trader.
               <span className="block text-[#8FD1C9]">
-                500 o 600 operaciones al año.
+                Importa el proceso y cómo gestionas cada decisión.
               </span>
             </p>
 
@@ -1159,18 +1087,16 @@ export default function TradingSinAtajosWJD092026() {
               buenas decisiones una y otra vez y saber gestionar también
               cuando el mercado te dice que no.
             </p>
-
           </div>
 
         </div>
       </section>
 
-                  {/* TESTIMONIOS */}
+      {/* TESTIMONIOS */}
       <section className="bg-[#10231F] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12">
 
           <div className="mx-auto max-w-[820px] text-center">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-[#8FD1C9]">
               Alumnos
             </p>
@@ -1183,18 +1109,14 @@ export default function TradingSinAtajosWJD092026() {
               Sin guion y con sus palabras. Personas que han pasado
               por la Mentoría y te cuentan cómo ha sido el proceso.
             </p>
-
           </div>
 
           <div className="relative mt-12">
-
             <div
               ref={testimoniosScrollRef}
               className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-
               {testimoniosVideoMentoria.map((testimonio) => {
-
                 const estaActivo =
                   videoTestimonioActivoId === testimonio.id &&
                   reproduciendoTestimonio
@@ -1209,13 +1131,9 @@ export default function TradingSinAtajosWJD092026() {
                     key={testimonio.id}
                     className="w-[86%] shrink-0 snap-center sm:w-[48%] lg:w-[31.5%]"
                   >
-
                     <div className="overflow-hidden rounded-[24px] border border-white/[0.13] bg-[#0B1C18] shadow-[0_22px_60px_rgba(0,0,0,0.22)]">
-
                       {estaActivo && embedUrl ? (
-
                         <div className="aspect-video bg-black">
-
                           <iframe
                             src={embedUrl}
                             title={`Testimonio de ${testimonio.nombre}`}
@@ -1223,11 +1141,8 @@ export default function TradingSinAtajosWJD092026() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           />
-
                         </div>
-
                       ) : (
-
                         <button
                           type="button"
                           onClick={() => {
@@ -1239,7 +1154,6 @@ export default function TradingSinAtajosWJD092026() {
                           className="group relative block aspect-video w-full overflow-hidden bg-black text-left"
                           aria-label={`Ver testimonio de ${testimonio.nombre}`}
                         >
-
                           <img
                             src={obtenerYoutubeMiniatura(
                               testimonio.videoUrl
@@ -1251,21 +1165,14 @@ export default function TradingSinAtajosWJD092026() {
                           <div className="absolute inset-0 bg-black/15 transition duration-300 group-hover:bg-black/25" />
 
                           <div className="absolute inset-0 flex items-center justify-center">
-
                             <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/40 bg-[#071512]/85 shadow-lg backdrop-blur-sm transition duration-200 group-hover:scale-105">
-
                               <span className="ml-1 block h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-white" />
-
                             </span>
-
                           </div>
-
                         </button>
-
                       )}
 
                       <div className="px-6 py-5 text-center">
-
                         <p className="font-display text-xl font-black text-white">
                           {testimonio.nombre}
                         </p>
@@ -1273,23 +1180,18 @@ export default function TradingSinAtajosWJD092026() {
                         <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[#8FD1C9]">
                           Alumno Mentoría PEV
                         </p>
-
                       </div>
-
                     </div>
-
                   </article>
                 )
               })}
-
             </div>
 
             <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-1 sm:px-3">
-
               <button
                 type="button"
                 onClick={() => moverTestimonios(-1)}
-                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:-translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark"
+                className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:-translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark sm:h-12 sm:w-12"
                 aria-label="Testimonio anterior"
               >
                 <ArrowRight
@@ -1301,7 +1203,7 @@ export default function TradingSinAtajosWJD092026() {
               <button
                 type="button"
                 onClick={() => moverTestimonios(1)}
-                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark"
+                className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-cmr-green bg-cmr-green text-white shadow-[0_12px_30px_rgba(0,0,0,0.32)] transition duration-200 hover:translate-x-1 hover:border-cmr-greenDark hover:bg-cmr-greenDark"
                 aria-label="Siguiente testimonio"
               >
                 <ArrowRight
@@ -1309,11 +1211,9 @@ export default function TradingSinAtajosWJD092026() {
                   strokeWidth={2.4}
                 />
               </button>
-
             </div>
 
             <div className="mt-6 flex items-center justify-center gap-4">
-
               <button
                 type="button"
                 onClick={() => moverTestimonios(-1)}
@@ -1341,16 +1241,13 @@ export default function TradingSinAtajosWJD092026() {
                   strokeWidth={2.4}
                 />
               </button>
-
             </div>
 
           </div>
-
         </div>
       </section>
 
-
-      {/* PREGUNTAS + RESERVA */}
+      {/* PREGUNTAS + MODALIDADES */}
       <section
         id="reserva"
         className="scroll-mt-8 border-t border-white/10 bg-cmr-dark py-20 sm:py-24 lg:py-28"
@@ -1358,9 +1255,8 @@ export default function TradingSinAtajosWJD092026() {
         <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12">
 
           <div className="mx-auto max-w-[850px] text-center">
-
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.28em] text-[#8FD1C9]">
-              Antes de reservar
+              Antes de elegir tu modalidad
             </p>
 
             <h2 className="mt-4 font-display text-4xl font-black leading-[1.06] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
@@ -1368,27 +1264,21 @@ export default function TradingSinAtajosWJD092026() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-[680px] text-base leading-7 text-white/[0.56] sm:text-lg sm:leading-8">
-              Si después de leer esto sigues pensando que la Mentoría
-              puede encajarte, entonces tiene sentido que hablemos.
+              Las tres modalidades comparten la metodología PEV y las clases.
+              Lo que cambia es el tiempo de acceso y el acompañamiento.
             </p>
-
           </div>
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-start lg:gap-16">
 
-            {/* FAQ */}
             <div>
-
               <div className="border-t border-white/[0.13]">
-
                 {preguntas.map((item, index) => (
                   <details
                     key={item.pregunta}
                     className="group border-b border-white/[0.13]"
                   >
-
                     <summary className="grid cursor-pointer list-none grid-cols-[42px_1fr_44px] items-center gap-4 py-6 text-left [&::-webkit-details-marker]:hidden sm:grid-cols-[54px_1fr_48px] sm:gap-5 sm:py-7">
-
                       <span className="font-display text-sm font-black tracking-[0.08em] text-cmr-gold/65 sm:text-base">
                         0{index + 1}
                       </span>
@@ -1400,11 +1290,9 @@ export default function TradingSinAtajosWJD092026() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.14] text-xl font-light text-[#8FD1C9] transition duration-200 group-hover:border-[#8FD1C9]/45 group-open:rotate-45 group-open:border-[#8FD1C9]/55 group-open:bg-[#8FD1C9]/10 sm:h-11 sm:w-11">
                         +
                       </span>
-
                     </summary>
 
                     <div className="grid grid-cols-[42px_1fr_44px] gap-4 pb-8 sm:grid-cols-[54px_1fr_48px] sm:gap-5">
-
                       <span />
 
                       <p className="max-w-3xl text-base leading-7 text-white/[0.58] sm:text-lg sm:leading-8">
@@ -1412,99 +1300,94 @@ export default function TradingSinAtajosWJD092026() {
                       </p>
 
                       <span />
-
                     </div>
-
                   </details>
                 ))}
-
               </div>
-
             </div>
 
-            {/* FILTRO FINAL */}
             <div className="lg:sticky lg:top-8">
-
               <div className="relative overflow-hidden rounded-[30px] border border-white/[0.12] bg-[#10231F] p-6 shadow-[0_28px_85px_rgba(0,0,0,0.24)] sm:p-8 lg:p-10">
 
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-cmr-green via-[#8FD1C9] to-cmr-gold" />
 
                 <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-cmr-gold">
-                  Una última cosa
+                  Elige tu modalidad
                 </p>
 
                 <h3 className="mt-4 font-display text-3xl font-black leading-[1.1] text-white sm:text-4xl">
-                  Si vamos a hacerlo, tenemos que hacerlo los dos.
+                  La misma formación PEV. Distinto acompañamiento.
                 </h3>
 
                 <p className="mt-5 text-base leading-7 text-white/[0.62] sm:text-lg sm:leading-8">
-                  La Mentoría PEV requiere trabajo continuado,
-                  constancia, compromiso y una inversión
-                  económica importante.
+                  Puedes aprender desde cero o mejorar tu operativa si ya
+                  tienes experiencia. Siempre con una clase semanal de
+                  teoría y otra de práctica en directo.
                 </p>
 
-                <p className="mt-4 text-base font-bold leading-7 text-white/[0.78] sm:text-lg sm:leading-8">
-                  Si vemos que encaja contigo, ¿estás dispuesto
-                  a asumir todo ello?
-                </p>
+                <div className="mt-7 border-t border-white/[0.12] pt-6">
+                  <h4 className="font-display text-xl font-black text-white">
+                    PEV Anual y PEV Flexible
+                  </h4>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  <p className="mt-3 text-sm leading-7 text-white/[0.64]">
+                    Anual: 12 meses de formación, clases y sala de trading
+                    con pago único. Flexible: hasta seis cuotas mensuales,
+                    sin permanencia; 12 meses de formación y clases si
+                    completas los pagos y sala incluida durante los seis
+                    meses de pago activo.
+                  </p>
+
+                  <a
+                    href={PLANES_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-cmr-green px-6 py-3 text-center text-sm font-extrabold text-white transition duration-200 hover:bg-cmr-greenDark"
+                  >
+                    Ver planes en Comudia
+
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+
+                <div className="mt-7 border-t border-white/[0.12] pt-6">
+                  <h4 className="font-display text-xl font-black text-white">
+                    PEV Premium
+                  </h4>
+
+                  <p className="mt-3 text-sm leading-7 text-white/[0.64]">
+                    14 meses de acompañamiento personalizado, con
+                    correcciones individuales y reuniones 1 a 1 cuando
+                    sean necesarias. Incluye 12 meses de sala de trading
+                    y acceso permanente a los contenidos formativos.
+                    Primero tenemos que hablar.
+                  </p>
 
                   <a
                     href={RESERVA_URL}
-                    onClick={() => setRespuestaFiltro('si')}
-                    className={`flex min-h-14 items-center justify-center rounded-full border px-5 py-4 text-center text-sm font-extrabold uppercase tracking-[0.12em] transition ${
-                      respuestaFiltro === 'si'
-                        ? 'border-[#8FD1C9] bg-cmr-green text-white'
-                        : 'border-white/[0.18] bg-transparent text-white hover:border-[#8FD1C9]/70 hover:bg-white/5'
-                    }`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-[#8FD1C9]/60 bg-transparent px-6 py-3 text-center text-sm font-extrabold text-white transition duration-200 hover:bg-white/[0.08]"
                   >
-                    Sí, estoy dispuesto
+                    Reservar cita para Premium
+
+                    <ArrowRight className="h-4 w-4" />
                   </a>
-
-                  <button
-                    type="button"
-                    onClick={() => setRespuestaFiltro('no')}
-                    className={`min-h-14 rounded-full border px-5 py-4 text-sm font-extrabold uppercase tracking-[0.12em] transition ${
-                      respuestaFiltro === 'no'
-                        ? 'border-cmr-gold/70 bg-cmr-gold/10 text-cmr-gold'
-                        : 'border-white/[0.18] bg-transparent text-white/70 hover:border-white/[0.35] hover:bg-white/5'
-                    }`}
-                  >
-                    Ahora mismo no
-                  </button>
-
                 </div>
-
-                {respuestaFiltro === 'no' && (
-                  <div className="mt-6 border-t border-white/[0.12] pt-6">
-
-                    <p className="text-base leading-7 text-white/[0.58]">
-                      Entonces es mejor no reservar todavía.
-                      Si más adelante puedes asumir el trabajo,
-                      la constancia y la inversión que requiere
-                      la Mentoría, podrás volver y valorarlo con calma.
-                    </p>
-
-                  </div>
-                )}
 
               </div>
 
               <p className="mt-5 text-center text-sm leading-6 text-white/[0.38]">
-                La llamada es para conocernos, ver dónde estás
-                y valorar si tiene sentido trabajar juntos.
+                La reunión previa es necesaria únicamente para Premium.
+                En Anual y Flexible puedes consultar y contratar directamente.
               </p>
-
             </div>
 
           </div>
-
         </div>
       </section>
 
-
-        {mostrarSubir && (
+      {mostrarSubir && (
         <button
           type="button"
           onClick={() =>
@@ -1514,7 +1397,7 @@ export default function TradingSinAtajosWJD092026() {
               behavior: 'smooth',
             })
           }
-          className="fixed bottom-5 right-5 z-50 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/[0.16] bg-[#10231F]/95 text-white shadow-[0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:border-[#8FD1C9]/60 hover:bg-cmr-green sm:bottom-7 sm:right-7"
+          className="fixed bottom-5 right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.16] bg-[#10231F]/95 text-white shadow-[0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:border-[#8FD1C9]/60 hover:bg-cmr-green sm:bottom-7 sm:right-7 sm:h-12 sm:w-12"
           aria-label="Volver arriba"
           title="Volver arriba"
         >
@@ -1525,11 +1408,8 @@ export default function TradingSinAtajosWJD092026() {
         </button>
       )}
 
-
-      {/* FOOTER MÍNIMO LEGAL */}
       <footer className="border-t border-white/10 bg-[#061310] py-8">
         <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-5 px-5 text-sm text-white/[0.38] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
-
           <p>
             © CMRBolsa · Carlos Martín Rodríguez
           </p>
@@ -1562,7 +1442,6 @@ export default function TradingSinAtajosWJD092026() {
               Cookies
             </Link>
           </div>
-
         </div>
       </footer>
 

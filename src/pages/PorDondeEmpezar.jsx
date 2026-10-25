@@ -1,3 +1,4 @@
+
 import {
   useMemo,
   useState,
@@ -19,14 +20,14 @@ import PageHero from '../components/PageHero'
 const caminos = {
   comunidad: {
     nombre: 'Comunidad PEV',
-    etiqueta: 'Creo que aquí encajas mejor',
+    etiqueta: 'Una opción que encaja con tu ritmo',
     descripcion:
-      'Por tus respuestas, creo que la Comunidad es el mejor punto de partida. Tendrás una formación ordenada, reuniones y contacto conmigo, sin entrar todavía en el trabajo más personal de la Mentoría.',
+      'Por tus respuestas, la Comunidad PEV puede encajar con tu forma de aprender. Tienes una clase online semanal en directo conmigo, con dudas y correcciones, y una sala de trading escrita para seguir el mercado a diario. Los vídeos pregrabados sirven como apoyo.',
     puntos: [
-      'Formación ordenada por niveles',
-      'Reuniones semanales conmigo',
-      'Sala escrita y seguimiento del mercado',
-      'Puedes avanzar a tu ritmo',
+      'Una clase online semanal en directo',
+      'Dudas y correcciones durante las clases',
+      'Sala de trading escrita en días de mercado',
+      'Más de 200 vídeos de apoyo para repasar',
     ],
     enlacePrincipal: '/comunidad-pev',
     textoPrincipal: 'Ver la Comunidad PEV',
@@ -36,17 +37,17 @@ const caminos = {
 
   mentoria: {
     nombre: 'Mentoría PEV',
-    etiqueta: 'Creo que necesitas algo más personal',
+    etiqueta: 'Una opción para profundizar y practicar',
     descripcion:
-      'Por tus respuestas, creo que no necesitas seguir acumulando contenido. Necesitas hacer ejercicios, recibir correcciones y saber exactamente qué tienes que mejorar.',
+      'Por tus respuestas, puede encajarte la Mentoría PEV. Tienes dos clases online semanales en directo: una de teoría y otra de práctica con correcciones grupales de gráficos y ejercicios. También dispones de sala de trading y contenidos grabados según la modalidad que elijas. Puedes empezar desde cero o tener experiencia.',
     puntos: [
-      'Ejercicios con correcciones',
-      'Un camino claro de principio a fin',
-      'Creación de tu plan de trading',
-      'Seguimiento más personal',
+      'Una clase semanal de teoría en directo',
+      'Otra clase semanal de práctica y correcciones',
+      'Sala de trading en directo según modalidad',
+      'Seguimiento individual adicional solo en Premium',
     ],
-    enlacePrincipal: '/solicitud-mentoria',
-    textoPrincipal: 'Ver si la Mentoría encaja conmigo',
+    enlacePrincipal: '/mentoria-pev',
+    textoPrincipal: 'Conocer la Mentoría PEV',
     enlaceAlternativo: '/comunidad-pev',
     textoAlternativo: 'Conocer primero la Comunidad',
   },
@@ -74,7 +75,7 @@ const preguntas = [
     id: 'situacion',
     titulo: '¿En qué punto estás ahora?',
     texto:
-      'No importa que tengas poca experiencia. Solo quiero saber desde dónde partes.',
+      'Puedes empezar de cero o tener experiencia. Lo importante es saber qué buscas ahora.',
     respuestas: [
       {
         id: 'empezando',
@@ -82,9 +83,9 @@ const preguntas = [
         texto:
           'Todavía estoy conociendo conceptos y necesito una base clara.',
         puntuacion: {
-          comunidad: 1,
-          mentoria: 0,
-          lectura: 3,
+          comunidad: 2,
+          mentoria: 3,
+          lectura: 1,
         },
       },
       {
@@ -93,19 +94,19 @@ const preguntas = [
         texto:
           'He visto formación y estrategias, pero sigo sin ordenar lo que hago.',
         puntuacion: {
-          comunidad: 4,
-          mentoria: 2,
+          comunidad: 3,
+          mentoria: 3,
           lectura: 0,
         },
       },
       {
         id: 'correccion',
-        titulo: 'Quiero que me corrijan y me guíen de verdad',
+        titulo: 'Ya opero y quiero revisar mis decisiones',
         texto:
-          'Busco trabajar ejercicios, recibir correcciones y saber en qué estoy fallando.',
+          'Tengo experiencia, pero quiero profundizar y detectar errores en mis gráficos.',
         puntuacion: {
-          comunidad: 1,
-          mentoria: 5,
+          comunidad: 2,
+          mentoria: 4,
           lectura: 0,
         },
       },
@@ -135,19 +136,19 @@ const preguntas = [
         texto:
           'Voy saltando de una cosa a otra y no sé bien qué debería trabajar primero.',
         puntuacion: {
-          comunidad: 4,
-          mentoria: 2,
+          comunidad: 3,
+          mentoria: 3,
           lectura: 0,
         },
       },
       {
         id: 'personal',
-        titulo: 'Quiero que revises lo que hago',
+        titulo: 'Quiero más clases y práctica cada semana',
         texto:
-          'Quiero saber dónde estoy fallando y qué tengo que corregir.',
+          'Me interesa tener una clase de teoría y otra de práctica con correcciones grupales.',
         puntuacion: {
-          comunidad: 1,
-          mentoria: 5,
+          comunidad: 2,
+          mentoria: 4,
           lectura: 0,
         },
       },
@@ -177,8 +178,8 @@ const preguntas = [
         texto:
           'Puedo estudiar, revisar gráficos y mantener una rutina.',
         puntuacion: {
-          comunidad: 4,
-          mentoria: 2,
+          comunidad: 3,
+          mentoria: 3,
           lectura: 0,
         },
       },
@@ -197,16 +198,16 @@ const preguntas = [
   },
 
   {
-    id: 'inversion',
-    titulo: 'Y respecto a la inversión, ¿cómo lo ves?',
+    id: 'formato',
+    titulo: '¿Qué forma de aprender te encaja más?',
     texto:
-      'No se trata de gastar más, sino de elegir algo que te encaje ahora.',
+      'Piensa en el ritmo de clases y el tipo de formación que buscas.',
     respuestas: [
       {
         id: 'sin-compromiso',
-        titulo: 'Prefiero conocerlo bien antes de pagar',
+        titulo: 'Primero quiero conocerte mejor',
         texto:
-          'Quiero leer, ver cómo trabajas y decidir después.',
+          'Prefiero leer y entender cómo trabajas antes de apuntarme a una formación.',
         puntuacion: {
           comunidad: 0,
           mentoria: 0,
@@ -215,23 +216,23 @@ const preguntas = [
       },
       {
         id: 'progresivo',
-        titulo: 'Puedo empezar poco a poco',
+        titulo: 'Una clase semanal y sala escrita',
         texto:
-          'Puedo invertir si veo claro que me va a ayudar.',
+          'Me encaja aprender en directo cada semana y seguir el mercado en la sala escrita.',
         puntuacion: {
           comunidad: 5,
-          mentoria: 1,
+          mentoria: 2,
           lectura: 0,
         },
       },
       {
         id: 'importante',
-        titulo: 'Pagaría más si veo que es justo lo que necesito',
+        titulo: 'Dos clases semanales y más práctica',
         texto:
-          'Pero tendría que ser un trabajo personal, con seguimiento y correcciones.',
+          'Quiero una clase de teoría, otra de práctica y corregir ejercicios en grupo.',
         puntuacion: {
-          comunidad: 1,
-          mentoria: 5,
+          comunidad: 2,
+          mentoria: 4,
           lectura: 0,
         },
       },
@@ -329,7 +330,7 @@ export default function PorDondeEmpezar() {
       <PageHero
         eyebrow="Orientación personalizada"
         title="No todo el mundo debe empezar por el mismo sitio"
-        text="Contesta cuatro preguntas y te recomendaré la opción que parece más lógica para tu situación actual. No es un examen ni te obliga a nada."
+        text="Contesta cuatro preguntas para orientarte entre Comunidad PEV, Mentoría PEV o empezar leyendo. Ambas formaciones admiten principiantes y personas con experiencia. No es un examen ni te obliga a nada."
         contenidoLateral={
           <div className="rounded-[2rem] border border-white/[0.24] bg-white/[0.14] p-6 shadow-darkGlow backdrop-blur-xl dark:border-white/[0.14] dark:bg-white/[0.08] sm:p-8">
             <Compass className="h-9 w-9 text-[#79CFC4]" />
