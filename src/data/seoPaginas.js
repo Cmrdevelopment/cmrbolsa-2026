@@ -52,6 +52,15 @@ export const seoPaginas = {
     description:
       'Dos clases online semanales de teoría y práctica con correcciones grupales. Sala de trading en directo de lunes a jueves, según modalidad. Método PEV.',
   },
+  
+  '/mentoria-pev-w26': {
+    title:
+      'Nueva Mentoría PEV | Clases online y sala de trading | CMRBolsa',
+    description:
+      'Nueva Mentoría PEV: dos clases semanales online, corrección de gráficos y sala de trading en directo. Plan Flexible desde 200 €/mes o Anual por 1.000 €.',
+  },
+
+
 
   '/trading-sin-atajos-wjd-092026': {
     title:

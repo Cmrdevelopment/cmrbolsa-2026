@@ -16,6 +16,7 @@ const rutasPrerender = [
   '/comunidad-pev-alternativa',
   '/mentoria-pev',
   '/mentoria-pev-w26',
+  '/trading-sin-atajos-wjd-092026',
   '/solicitud-mentoria',
   '/sala-escrita',
   '/eventos',
