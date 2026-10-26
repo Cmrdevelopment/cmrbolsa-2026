@@ -184,6 +184,8 @@ function BotonPago({
 
 export default function MentoriaPEVW26() {
   useEffect(() => {
+    document.title = 'Mentoría PEV | CMRBolsa'
+
     // Eliminar anclas anteriores al abrir la página
     if (window.location.hash) {
       window.history.replaceState(
