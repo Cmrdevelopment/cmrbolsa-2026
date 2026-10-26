@@ -10,11 +10,15 @@ import BunnyVideo from '../../components/media/BunnyVideo'
 import { siteConfig } from '../../data/siteConfig'
 
 // ENLACES DE PAGO
-// Los añadiremos cuando configuremos Comudia.
 const ENLACES_PAGO = {
-  unico: '',
-  mensual: '',
+  unico:
+    'https://www.comudia.com/unirse/mentoria-pev-de-cmrbolsa?plan=pev-anual',
+  mensual:
+    'https://www.comudia.com/unirse/mentoria-pev-de-cmrbolsa?plan=pev-flexible',
 }
+
+const INFO_COMUDIA_URL =
+  'https://www.comudia.com/c/mentoria-pev-de-cmrbolsa'
 
 // FOTOGRAFÍA DE CARLOS
 const FOTO_CARLOS =
@@ -313,7 +317,7 @@ export default function MentoriaPEVW26() {
 
             <h2 className="font-display text-3xl font-black leading-tight tracking-[-.04em] sm:text-4xl">
               Vídeos para prepararte.
-              Clases para avanzar.
+              Clases para avanzar
             </h2>
 
             <ul className="mt-6 space-y-3">
@@ -355,17 +359,18 @@ export default function MentoriaPEVW26() {
             </p>
 
             <h2 className="font-display text-3xl font-black tracking-[-.04em] sm:text-4xl">
-              La Mentoría PEV.
+              La Mentoría PEV
               <span className="block text-[#428F74]">
-                Dos formas de empezar.
+                Dos formas de empezar
               </span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-[650px] text-base leading-7 text-[#647B6D]">
               La misma formación, clases y acompañamiento.
               La diferencia está en cómo quieres pagar
-              y cuánto tiempo tienes incluida la Sala de Trading.
+              y cuánto tiempo tienes incluida la Sala de Trading
             </p>
+
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -511,6 +516,16 @@ export default function MentoriaPEVW26() {
 
           </div>
 
+          <div className="mt-8 flex justify-center">
+            <a
+              href={INFO_COMUDIA_URL}
+              className="inline-flex min-h-[50px] items-center gap-2 rounded-xl border-2 border-[#15594E] px-6 py-3 font-extrabold text-[#15594E] transition hover:bg-[#15594E] hover:text-white"
+            >
+              Ver más información sobre la Mentoría PEV
+              <ArrowRight size={18} />
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -524,12 +539,15 @@ export default function MentoriaPEVW26() {
         <div className="mx-auto max-w-[850px]">
 
           <div className="mb-8 text-center">
+            <h2 className="mb-3 font-display text-3xl font-black tracking-[-.04em] sm:text-4xl">
+              F A Q
+            </h2>
             <p className="mb-3 text-xs font-black uppercase tracking-[.16em] text-[#438A71]">
               Antes de empezar
             </p>
 
             <h2 className="font-display text-3xl font-black tracking-[-.04em] sm:text-4xl">
-              Lo importante, sin letra pequeña.
+              Lo importante, sin letra pequeña
             </h2>
 
             <p className="mt-3 text-[#647B6D]">
